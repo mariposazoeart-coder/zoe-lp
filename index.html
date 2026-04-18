@@ -142,31 +142,55 @@
       position: relative;
       overflow: hidden;
       min-height: 520px;
+      background: var(--off-white);
     }
 
-    /* 背景①：人物写真（フル幅） */
-    .hero-photo-bg {
-      position: absolute;
-      inset: 0;
-      background: url('images/profile-fv.png') center top / cover no-repeat;
-      z-index: 0;
-    }
-
-    /* 背景②：黄色ネットワーク模様（30%透明度） */
-    .hero-yellow-overlay {
+    /* back_FV.jpg を30%透明度で表示（::before で人物写真に影響させない） */
+    .hero::before {
+      content: '';
       position: absolute;
       inset: 0;
       background: url('images/back_FV.jpg') center / cover no-repeat;
       opacity: 0.3;
-      z-index: 1;
+      z-index: 0;
     }
 
-    /* 下部グラデ：自然なフェードアウト */
+    /* 人物写真（左側・100%不透明） */
+    .hero-photo-col {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 58%;
+      z-index: 2;
+    }
+
+    .hero-photo-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* 写真右端→右エリアへのなじみグラデ */
+    .hero-photo-col::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        transparent 55%,
+        rgba(250,243,206,0.5) 75%,
+        rgba(250,243,206,0.9) 90%,
+        var(--off-white) 100%
+      );
+    }
+
+    /* 下部グラデ */
     .hero-bottom-grad {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 45%;
-      background: linear-gradient(to top, rgba(20,10,0,0.65) 0%, transparent 100%);
+      height: 40%;
+      background: linear-gradient(to top, rgba(50,30,8,0.55) 0%, transparent 100%);
       z-index: 2;
       pointer-events: none;
     }
@@ -234,12 +258,12 @@
       font-family: var(--font-mincho);
       font-weight: 700;
       font-size: 14px;
-      color: var(--white);
+      color: var(--brown);
       letter-spacing: 0.15em;
       line-height: 1.3;
       background: none !important;
       padding: 0 5px !important;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.7);
+      text-shadow: 0 1px 4px rgba(255,255,255,0.6);
     }
 
     /* 名前タグ：左下 */
@@ -1076,11 +1100,10 @@
   <!-- HERO -->
   <section class="hero">
 
-    <!-- 背景①：人物写真（フル幅） -->
-    <div class="hero-photo-bg"></div>
-
-    <!-- 背景②：黄色ネットワーク模様（30%） -->
-    <div class="hero-yellow-overlay"></div>
+    <!-- 人物写真（左・100%不透明） -->
+    <div class="hero-photo-col">
+      <img src="images/profile-fv.png" alt="川副真理子 ゾエ">
+    </div>
 
     <!-- 下部グラデ -->
     <div class="hero-bottom-grad"></div>
