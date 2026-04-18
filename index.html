@@ -7,109 +7,123 @@
   <meta name="description" content="発信の手ごたえはあるのに、売上が安定しない。その理由を動画で公開します。公式LINEに登録した方限定で「あなたの売上が安定しない本当の理由」を３本の無料動画でお届けします。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
 
+    /* ===== VARIABLES ===== */
     :root {
-      --gold:        #C49A3C;
-      --gold-light:  #E2C97E;
-      --gold-pale:   #F7EDCF;
-      --gold-bg:     #FDF8EE;
-      --brown-dark:  #3A2510;
-      --brown-mid:   #6B4826;
-      --brown-soft:  #9C7150;
-      --cream:       #FDFAF4;
-      --cream-2:     #F5EDD8;
+      --yellow:      #E3C964;
+      --yellow-pale: #FAF3CE;
+      --yellow-dark: #C9AF50;
+      --brown:       #7B5C3E;
+      --brown-light: #AC947F;
+      --brown-pale:  #BAAA9C;
+      --brown-bg:    #F7F2ED;
       --white:       #FFFFFF;
+      --off-white:   #FDFAF5;
+      --text-dark:   #3A2A1A;
+      --text-mid:    #6B5040;
+      --text-soft:   #9A8070;
       --line-green:  #06C755;
 
       --font-mincho: 'Shippori Mincho B1', 'Hiragino Mincho ProN', serif;
       --font-sans:   'Noto Sans JP', 'Hiragino Sans', sans-serif;
-
-      --max-w: 780px;
-      --section-py: 80px;
+      --max-w: 720px;
     }
 
-    html { scroll-behavior: smooth; }
-
     body {
-      background-color: var(--gold-bg);
-      color: var(--brown-dark);
+      background: var(--off-white);
+      color: var(--text-dark);
       font-family: var(--font-sans);
-      font-weight: 300;
-      line-height: 1.9;
+      font-weight: 400;
+      line-height: 1.85;
       font-size: 15px;
       -webkit-font-smoothing: antialiased;
     }
 
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ===== UTILITY ===== */
-    .container {
+    /* ===== SECTION WRAPPER ===== */
+    .wrap {
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
-    .text-center { text-align: center; }
-
-    .section-label {
+    /* ===== SECTION TITLE BADGE ===== */
+    .sec-badge {
+      display: inline-block;
+      background: var(--brown);
+      color: var(--white);
       font-family: var(--font-mincho);
-      font-size: 11px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 12px;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      padding: 6px 24px;
+      border-radius: 2px;
+      margin-bottom: 16px;
     }
 
-    .section-heading {
+    .sec-title {
       font-family: var(--font-mincho);
       font-weight: 700;
-      font-size: clamp(22px, 4.5vw, 30px);
-      line-height: 1.5;
-      color: var(--brown-dark);
+      font-size: clamp(20px, 4.5vw, 26px);
+      line-height: 1.55;
+      color: var(--brown);
     }
 
-    .divider {
+    .sec-title em {
+      font-style: normal;
+      color: var(--yellow-dark);
+      border-bottom: 3px solid var(--yellow);
+    }
+
+    /* ===== LINE CTA BUTTON ===== */
+    .line-btn {
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin: 0 auto 40px;
-      max-width: 300px;
+      justify-content: center;
+      gap: 10px;
+      background: var(--line-green);
+      color: var(--white);
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(15px, 3.5vw, 17px);
+      letter-spacing: 0.04em;
+      padding: 18px 32px;
+      border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(6,199,85,0.38);
+      transition: transform .2s, box-shadow .2s;
+      max-width: 420px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
     }
+    .line-btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -80%;
+      width: 50%; height: 100%;
+      background: linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+      transition: left .5s;
+    }
+    .line-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(6,199,85,.48); }
+    .line-btn:hover::after { left: 130%; }
+    .line-btn svg { width: 24px; height: 24px; fill: currentColor; flex-shrink: 0; }
 
-    .divider-line {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-light));
-    }
-    .divider-line.r {
-      background: linear-gradient(90deg, var(--gold-light), transparent);
-    }
+    .cta-area { text-align: center; padding: 12px 0 4px; }
+    .cta-note { font-size: 11px; color: var(--text-soft); margin-top: 10px; }
 
-    .divider-diamond {
-      width: 8px;
-      height: 8px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      flex-shrink: 0;
-    }
-
-    /* ===== TOP BAR ===== */
-    .top-bar {
-      background: var(--brown-dark);
-      color: var(--gold-light);
+    /* ===== TOP RIBBON ===== */
+    .top-ribbon {
+      background: var(--brown);
+      color: var(--yellow-pale);
       text-align: center;
-      padding: 10px 16px;
+      padding: 9px 16px;
       font-family: var(--font-mincho);
       font-size: 12px;
       letter-spacing: 0.15em;
@@ -117,744 +131,587 @@
 
     /* ===== HERO ===== */
     .hero {
-      background: linear-gradient(160deg, var(--brown-dark) 0%, #5A3A1A 55%, var(--brown-mid) 100%);
+      background: linear-gradient(145deg, var(--brown) 0%, #5C3E28 60%, #7B5C3E 100%);
       position: relative;
       overflow: hidden;
-      min-height: 100svh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 56px 20px 80px;
     }
 
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(196,154,60,0.18) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(196,154,60,0.10) 0%, transparent 60%);
+      background: radial-gradient(ellipse 70% 60% at 80% 40%, rgba(227,201,100,.18) 0%, transparent 65%);
       pointer-events: none;
     }
 
     .hero::after {
       content: '';
       position: absolute;
-      top: 0; right: 0; bottom: 0;
-      width: 3px;
-      background: linear-gradient(180deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+      bottom: 0; left: 0; right: 0;
+      height: 40px;
+      background: var(--off-white);
+      clip-path: polygon(0 100%, 100% 0, 100% 100%);
     }
 
     .hero-inner {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 40px;
-      max-width: 900px;
+      max-width: 760px;
       margin: 0 auto;
-      padding: 80px 40px;
-      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 32px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
-    .hero-text  { order: 1; }
-    .hero-image { order: 2; }
-
-    .hero-badge {
+    .hero-eyebrow {
       display: inline-block;
-      border: 1px solid var(--gold);
-      color: var(--gold-light);
+      border: 1px solid var(--yellow);
+      color: var(--yellow);
       font-family: var(--font-mincho);
       font-size: 11px;
       letter-spacing: 0.25em;
-      padding: 5px 16px;
-      margin-bottom: 28px;
+      padding: 4px 14px;
+      margin-bottom: 20px;
     }
 
     .hero-catch {
       font-family: var(--font-mincho);
       font-weight: 700;
-      font-size: clamp(20px, 4vw, 28px);
+      font-size: clamp(21px, 4.5vw, 28px);
       color: var(--white);
-      line-height: 1.7;
-      margin-bottom: 24px;
+      line-height: 1.65;
+      margin-bottom: 20px;
     }
 
     .hero-catch em {
       font-style: normal;
-      color: var(--gold-light);
+      color: var(--yellow);
     }
 
     .hero-sub {
-      font-family: var(--font-sans);
       font-size: 13px;
-      color: rgba(255,255,255,0.78);
+      color: rgba(255,255,255,.80);
       line-height: 1.95;
-      margin-bottom: 36px;
-      padding-left: 16px;
-      border-left: 2px solid var(--gold);
+      padding-left: 14px;
+      border-left: 2px solid var(--yellow);
+      margin-bottom: 32px;
     }
 
-    .hero-image-wrap {
+    .hero-photo {
       position: relative;
     }
 
-    .hero-image-wrap::before {
+    .hero-photo::before {
       content: '';
       position: absolute;
-      inset: -8px -8px 8px 8px;
-      border: 1px solid var(--gold);
-      opacity: 0.5;
+      inset: 6px -6px -6px 6px;
+      border: 1px solid var(--yellow);
+      opacity: .5;
       border-radius: 2px;
-      z-index: 0;
     }
 
-    .hero-image-wrap img {
+    .hero-photo img {
+      border-radius: 2px;
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
       position: relative;
       z-index: 1;
-      width: 100%;
-      max-width: 360px;
-      margin: 0 auto;
-      border-radius: 2px;
-      object-fit: cover;
-      aspect-ratio: 3/4;
-      filter: brightness(0.97) contrast(1.03);
     }
 
-    .hero-name {
+    .hero-photo-name {
       position: relative;
       z-index: 2;
+      background: rgba(58,42,26,.85);
+      color: var(--yellow);
       text-align: center;
-      margin-top: 14px;
-      color: var(--gold-light);
       font-family: var(--font-mincho);
-      font-size: 13px;
-      letter-spacing: 0.2em;
+      font-size: 11px;
+      letter-spacing: .15em;
+      padding: 7px 8px;
     }
 
-    /* ===== CTA BUTTONS ===== */
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #08D65D 0%, var(--line-green) 50%, #04A848 100%);
-      color: var(--white);
-      font-family: var(--font-mincho);
-      font-weight: 700;
-      font-size: clamp(15px, 3vw, 17px);
-      letter-spacing: 0.05em;
-      padding: 20px 36px;
-      border-radius: 6px;
-      box-shadow: 0 6px 30px rgba(6,199,85,0.40);
-      transition: transform 0.25s, box-shadow 0.25s;
-      position: relative;
-      overflow: hidden;
+    /* ===== MINI CTA ===== */
+    .mini-cta {
+      background: var(--yellow-pale);
+      border-top: 3px solid var(--yellow);
+      border-bottom: 3px solid var(--yellow);
+      padding: 36px 20px;
+    }
+
+    .mini-cta-text {
       text-align: center;
-      max-width: 420px;
-      width: 100%;
-    }
-
-    .cta-btn::after {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 40px rgba(6,199,85,0.50);
-    }
-    .cta-btn:hover::after { left: 150%; }
-
-    .cta-btn svg {
-      width: 22px;
-      height: 22px;
-      fill: currentColor;
-      flex-shrink: 0;
-    }
-
-    .cta-wrap {
-      text-align: center;
-      margin: 24px 0 8px;
-    }
-
-    .cta-wrap .sub {
-      display: block;
-      margin-top: 12px;
-      font-size: 12px;
-      color: var(--brown-soft);
-    }
-
-    /* ===== SCROLL CUE ===== */
-    .scroll-cue {
-      position: absolute;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: var(--gold);
-      font-family: var(--font-mincho);
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      z-index: 3;
-    }
-
-    .scroll-cue-arrow {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(180deg, var(--gold), transparent);
-      animation: scrollDown 1.6s ease-in-out infinite;
-    }
-
-    @keyframes scrollDown {
-      0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
-      50%  { opacity: 1; transform: scaleY(1); }
-      100% { opacity: 0; transform: translateY(20px); }
-    }
-
-    /* ===== CTA SECTION (Shared) ===== */
-    .cta-section {
-      background: var(--cream-2);
-      padding: 60px 0;
-    }
-
-    .cta-section-inner {
-      text-align: center;
-    }
-
-    .cta-section-title {
       font-family: var(--font-mincho);
       font-weight: 700;
-      font-size: clamp(17px, 3.5vw, 21px);
+      font-size: clamp(15px, 3.5vw, 18px);
+      color: var(--brown);
       line-height: 1.7;
-      color: var(--brown-dark);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
-    .cta-section-desc {
-      font-size: 14px;
-      color: var(--brown-soft);
-      line-height: 1.9;
-      margin-bottom: 28px;
+    /* ===== SECTION: PAIN ===== */
+    .section-pain {
+      background: var(--off-white);
+      padding: 64px 0;
     }
 
-    /* ===== EMPATHY SECTION ===== */
-    .empathy {
-      background: var(--gold-bg);
-      padding: var(--section-py) 0;
-    }
+    .section-pain .inner { text-align: center; }
 
-    .empathy-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .pain-list {
-      list-style: none;
+    .pain-cards {
       display: grid;
       gap: 14px;
-      max-width: 640px;
-      margin: 0 auto;
+      margin-bottom: 36px;
     }
 
-    .pain-list li {
+    .pain-card {
       background: var(--white);
-      border: 1px solid var(--gold-pale);
-      border-left: 3px solid var(--gold);
-      padding: 18px 24px;
-      border-radius: 0 4px 4px 0;
+      border: 1px solid #E0D5CA;
+      border-left: 4px solid var(--yellow);
+      border-radius: 6px;
+      padding: 16px 20px;
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      font-family: var(--font-mincho);
-      font-size: clamp(14px, 2.8vw, 16px);
-      line-height: 1.75;
-      color: var(--brown-dark);
-      transition: box-shadow 0.2s;
+      text-align: left;
+      transition: box-shadow .2s;
     }
 
-    .pain-list li:hover { box-shadow: 0 4px 20px rgba(196,154,60,0.12); }
+    .pain-card:hover { box-shadow: 0 4px 18px rgba(123,92,62,.10); }
 
-    .pain-check {
-      width: 26px;
-      height: 26px;
+    .pain-icon {
+      width: 32px; height: 32px;
       flex-shrink: 0;
-      border: 1.5px solid var(--gold-light);
+      background: var(--yellow-pale);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--gold);
-      font-size: 13px;
-      margin-top: 2px;
+      color: var(--yellow-dark);
+      font-weight: 700;
+      font-size: 15px;
+      margin-top: 1px;
     }
 
-    .empathy-close {
+    .pain-text {
+      font-family: var(--font-mincho);
+      font-size: clamp(14px, 2.8vw, 15px);
+      line-height: 1.7;
+      color: var(--text-dark);
+    }
+
+    .pain-close {
+      background: linear-gradient(135deg, var(--brown) 0%, #5C3E28 100%);
+      border-radius: 8px;
+      padding: 28px 28px;
       text-align: center;
-      margin-top: 48px;
-      padding: 36px 32px;
-      background: linear-gradient(135deg, var(--brown-dark), #5A3A1A);
-      border-radius: 4px;
     }
 
-    .empathy-close p {
+    .pain-close p {
       font-family: var(--font-mincho);
       font-size: clamp(15px, 3vw, 18px);
       color: var(--white);
-      line-height: 1.9;
+      line-height: 1.85;
     }
 
-    .empathy-close em {
+    .pain-close em {
       font-style: normal;
-      color: var(--gold-light);
+      color: var(--yellow);
       font-weight: 700;
     }
 
-    /* ===== PROBLEM SECTION ===== */
-    .problem {
-      background: var(--cream-2);
-      padding: var(--section-py) 0;
+    /* ===== SECTION: PROBLEM ===== */
+    .section-problem {
+      background: var(--brown-bg);
+      padding: 64px 0;
     }
 
-    .problem-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .problem-box {
-      background: var(--white);
-      padding: 40px 36px;
-      border-radius: 4px;
-      box-shadow: 0 2px 16px rgba(58,37,16,0.06);
-      margin-bottom: 32px;
-    }
+    .section-problem .inner { text-align: center; }
 
     .problem-lead {
       font-family: var(--font-mincho);
-      font-size: clamp(16px, 3vw, 19px);
-      color: var(--brown-dark);
-      line-height: 1.85;
-      margin-bottom: 24px;
+      font-size: clamp(15px, 3vw, 18px);
+      color: var(--text-dark);
+      line-height: 1.9;
+      margin-bottom: 28px;
       text-align: center;
     }
 
-    .problem-answer {
+    .problem-answer-box {
+      background: var(--white);
+      border: 2px solid var(--yellow);
+      border-radius: 8px;
+      padding: 28px 24px;
+      margin-bottom: 28px;
+      position: relative;
       text-align: center;
-      padding: 28px 20px;
-      margin: 28px 0;
-      border-top: 1px solid var(--gold-pale);
-      border-bottom: 1px solid var(--gold-pale);
     }
 
-    .problem-answer-label {
+    .problem-answer-box::before {
+      content: '理由はひとつ';
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--yellow);
+      color: var(--brown);
       font-family: var(--font-mincho);
-      font-size: 13px;
-      color: var(--gold);
-      letter-spacing: 0.15em;
-      display: block;
-      margin-bottom: 12px;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: .2em;
+      padding: 3px 18px;
+      border-radius: 20px;
+      white-space: nowrap;
     }
 
     .problem-answer-text {
       font-family: var(--font-mincho);
       font-weight: 700;
       font-size: clamp(20px, 4.5vw, 26px);
-      color: var(--brown-dark);
-      line-height: 1.6;
+      color: var(--brown);
+      line-height: 1.55;
     }
 
     .problem-answer-text em {
       font-style: normal;
-      color: var(--gold);
-      position: relative;
+      color: var(--yellow-dark);
+      border-bottom: 3px solid var(--yellow);
     }
 
-    .problem-answer-text em::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background: var(--gold-pale);
-      z-index: -1;
+    .problem-body {
+      text-align: left;
+      background: var(--white);
+      border-radius: 8px;
+      padding: 28px 28px;
+      margin-bottom: 20px;
     }
 
     .problem-body p {
       font-family: var(--font-mincho);
       font-size: 15px;
       line-height: 2;
-      color: var(--brown-dark);
-      margin-bottom: 18px;
+      color: var(--text-dark);
+      margin-bottom: 16px;
     }
 
     .problem-body p:last-child { margin-bottom: 0; }
 
     .problem-body strong {
-      color: var(--brown-dark);
+      color: var(--brown);
       font-weight: 700;
-      background: linear-gradient(transparent 70%, var(--gold-pale) 70%);
-      padding: 0 2px;
     }
 
     .problem-structure {
-      background: var(--brown-dark);
+      background: var(--brown);
       color: var(--white);
+      border-radius: 8px;
+      padding: 22px 24px;
       text-align: center;
-      padding: 24px 20px;
-      margin-top: 28px;
-      border-radius: 4px;
     }
 
     .problem-structure p {
       font-family: var(--font-mincho);
-      font-size: clamp(15px, 3vw, 17px);
-      line-height: 1.8;
-      color: var(--white);
+      font-size: clamp(14px, 3vw, 17px);
+      line-height: 1.85;
     }
 
     .problem-structure em {
       font-style: normal;
-      color: var(--gold-light);
+      color: var(--yellow);
       font-weight: 700;
     }
 
-    /* ===== BENEFITS (VIDEOS) ===== */
-    .benefits {
-      background: var(--gold-bg);
-      padding: var(--section-py) 0;
-      position: relative;
-    }
-
-    .benefits-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .benefits-intro {
-      font-family: var(--font-mincho);
-      font-size: 14px;
-      color: var(--brown-mid);
-      margin-top: 16px;
-      line-height: 1.9;
-    }
-
-    .video-gift-badge {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--white);
-      font-family: var(--font-mincho);
-      font-size: 11px;
-      letter-spacing: 0.25em;
-      padding: 5px 20px;
-      border-radius: 2px;
-      margin-bottom: 20px;
-    }
-
-    .video-list {
-      display: grid;
-      gap: 28px;
-    }
-
-    .video-item {
-      background: var(--white);
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 2px 16px rgba(58,37,16,0.06);
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 1px solid var(--gold-pale);
-    }
-
-    .video-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(58,37,16,0.10);
-    }
-
-    .video-item-head {
-      background: linear-gradient(135deg, var(--brown-dark), #5A3A1A);
-      padding: 24px 28px;
+    .dots-bridge {
       display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--brown-pale); }
+    .bridge { flex: 1; max-width: 100px; height: 2px; background: linear-gradient(90deg, var(--brown-pale), var(--yellow)); }
+
+    /* ===== SECTION: VIDEOS ===== */
+    .section-videos {
+      background: var(--off-white);
+      padding: 64px 0;
+    }
+
+    .section-videos .inner { text-align: center; }
+
+    .gift-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow);
+      color: var(--brown);
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .2em;
+      padding: 6px 20px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .video-cards {
+      display: grid;
       gap: 20px;
+      margin: 32px 0;
+    }
+
+    .video-card {
+      background: var(--white);
+      border: 1px solid #E0D5CA;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(123,92,62,.07);
+      text-align: left;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .video-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(123,92,62,.13); }
+
+    .video-card-head {
+      background: linear-gradient(135deg, var(--brown) 0%, #5C3E28 100%);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
     }
 
     .video-num {
       flex-shrink: 0;
-      width: 56px;
-      height: 56px;
-      background: var(--gold);
-      color: var(--white);
-      font-family: var(--font-mincho);
-      font-weight: 700;
+      width: 54px; height: 54px;
+      background: var(--yellow);
       border-radius: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      line-height: 1;
+      color: var(--brown);
+      line-height: 1.1;
     }
 
-    .video-num span {
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      opacity: 0.8;
-      margin-bottom: 2px;
-    }
-
-    .video-num strong {
-      font-size: 20px;
-    }
+    .video-num span { font-size: 9px; font-weight: 700; letter-spacing: .1em; font-family: var(--font-sans); }
+    .video-num strong { font-family: var(--font-mincho); font-size: 22px; font-weight: 800; }
 
     .video-title {
       font-family: var(--font-mincho);
       font-weight: 700;
-      font-size: clamp(15px, 3vw, 17px);
+      font-size: clamp(14px, 3vw, 16px);
       color: var(--white);
       line-height: 1.6;
       flex: 1;
     }
 
-    .video-body {
-      padding: 24px 28px;
-    }
+    .video-body { padding: 22px 24px; }
 
     .video-desc {
       font-size: 14px;
       line-height: 1.95;
-      color: var(--brown-dark);
+      color: var(--text-mid);
     }
 
     .video-closing {
-      margin-top: 48px;
-      padding: 32px 28px;
-      background: var(--white);
-      border: 1px dashed var(--gold);
-      border-radius: 4px;
+      background: var(--yellow-pale);
+      border: 2px dashed var(--yellow-dark);
+      border-radius: 10px;
+      padding: 28px 24px;
       text-align: center;
+      margin-top: 8px;
     }
 
     .video-closing p {
       font-family: var(--font-mincho);
-      font-size: clamp(14px, 2.8vw, 16px);
-      line-height: 1.9;
-      color: var(--brown-dark);
+      font-size: clamp(14px, 3vw, 16px);
+      color: var(--brown);
+      line-height: 1.95;
     }
 
     .video-closing em {
       font-style: normal;
-      color: var(--gold);
       font-weight: 700;
+      color: var(--yellow-dark);
     }
 
-    /* ===== TESTIMONIALS ===== */
-    .testimonials {
-      background: var(--cream-2);
-      padding: var(--section-py) 0;
+    /* ===== SECTION: VOICE ===== */
+    .section-voice {
+      background: var(--brown-bg);
+      padding: 64px 0;
     }
 
-    .testimonials-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
+    .section-voice .inner { text-align: center; }
 
-    .testimonials-intro {
-      font-family: var(--font-mincho);
-      font-size: 14px;
-      color: var(--brown-mid);
-      margin-top: 16px;
-      line-height: 1.9;
-    }
-
-    .testimonial-list {
+    .voice-cards {
       display: grid;
-      gap: 28px;
+      gap: 24px;
+      margin-top: 36px;
     }
 
-    .testimonial {
+    .voice-card {
       background: var(--white);
-      border-radius: 6px;
-      padding: 32px 32px 28px;
-      box-shadow: 0 2px 16px rgba(58,37,16,0.06);
-      position: relative;
-      border-top: 3px solid var(--gold);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(123,92,62,.07);
+      text-align: left;
     }
 
-    .testimonial-quote {
-      position: absolute;
-      top: 16px;
-      right: 24px;
-      font-family: 'Georgia', serif;
-      font-size: 48px;
-      line-height: 1;
-      color: var(--gold-pale);
+    .voice-card-head {
+      background: linear-gradient(90deg, var(--yellow-pale), var(--white));
+      border-bottom: 2px solid var(--yellow);
+      padding: 16px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .voice-avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--brown-pale);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-family: var(--font-mincho);
+      font-size: 20px;
       font-weight: 700;
+      border: 2px solid var(--yellow);
     }
 
-    .testimonial-client {
+    .voice-name {
       font-family: var(--font-mincho);
       font-weight: 700;
-      font-size: clamp(15px, 2.8vw, 17px);
-      color: var(--brown-dark);
-      line-height: 1.6;
-      margin-bottom: 4px;
+      font-size: 15px;
+      color: var(--brown);
+      line-height: 1.4;
+    }
+    .voice-tag {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--brown);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-top: 4px;
     }
 
-    .testimonial-service {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--gold-pale);
-    }
+    .voice-body { padding: 20px 22px; }
 
-    .testimonial-text {
+    .voice-text {
       font-size: 14px;
       line-height: 1.95;
-      color: var(--brown-dark);
-      margin-bottom: 18px;
+      color: var(--text-dark);
+      margin-bottom: 14px;
     }
 
-    .testimonial-result {
-      background: var(--gold-bg);
-      border-left: 2px solid var(--gold);
-      padding: 12px 16px;
+    .voice-result {
+      background: var(--yellow-pale);
+      border-left: 3px solid var(--yellow-dark);
+      border-radius: 0 4px 4px 0;
+      padding: 10px 14px;
       font-family: var(--font-mincho);
-      font-size: clamp(14px, 2.6vw, 15px);
-      color: var(--brown-dark);
-      line-height: 1.7;
-      font-weight: 600;
-      margin-bottom: 16px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--brown);
+      line-height: 1.65;
+      margin-bottom: 14px;
     }
 
-    .testimonial-result strong {
-      color: var(--gold);
-    }
-
-    .testimonial-link {
+    .voice-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       font-size: 12px;
-      color: var(--brown-mid);
-      border-bottom: 1px solid var(--gold-pale);
-      padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
+      color: var(--brown-light);
+      border-bottom: 1px solid var(--brown-pale);
+      padding-bottom: 1px;
+      transition: color .2s;
+    }
+    .voice-link:hover { color: var(--brown); }
+    .voice-link svg { width: 14px; height: 14px; fill: currentColor; }
+
+    /* ===== SECTION: PROFILE ===== */
+    .section-profile {
+      background: var(--off-white);
+      padding: 64px 0;
     }
 
-    .testimonial-link:hover {
-      color: var(--gold);
-      border-color: var(--gold);
+    .profile-box {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(123,92,62,.08);
     }
 
-    .testimonial-link svg {
-      width: 14px;
-      height: 14px;
-      fill: currentColor;
-    }
-
-    /* ===== PROFILE ===== */
-    .profile {
-      background: var(--gold-bg);
-      padding: var(--section-py) 0;
-    }
-
-    .profile-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .profile-inner {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 48px;
-      align-items: start;
+    .profile-box-head {
+      background: linear-gradient(135deg, var(--brown) 0%, #5C3E28 100%);
+      padding: 28px 28px 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
 
     .profile-photo-wrap {
+      flex-shrink: 0;
+      width: 110px; height: 130px;
       position: relative;
     }
 
     .profile-photo-wrap::before {
       content: '';
       position: absolute;
-      inset: 6px -6px -6px 6px;
-      background: var(--gold-pale);
+      inset: 4px -4px -4px 4px;
+      background: var(--yellow);
+      opacity: .4;
       border-radius: 2px;
-      z-index: 0;
     }
 
     .profile-photo-wrap img {
       position: relative;
       z-index: 1;
       width: 100%;
-      border-radius: 2px;
-      aspect-ratio: 3/4;
+      height: 100%;
       object-fit: cover;
+      border-radius: 2px;
     }
 
-    .profile-name-plate {
-      position: relative;
-      z-index: 2;
-      background: var(--brown-dark);
-      color: var(--gold-light);
-      text-align: center;
-      padding: 10px 16px;
-    }
-
-    .profile-name-plate .name-en {
+    .profile-label {
       font-size: 10px;
-      letter-spacing: 0.2em;
-      opacity: 0.6;
+      letter-spacing: .2em;
+      color: var(--yellow);
+      opacity: .8;
       font-family: var(--font-sans);
+      margin-bottom: 4px;
     }
-
-    .profile-name-plate .name-ja {
-      font-family: var(--font-mincho);
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-    }
-
-    .profile-name-plate .name-title {
-      font-size: 10px;
-      opacity: 0.7;
-      margin-top: 3px;
-      letter-spacing: 0.05em;
-    }
-
-    .profile-tagline {
+    .profile-name {
       font-family: var(--font-mincho);
       font-weight: 700;
-      font-size: clamp(15px, 3vw, 18px);
-      color: var(--brown-dark);
+      font-size: clamp(20px, 4vw, 24px);
+      color: var(--white);
+      letter-spacing: .1em;
+      line-height: 1.3;
+    }
+    .profile-title {
+      font-family: var(--font-mincho);
+      font-size: 12px;
+      color: rgba(255,255,255,.7);
+      margin-top: 6px;
       line-height: 1.6;
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--gold-pale);
     }
 
-    .profile-tagline small {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      margin-bottom: 8px;
-      font-weight: 400;
-    }
+    .profile-box-body { padding: 28px 28px; }
 
     .profile-bio {
-      font-size: 13.5px;
+      font-size: 14px;
       line-height: 1.95;
-      color: var(--brown-dark);
+      color: var(--text-mid);
       margin-bottom: 20px;
     }
 
@@ -862,980 +719,612 @@
       list-style: none;
       display: grid;
       gap: 10px;
-      margin-top: 20px;
     }
 
     .profile-achievements li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      font-size: 13.5px;
-      line-height: 1.75;
-      color: var(--brown-dark);
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-dark);
     }
 
-    .achievement-dot {
-      width: 16px;
-      height: 16px;
+    .ach-diamond {
+      width: 14px; height: 14px;
       flex-shrink: 0;
-      background: var(--gold);
+      background: var(--yellow);
       clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
       margin-top: 5px;
     }
 
     .profile-motto {
-      margin-top: 24px;
-      padding: 16px 20px;
-      background: var(--white);
-      border-left: 3px solid var(--gold);
+      margin-top: 20px;
+      padding: 14px 18px;
+      background: var(--yellow-pale);
+      border-left: 4px solid var(--yellow-dark);
+      border-radius: 0 6px 6px 0;
       font-family: var(--font-mincho);
       font-size: 14px;
       line-height: 1.85;
-      color: var(--brown-dark);
+      color: var(--brown);
     }
 
-    /* ===== MAIN CTA ===== */
-    .main-cta {
-      background: linear-gradient(160deg, var(--brown-dark) 0%, #3A1A06 100%);
-      padding: var(--section-py) 0;
+    /* ===== SECTION: MAIN CTA ===== */
+    .section-main-cta {
+      background: linear-gradient(150deg, var(--brown) 0%, #3D2210 100%);
+      padding: 64px 20px;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .main-cta::before {
+    .section-main-cta::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,154,60,0.18) 0%, transparent 60%);
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(227,201,100,.18) 0%, transparent 55%);
     }
 
-    .main-cta-inner {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
+    .section-main-cta .inner { position: relative; z-index: 1; }
 
-    .main-cta .section-label { color: var(--gold-light); }
-    .main-cta .section-heading { color: var(--white); margin-bottom: 28px; }
+    .main-cta-title {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(18px, 4vw, 22px);
+      color: var(--white);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
 
     .main-cta-desc {
       font-family: var(--font-mincho);
-      font-size: clamp(14px, 3vw, 16px);
-      color: rgba(255,255,255,0.85);
-      line-height: 2;
-      margin-bottom: 32px;
-      max-width: 560px;
+      font-size: 14px;
+      color: rgba(255,255,255,.80);
+      line-height: 1.95;
+      margin-bottom: 28px;
+      max-width: 500px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .main-cta-desc em {
       font-style: normal;
-      color: var(--gold-light);
+      color: var(--yellow);
       font-weight: 700;
     }
 
     .main-cta-note {
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
+      font-size: 12px;
+      color: rgba(255,255,255,.55);
       margin-bottom: 28px;
-      line-height: 1.9;
     }
 
     .main-cta-remark {
-      margin-top: 20px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.5);
+      margin-top: 14px;
+      font-size: 11px;
+      color: rgba(255,255,255,.45);
     }
 
-    /* ===== QA ===== */
-    .qa {
-      background: var(--cream-2);
-      padding: var(--section-py) 0;
+    /* ===== SECTION: QA ===== */
+    .section-qa {
+      background: var(--brown-bg);
+      padding: 64px 0;
     }
 
-    .qa-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
+    .section-qa .inner { text-align: center; }
 
-    .qa-list {
-      display: grid;
-      gap: 16px;
-    }
+    .qa-list { display: grid; gap: 12px; margin-top: 32px; text-align: left; }
 
     .qa-item {
       background: var(--white);
-      border: 1px solid var(--gold-pale);
-      border-radius: 4px;
+      border: 1px solid #E0D5CA;
+      border-radius: 8px;
       overflow: hidden;
     }
 
     .qa-q {
       display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 20px 24px;
-      font-family: var(--font-mincho);
-      font-weight: 700;
-      font-size: clamp(14px, 2.8vw, 16px);
-      line-height: 1.6;
-      color: var(--brown-dark);
-      background: var(--gold-bg);
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
       cursor: pointer;
       user-select: none;
-      transition: background 0.2s;
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(13px, 2.8vw, 15px);
+      line-height: 1.6;
+      color: var(--brown);
+      background: var(--yellow-pale);
+      transition: background .2s;
     }
 
-    .qa-q:hover { background: var(--gold-pale); }
+    .qa-q:hover { background: #F5E89A; }
 
-    .qa-q::before {
-      content: 'Q';
+    .qa-q-icon {
       flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      background: var(--gold);
-      color: var(--white);
+      width: 28px; height: 28px;
+      background: var(--yellow);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: var(--brown);
+      font-family: var(--font-mincho);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    .qa-q::after {
-      content: '+';
+    .qa-q-arrow {
       margin-left: auto;
-      color: var(--gold);
-      font-size: 22px;
-      line-height: 1;
-      transition: transform 0.3s;
       flex-shrink: 0;
+      width: 22px; height: 22px;
+      border: 2px solid var(--brown-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brown-light);
+      font-size: 14px;
+      transition: transform .3s;
     }
 
-    .qa-item.open .qa-q::after {
-      transform: rotate(45deg);
-    }
+    .qa-item.open .qa-q-arrow { transform: rotate(45deg); }
 
     .qa-a {
       display: flex;
       align-items: flex-start;
-      gap: 14px;
-      padding: 0 24px;
+      gap: 12px;
+      padding: 0 20px;
       font-size: 14px;
       line-height: 1.95;
-      color: var(--brown-dark);
+      color: var(--text-dark);
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
+      transition: max-height .4s ease, padding .4s ease;
     }
 
     .qa-item.open .qa-a {
-      padding: 20px 24px 24px;
-      max-height: 400px;
+      padding: 18px 20px 20px;
+      max-height: 300px;
     }
 
-    .qa-a::before {
-      content: 'A';
+    .qa-a-icon {
       flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      background: var(--brown-dark);
-      color: var(--gold-light);
+      width: 28px; height: 28px;
+      background: var(--brown);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
-      font-weight: 700;
+      color: var(--yellow);
       font-family: var(--font-mincho);
+      font-size: 13px;
+      font-weight: 800;
+      margin-top: 1px;
     }
 
-    /* ===== CLOSING ===== */
-    .closing {
-      background: var(--gold-bg);
-      padding: var(--section-py) 0;
-    }
-
-    .closing-inner {
+    /* ===== SECTION: CLOSING ===== */
+    .section-closing {
+      background: var(--off-white);
+      padding: 64px 20px;
       text-align: center;
     }
 
-    .closing-heading {
+    .closing-msg p {
       font-family: var(--font-mincho);
-      font-weight: 700;
-      font-size: clamp(18px, 3.5vw, 22px);
-      color: var(--brown-dark);
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-
-    .closing-body p {
-      font-family: var(--font-mincho);
-      font-size: clamp(14px, 2.8vw, 16px);
+      font-size: clamp(14px, 3vw, 16px);
       line-height: 2;
-      color: var(--brown-dark);
-      margin-bottom: 18px;
+      color: var(--text-dark);
+      margin-bottom: 16px;
     }
 
     .closing-tagline {
       font-family: var(--font-mincho);
       font-weight: 700;
-      font-size: clamp(18px, 3.8vw, 22px);
-      color: var(--gold);
+      font-size: clamp(19px, 4.5vw, 24px);
+      color: var(--brown);
       line-height: 1.6;
-      margin: 32px 0 20px;
-      letter-spacing: 0.05em;
+      margin: 32px 0 12px;
     }
 
     .closing-sig {
       font-family: var(--font-mincho);
       font-size: 13px;
-      color: var(--brown-mid);
-      letter-spacing: 0.1em;
+      color: var(--brown-light);
+      letter-spacing: .1em;
       margin-bottom: 32px;
     }
 
     /* ===== FOOTER ===== */
     footer {
-      background: var(--brown-dark);
-      padding: 40px 24px;
+      background: var(--brown);
+      padding: 36px 20px;
     }
 
     .footer-inner {
       max-width: var(--max-w);
       margin: 0 auto;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
-      text-align: center;
+      gap: 16px;
     }
 
     .footer-logo {
       font-family: var(--font-mincho);
-      font-size: 15px;
-      color: var(--gold-light);
-      letter-spacing: 0.2em;
+      font-size: 14px;
+      color: var(--yellow-pale);
+      letter-spacing: .2em;
     }
 
-    .footer-sns {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
+    .footer-line { width: 36px; height: 1px; background: var(--yellow); opacity: .4; }
 
     .footer-sns a {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,.6);
       font-size: 13px;
-      transition: color 0.2s;
+      transition: color .2s;
     }
-
-    .footer-sns a:hover { color: var(--gold-light); }
-
-    .sns-ig-icon {
-      width: 20px;
-      height: 20px;
-    }
+    .footer-sns a:hover { color: var(--yellow); }
+    .footer-sns svg { width: 18px; height: 18px; fill: currentColor; }
 
     .footer-copy {
       font-size: 11px;
-      color: rgba(255,255,255,0.3);
-      letter-spacing: 0.1em;
+      color: rgba(255,255,255,.3);
+      letter-spacing: .08em;
     }
 
-    .footer-divider {
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-      opacity: 0.4;
-    }
+    /* ===== FADE IN ===== */
+    .fi { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .fi.on { opacity: 1; transform: none; }
 
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 680px) {
-      :root { --section-py: 60px; }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding: 60px 24px 80px;
-        text-align: center;
-      }
-
-      .hero-text  { order: 2; }
-      .hero-image { order: 1; }
-
+    @media (max-width: 640px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-photo { max-width: 180px; margin: 0 auto; }
+      .hero-photo img { aspect-ratio: 1/1; border-radius: 50%; }
+      .hero-photo::before { display: none; }
       .hero-sub { text-align: left; }
-
-      .hero-image-wrap::before { display: none; }
-
-      .hero-image-wrap img {
-        max-width: 220px;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        margin: 0 auto;
-      }
-
-      .profile-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .profile-photo-wrap {
-        max-width: 220px;
-        margin: 0 auto;
-      }
-
-      .video-item-head {
-        padding: 20px;
-        gap: 14px;
-      }
-
-      .video-num {
-        width: 48px;
-        height: 48px;
-      }
-
-      .video-num strong { font-size: 17px; }
-
-      .video-body, .problem-box, .testimonial {
-        padding: 24px 22px;
-      }
-
-      .pain-list li {
-        padding: 16px 18px;
-        gap: 10px;
-      }
-
-      .qa-q, .qa-item.open .qa-a {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
+      .profile-box-head { flex-direction: column; text-align: center; }
+      .profile-photo-wrap { margin: 0 auto; }
+      .profile-photo-wrap::before { display: none; }
     }
 
     @media (max-width: 400px) {
       .hero-catch { font-size: 19px; }
-      .cta-btn { padding: 18px 20px; font-size: 14px; }
-    }
-
-    /* ===== ANIMATION ===== */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: none;
+      .line-btn { font-size: 14px; padding: 16px 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
+  <!-- TOP RIBBON -->
+  <div class="top-ribbon">
     公式LINE登録で「売上が安定しない本当の理由」３本の無料動画をプレゼント
   </div>
 
-  <!-- ============================================================
-       [FV] HERO
-  ============================================================ -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-
       <div class="hero-text">
-        <div class="hero-badge">Sales Coaching × LINE Strategy</div>
-
+        <div class="hero-eyebrow">Sales Coaching × LINE Strategy</div>
         <h1 class="hero-catch">
           発信の手ごたえはあるのに、<br>
           <em>売上が安定しない。</em><br>
           その理由を動画で公開します。
         </h1>
-
         <p class="hero-sub">
           公式LINEに登録した方限定で<br>
           「あなたの売上が安定しない本当の理由」を<br>
           ３本の無料動画でお届けします。
         </p>
+        <div class="cta-area">
+          <a href="https://lin.ee/ropbySH" class="line-btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            ▼ 無料動画を受け取る（公式LINEへ）
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="images/profile.jpg" alt="川副真理子 ゾエ">
+        <p class="hero-photo-name">川副真理子 / Zoe</p>
+      </div>
+    </div>
+  </section>
 
-        <a href="https://lin.ee/ropbySH" class="cta-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          ▼ 無料動画を受け取る
+  <!-- MINI CTA① -->
+  <section class="mini-cta">
+    <div class="wrap fi">
+      <p class="mini-cta-text">公式LINEに登録した方限定<br>３本の<strong>無料動画</strong>をプレゼント中📩</p>
+      <div class="cta-area">
+        <a href="https://lin.ee/ropbySH" class="line-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          ▼ 無料動画を受け取る（公式LINEへ）
         </a>
-      </div>
-
-      <div class="hero-image">
-        <div class="hero-image-wrap">
-          <img src="images/profile.jpg" alt="川副真理子 ゾエ｜売れる流れを作るセールス伴走コーチ" loading="eager">
-        </div>
-        <p class="hero-name">川副真理子 / Zoe</p>
-      </div>
-
-    </div>
-
-    <div class="scroll-cue">
-      <span>scroll</span>
-      <div class="scroll-cue-arrow"></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       [CTA①] SMALL CTA
-  ============================================================ -->
-  <section class="cta-section">
-    <div class="container cta-section-inner fade-in">
-      <p class="cta-section-title">
-        公式LINEに登録した方限定<br>
-        ３本の無料動画をプレゼント中
-      </p>
-      <p class="cta-section-desc">
-        登録は30秒。もちろん完全無料です。
-      </p>
-      <a href="https://lin.ee/ropbySH" class="cta-btn" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        ▼ 無料動画を受け取る（公式LINEへ）
-      </a>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       [よくあるお悩み]
-  ============================================================ -->
-  <section class="empathy">
-    <div class="container">
-      <div class="empathy-header fade-in">
-        <span class="section-label">Trouble</span>
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-diamond"></div>
-          <div class="divider-line r"></div>
-        </div>
-        <h2 class="section-heading">こんな状況に、心当たりありませんか？</h2>
-      </div>
-
-      <ul class="pain-list fade-in">
-        <li>
-          <div class="pain-check">✓</div>
-          <span>発信は続けているのに、毎月<strong>売上がバラバラ</strong>で不安が消えない</span>
-        </li>
-        <li>
-          <div class="pain-check">✓</div>
-          <span>LINEに登録してもらっても、設定は<strong>あいさつ文だけ</strong></span>
-        </li>
-        <li>
-          <div class="pain-check">✓</div>
-          <span>「何かやらなきゃ」と思いながら、<strong>SNS投稿だけが続く</strong></span>
-        </li>
-        <li>
-          <div class="pain-check">✓</div>
-          <span>やることが多すぎて、<strong>何から手をつければいいか</strong>分からない</span>
-        </li>
-        <li>
-          <div class="pain-check">✓</div>
-          <span>時間を使えば使うほど、<strong>本来の仕事が圧迫される</strong></span>
-        </li>
-      </ul>
-
-      <div class="empathy-close fade-in">
-        <p>
-          頑張っているのに売上があがらない。<br>
-          それ、<em>頑張りレベルの問題じゃなくて、</em><br>
-          <em>頑張る場所が少しズレているだけ</em>なんです。
-        </p>
+        <p class="cta-note">登録30秒・完全無料・強引な勧誘はありません</p>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       [問題提起]
-  ============================================================ -->
-  <section class="problem">
-    <div class="container">
-      <div class="problem-header fade-in">
-        <span class="section-label">The Real Reason</span>
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-diamond"></div>
-          <div class="divider-line r"></div>
-        </div>
-        <h2 class="section-heading">
-          なぜ発信しているのに<br>
-          売上が安定しないのか
-        </h2>
+  <!-- お悩み -->
+  <section class="section-pain">
+    <div class="wrap">
+      <div class="inner fi" style="text-align:center;">
+        <span class="sec-badge">こんなお悩みはありませんか？</span>
+        <p class="sec-title" style="margin-bottom:32px;">こんな状況に、<br>心当たりありませんか？</p>
       </div>
-
-      <div class="problem-box fade-in">
-        <p class="problem-lead">
-          理由は、一つです。
-        </p>
-
-        <div class="problem-answer">
-          <span class="problem-answer-label">—— それは ——</span>
-          <p class="problem-answer-text">
-            「発信」と「販売」の間に<br>
-            <em>橋がない。</em>ということ。
-          </p>
-        </div>
-
-        <div class="problem-body">
-          <p>
-            フォロワーが増えて、いいねもつく。LINEにも登録してもらえてる。<br>
-            でも<strong>売上には繋がっていない。</strong>
-          </p>
-          <p>
-            それは、登録した人に<br>
-            「なぜ今、あなたのサービスが必要なのか」を<br>
-            伝える仕組みがないから。
-          </p>
-          <p>
-            <strong>登録してくれた瞬間が一番熱量が高い</strong>のに、<br>
-            その後何も届かないから、気づいた時にはもう冷めている。
-          </p>
-          <p>
-            だから、毎月ゼロから集客し直して、発信して、疲弊して続かなくなる。。。
-          </p>
-        </div>
-
-        <div class="problem-structure">
-          <p>
-            この負のスパイラルの正体は、<br>
-            才能でも努力でもなく、<em>構造が問題</em>なんです。
-          </p>
-        </div>
+      <div class="pain-cards fi">
+        <div class="pain-card"><div class="pain-icon">✓</div><p class="pain-text">発信は続けているのに、毎月<strong>売上がバラバラ</strong>で不安が消えない</p></div>
+        <div class="pain-card"><div class="pain-icon">✓</div><p class="pain-text">LINEに登録してもらっても、設定は<strong>あいさつ文だけ</strong></p></div>
+        <div class="pain-card"><div class="pain-icon">✓</div><p class="pain-text">「何かやらなきゃ」と思いながら、<strong>SNS投稿だけが続く</strong></p></div>
+        <div class="pain-card"><div class="pain-icon">✓</div><p class="pain-text">やることが多すぎて、<strong>何から手をつければいいか</strong>分からない</p></div>
+        <div class="pain-card"><div class="pain-icon">✓</div><p class="pain-text">時間を使えば使うほど、<strong>本来の仕事が圧迫される</strong></p></div>
       </div>
-
-      <div class="problem-box fade-in">
-        <div class="problem-body">
-          <p style="text-align:center;">
-            <strong>さらに…</strong>
-          </p>
-          <p>
-            インスタの発信は<strong>「点」</strong>でしかありません。<br>
-            どれだけ投稿を重ねても、<br>
-            それだけでは見込み客の信頼は育ちません。
-          </p>
-          <p>
-            点を<strong>「線」</strong>にする仕組みが、<br>
-            あなたのビジネスにはまだ足りていない。
-          </p>
-          <p style="text-align:center; margin-top: 24px;">
-            その仕組みの作り方を、<br>
-            <strong>この動画で全部話します。</strong>
-          </p>
-        </div>
+      <div class="pain-close fi">
+        <p>頑張っているのに売上があがらない。<br>それ、<em>頑張りレベルの問題じゃなくて、</em><br><em>頑張る場所が少しズレているだけ</em>なんです。</p>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       [特典の中身]
-  ============================================================ -->
-  <section class="benefits">
-    <div class="container">
-      <div class="benefits-header fade-in">
-        <span class="video-gift-badge">★ 無料プレゼント ★</span>
-        <h2 class="section-heading">
-          公式LINE登録で受け取れる<br>
-          無料動画３本
-        </h2>
-        <p class="benefits-intro">
-          売上が安定しない本当の理由を、<br>
-          ３本の動画で丁寧に解説します。
-        </p>
+  <!-- 問題提起 -->
+  <section class="section-problem">
+    <div class="wrap">
+      <div class="inner fi" style="text-align:center; margin-bottom: 32px;">
+        <span class="sec-badge">なぜ売上が安定しないのか</span>
+        <p class="sec-title" style="margin-top:8px;">発信しているのに<br>売上が安定しない<em>本当の理由</em></p>
       </div>
-
-      <div class="video-list fade-in">
-
-        <div class="video-item">
-          <div class="video-item-head">
-            <div class="video-num">
-              <span>VIDEO</span>
-              <strong>01</strong>
-            </div>
-            <p class="video-title">
-              フォロワーが増えても売れない<br>本当の理由、知っていますか？
-            </p>
-          </div>
-          <div class="video-body">
-            <p class="video-desc">
-              売上が安定しない女性起業家が陥りがちな３つの罠を暴きます。<br>
-              「頑張っているのに結果が出ない」のは、あなたのせいではありません。その構造的な原因を、この動画で明らかにします。
-            </p>
-          </div>
-        </div>
-
-        <div class="video-item">
-          <div class="video-item-head">
-            <div class="video-num">
-              <span>VIDEO</span>
-              <strong>02</strong>
-            </div>
-            <p class="video-title">
-              売れ続ける人だけが知っている<br>セールスの３つの鉄則
-            </p>
-          </div>
-          <div class="video-body">
-            <p class="video-desc">
-              苦手意識がスーッと消えて、自信を持って発信できるようになります。<br>
-              「売り込まなきゃいけない」という感覚が、そもそも間違っているんです。売れ続ける人が自然にやっていることを、私の経験から言語化します。
-            </p>
-          </div>
-        </div>
-
-        <div class="video-item">
-          <div class="video-item-head">
-            <div class="video-num">
-              <span>VIDEO</span>
-              <strong>03</strong>
-            </div>
-            <p class="video-title">
-              公式LINE×沼らせ設計で<br>自然と選ばれる導線の全体像を公開
-            </p>
-          </div>
-          <div class="video-body">
-            <p class="video-desc">
-              LINEであなたが体験することが、そのままあなたのビジネスに転用できます。<br>
-              「作って終わり」ではなく、見込み客が自然に深くなっていく仕組みの全体像を、具体的に体感してみてください。
-            </p>
-          </div>
-        </div>
-
+      <p class="problem-lead fi">理由は、一つです。</p>
+      <div class="problem-answer-box fi">
+        <p class="problem-answer-text">「発信」と「販売」の間に<br><em>橋がない。</em>ということ。</p>
       </div>
-
-      <div class="video-closing fade-in">
-        <p>
-          一度この仕組みができれば、<br>
-          クライアント対応をしながらでも、<br>
-          子どもと過ごしながらでも、<br>
-          <em>あなたが睡眠中でも、</em><br>
-          導線は止まらずに動き続けます。
-        </p>
+      <div class="problem-body fi">
+        <p>フォロワーが増えて、いいねもつく。LINEにも登録してもらえてる。<br>でも<strong>売上には繋がっていない。</strong></p>
+        <p>それは、登録した人に<strong>「なぜ今、あなたのサービスが必要なのか」</strong>を伝える仕組みがないから。</p>
+        <p><strong>登録してくれた瞬間が一番熱量が高い</strong>のに、その後何も届かないから、気づいた時にはもう冷めている。</p>
+        <p>だから、毎月ゼロから集客し直して、発信して、疲弊して続かなくなる。。。</p>
       </div>
+      <div class="problem-structure fi">
+        <p>この負のスパイラルの正体は、才能でも努力でもなく、<em>構造が問題</em>なんです。</p>
+      </div>
+      <div class="dots-bridge fi">
+        <div class="dot"></div>
+        <div class="bridge"></div>
+        <div class="dot"></div>
+        <div class="bridge" style="background: linear-gradient(90deg, var(--yellow), var(--brown-pale));"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="problem-body fi">
+        <p style="text-align:center;"><strong>さらに…</strong></p>
+        <p>インスタの発信は<strong>「点」</strong>でしかありません。どれだけ投稿を重ねても、それだけでは見込み客の信頼は育ちません。</p>
+        <p>点を<strong>「線」</strong>にする仕組みが、あなたのビジネスにはまだ足りていない。</p>
+        <p style="text-align:center; font-family: var(--font-mincho); font-weight:700;">その仕組みの作り方を、<br>この動画で全部話します。</p>
+      </div>
+    </div>
+  </section>
 
-      <div class="cta-wrap fade-in" style="margin-top: 40px;">
-        <a href="https://lin.ee/ropbySH" class="cta-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          ▼ 無料動画を受け取る
+  <!-- 動画特典 -->
+  <section class="section-videos">
+    <div class="wrap">
+      <div class="inner fi" style="text-align:center; margin-bottom:8px;">
+        <span class="gift-badge">🎁 公式LINE登録で無料プレゼント</span>
+        <p class="sec-title" style="margin-top:8px;">無料動画<em>３本</em>の中身</p>
+      </div>
+      <div class="video-cards fi">
+        <div class="video-card">
+          <div class="video-card-head">
+            <div class="video-num"><span>VIDEO</span><strong>01</strong></div>
+            <p class="video-title">フォロワーが増えても売れない<br>本当の理由、知っていますか？</p>
+          </div>
+          <div class="video-body"><p class="video-desc">売上が安定しない女性起業家が陥りがちな３つの罠を暴きます。「頑張っているのに結果が出ない」のは、あなたのせいではありません。その構造的な原因を、この動画で明らかにします。</p></div>
+        </div>
+        <div class="video-card">
+          <div class="video-card-head">
+            <div class="video-num"><span>VIDEO</span><strong>02</strong></div>
+            <p class="video-title">売れ続ける人だけが知っている<br>セールスの３つの鉄則</p>
+          </div>
+          <div class="video-body"><p class="video-desc">苦手意識がスーッと消えて、自信を持って発信できるようになります。「売り込まなきゃいけない」という感覚が、そもそも間違っているんです。売れ続ける人が自然にやっていることを、私の経験から言語化します。</p></div>
+        </div>
+        <div class="video-card">
+          <div class="video-card-head">
+            <div class="video-num"><span>VIDEO</span><strong>03</strong></div>
+            <p class="video-title">公式LINE×沼らせ設計で<br>自然と選ばれる導線の全体像を公開</p>
+          </div>
+          <div class="video-body"><p class="video-desc">LINEであなたが体験することが、そのままあなたのビジネスに転用できます。「作って終わり」ではなく、見込み客が自然に深くなっていく仕組みの全体像を、具体的に体感してみてください。</p></div>
+        </div>
+      </div>
+      <div class="video-closing fi">
+        <p>一度この仕組みができれば、<br>クライアント対応をしながらでも、子どもと過ごしながらでも、<br><em>あなたが睡眠中でも、</em><br>導線は止まらずに動き続けます。</p>
+      </div>
+      <div class="cta-area fi" style="margin-top:32px;">
+        <a href="https://lin.ee/ropbySH" class="line-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          ▼ 無料動画を受け取る（公式LINEへ）
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       [お客様の声]
-  ============================================================ -->
-  <section class="testimonials">
-    <div class="container">
-      <div class="testimonials-header fade-in">
-        <span class="section-label">Voice</span>
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-diamond"></div>
-          <div class="divider-line r"></div>
-        </div>
-        <h2 class="section-heading">お客様の声</h2>
-        <p class="testimonials-intro">
-          今まで導線をサポートさせていただいた方から<br>
-          嬉しいお声をいただいています。
-        </p>
+  <!-- お客様の声 -->
+  <section class="section-voice">
+    <div class="wrap">
+      <div class="inner fi" style="text-align:center;">
+        <span class="sec-badge">リアルな声</span>
+        <p class="sec-title" style="margin-top:8px;">導線サポートを受けた方から<br>嬉しいお声をいただいています</p>
       </div>
-
-      <div class="testimonial-list fade-in">
-
-        <div class="testimonial">
-          <div class="testimonial-quote">"</div>
-          <p class="testimonial-client">訪問産後ケアの助産師として独立開業<br>青木ゆきさん</p>
-          <p class="testimonial-service">公式LINE構築</p>
-          <p class="testimonial-text">
-            何から手をつければいいか全くわからない状態からスタートして、インスタ → LINE → 予約フォームの流れが完全に機能するようになりました。「LINEもちゃんと稼働してる」とお客様から直接言われた時は、やってよかったと心から思いました。
-          </p>
-          <p class="testimonial-result">
-            事業開始2ヶ月半で<strong>予約の9割が埋まり</strong>、<strong>月25件の目標</strong>を毎月更新中。
-          </p>
-          <a href="https://youtu.be/_n2Am_D8eH8" target="_blank" rel="noopener" class="testimonial-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            インタビュー動画を見る
-          </a>
+      <div class="voice-cards fi">
+        <div class="voice-card">
+          <div class="voice-card-head">
+            <div class="voice-avatar">青</div>
+            <div>
+              <p class="voice-name">青木ゆきさん<br><span style="font-size:12px;font-weight:400;color:var(--text-soft);">訪問産後ケアの助産師として独立開業</span></p>
+              <span class="voice-tag">公式LINE構築</span>
+            </div>
+          </div>
+          <div class="voice-body">
+            <p class="voice-text">何から手をつければいいか全くわからない状態からスタートして、インスタ → LINE → 予約フォームの流れが完全に機能するようになりました。「LINEもちゃんと稼働してる」とお客様から直接言われた時は、やってよかったと心から思いました。</p>
+            <p class="voice-result">事業開始2ヶ月半で<strong>予約の9割が埋まり</strong>、月25件の目標を毎月更新中。</p>
+            <a href="https://youtu.be/_n2Am_D8eH8" target="_blank" rel="noopener" class="voice-link"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>インタビュー動画を見る</a>
+          </div>
         </div>
-
-        <div class="testimonial">
-          <div class="testimonial-quote">"</div>
-          <p class="testimonial-client">発酵教室10年・講師育成講座を主催<br>吉田亜衣さん</p>
-          <p class="testimonial-service">LP制作</p>
-          <p class="testimonial-text">
-            ヒアリングシートに書いただけの内容なのに、私が言いたかったことを丁寧に拾い上げてもらえて。色合いも世界観も、「自分で作るより私らしい」と感じるほどでした。SNSとLPで流れがきちんと整いました。
-          </p>
-          <p class="testimonial-result">
-            初回ローンチで<strong>400名がセミナーに申し込み</strong>。SNSの「点」が「線」でつながった瞬間でした。
-          </p>
-          <a href="https://youtu.be/JCyiLYKR49I" target="_blank" rel="noopener" class="testimonial-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            インタビュー動画を見る
-          </a>
+        <div class="voice-card">
+          <div class="voice-card-head">
+            <div class="voice-avatar">吉</div>
+            <div>
+              <p class="voice-name">吉田亜衣さん<br><span style="font-size:12px;font-weight:400;color:var(--text-soft);">発酵教室10年・講師育成講座を主催</span></p>
+              <span class="voice-tag">LP制作</span>
+            </div>
+          </div>
+          <div class="voice-body">
+            <p class="voice-text">ヒアリングシートに書いただけの内容なのに、私が言いたかったことを丁寧に拾い上げてもらえて。色合いも世界観も、「自分で作るより私らしい」と感じるほどでした。SNSとLPで流れがきちんと整いました。</p>
+            <p class="voice-result">初回ローンチで<strong>400名がセミナーに申し込み</strong>。SNSの「点」が「線」でつながった瞬間でした。</p>
+            <a href="https://youtu.be/JCyiLYKR49I" target="_blank" rel="noopener" class="voice-link"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>インタビュー動画を見る</a>
+          </div>
         </div>
-
-        <div class="testimonial">
-          <div class="testimonial-quote">"</div>
-          <p class="testimonial-client">親子教室の先生向け集客コンサル<br>小関すみよさん</p>
-          <p class="testimonial-service">プロモーションサポート</p>
-          <p class="testimonial-text">
-            返事が早く、クオリティも高く、余計なストレスが一切なかった。不安で頭がいっぱいになりそうな時に「すみよさんは、救うべき人を救うだけでいい」と言ってもらえて、そこで原点に立ち返れました。
-          </p>
-          <p class="testimonial-result">
-            <strong>2週間で400万円以上</strong>の売上を達成。
-          </p>
-          <a href="https://youtu.be/PMd_BmNI-zs" target="_blank" rel="noopener" class="testimonial-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            インタビュー動画を見る
-          </a>
+        <div class="voice-card">
+          <div class="voice-card-head">
+            <div class="voice-avatar">小</div>
+            <div>
+              <p class="voice-name">小関すみよさん<br><span style="font-size:12px;font-weight:400;color:var(--text-soft);">親子教室の先生向け集客コンサル</span></p>
+              <span class="voice-tag">プロモーションサポート</span>
+            </div>
+          </div>
+          <div class="voice-body">
+            <p class="voice-text">返事が早く、クオリティも高く、余計なストレスが一切なかった。不安で頭がいっぱいになりそうな時に「すみよさんは、救うべき人を救うだけでいい」と言ってもらえて、そこで原点に立ち返れました。</p>
+            <p class="voice-result"><strong>2週間で400万円以上</strong>の売上を達成。</p>
+            <a href="https://youtu.be/PMd_BmNI-zs" target="_blank" rel="noopener" class="voice-link"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>インタビュー動画を見る</a>
+          </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       [ゾエについて]
-  ============================================================ -->
-  <section class="profile">
-    <div class="container">
-      <div class="profile-header fade-in">
-        <span class="section-label">About Zoe</span>
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-diamond"></div>
-          <div class="divider-line r"></div>
-        </div>
-        <h2 class="section-heading">ゾエについて</h2>
+  <!-- プロフィール -->
+  <section class="section-profile">
+    <div class="wrap">
+      <div class="fi" style="text-align:center; margin-bottom:32px;">
+        <span class="sec-badge">ゾエについて</span>
+        <p class="sec-title" style="margin-top:8px;">制作者の紹介</p>
       </div>
-
-      <div class="profile-inner fade-in">
-
-        <div class="profile-photo-wrap">
-          <img src="images/profile.jpg" alt="川副真理子 プロフィール写真">
-          <div class="profile-name-plate">
-            <p class="name-en">Sales Coaching / Zoe</p>
-            <p class="name-ja">川副 真理子</p>
-            <p class="name-title">売れる流れを作るセールス伴走コーチ</p>
+      <div class="profile-box fi">
+        <div class="profile-box-head">
+          <div class="profile-photo-wrap">
+            <img src="images/profile.jpg" alt="川副真理子 ゾエ">
+          </div>
+          <div>
+            <p class="profile-label">SALES COACH</p>
+            <p class="profile-name">川副 真理子</p>
+            <p class="profile-title">売れる流れを作るセールス伴走コーチ<br>ゾエ（Zoe）</p>
           </div>
         </div>
-
-        <div class="profile-content">
-          <p class="profile-tagline">
-            <small>SALES COACH</small>
-            売れる流れを作る<br>
-            セールス伴走コーチ ゾエ
-          </p>
-
-          <p class="profile-bio">
-            YKK AP株式会社で中高層ビルの設計を8年経験後、貿易事務・コーヒー豆の直輸入販売・iPadイラスト制作等を経て、2022年次男の出産を機にオンライン起業。「細分化と整理」を武器に、クライアントのビジネス構築を伴走。
-          </p>
-
+        <div class="profile-box-body">
+          <p class="profile-bio">YKK AP株式会社で中高層ビルの設計を8年経験後、貿易事務・コーヒー豆の直輸入販売・iPadイラスト制作等を経て、2022年次男の出産を機にオンライン起業。「細分化と整理」を武器に、クライアントのビジネス構築を伴走。</p>
           <ul class="profile-achievements">
-            <li>
-              <div class="achievement-dot"></div>
-              LP制作でクライアントの初セミナー集客<strong>400名超</strong>に貢献
-            </li>
-            <li>
-              <div class="achievement-dot"></div>
-              <strong>1億規模</strong>のプロモーションチームで導線整理を担当
-            </li>
-            <li>
-              <div class="achievement-dot"></div>
-              <strong>5,000万円以上</strong>売り上げるクライアントのコンテンツ制作を担当
-            </li>
-            <li>
-              <div class="achievement-dot"></div>
-              公式LINE構築サポートで産後ケア事業の予約を<strong>3ヶ月で満席</strong>に
-            </li>
+            <li><div class="ach-diamond"></div>LP制作でクライアントの初セミナー集客<strong>400名超</strong>に貢献</li>
+            <li><div class="ach-diamond"></div><strong>1億規模</strong>のプロモーションチームで導線整理を担当</li>
+            <li><div class="ach-diamond"></div><strong>5,000万円以上</strong>売り上げるクライアントのコンテンツ制作を担当</li>
+            <li><div class="ach-diamond"></div>公式LINE構築サポートで産後ケア事業の予約を<strong>3ヶ月で満席</strong>に</li>
           </ul>
-
-          <p class="profile-motto">
-            4歳と7歳の兄弟の母。次男の4ヶ月入院付き添い中にもビジネスを構築し続けた経験から、<br>
-            <strong>「どんな状況でも、具体化さえできれば行動できる！」</strong>をモットーにサポートをしています。
-          </p>
+          <p class="profile-motto">4歳と7歳の兄弟の母。次男の4ヶ月入院付き添い中にもビジネスを構築し続けた経験から、<strong>「どんな状況でも、具体化さえできれば行動できる！」</strong>をモットーにサポートをしています。</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       [CTA②] MAIN CTA
-  ============================================================ -->
-  <section class="main-cta">
-    <div class="container">
-      <div class="main-cta-inner fade-in">
-        <span class="section-label">Free Gift</span>
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-diamond"></div>
-          <div class="divider-line r"></div>
-        </div>
-        <h2 class="section-heading">
-          まずは無料動画を<br>
-          受け取ってください。
-        </h2>
-
-        <p class="main-cta-desc">
-          動画を見た上で、もし<em>「一緒にやってみたい」</em>と<br>
-          思っていただけたら、公式LINE内で<br>
-          個別相談のご案内をします。
-        </p>
-
-        <p class="main-cta-note">
-          もちろん動画を受け取るだけでも大歓迎です。
-        </p>
-
-        <a href="https://lin.ee/ropbySH" class="cta-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+  <!-- メインCTA② -->
+  <section class="section-main-cta">
+    <div class="inner fi">
+      <p class="main-cta-title">まずは無料動画を受け取ってください。</p>
+      <p class="main-cta-desc">動画を見た上で、もし<em>「一緒にやってみたい」</em>と<br>思っていただけたら、公式LINE内で<br>個別相談のご案内をします。</p>
+      <p class="main-cta-note">もちろん動画を受け取るだけでも大歓迎です。</p>
+      <div class="cta-area">
+        <a href="https://lin.ee/ropbySH" class="line-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
           ▼ 無料動画を受け取る（公式LINEへ）
         </a>
+      </div>
+      <p class="main-cta-remark">※ 登録は30秒・完全無料・強引な勧誘はありません</p>
+    </div>
+  </section>
 
-        <p class="main-cta-remark">※ 登録は30秒・完全無料・強引な勧誘はありません</p>
+  <!-- Q&A -->
+  <section class="section-qa">
+    <div class="wrap">
+      <div class="inner fi" style="text-align:center;">
+        <span class="sec-badge">よくあるご質問</span>
+        <p class="sec-title" style="margin-top:8px;">Q &amp; A</p>
+      </div>
+      <div class="qa-list fi">
+        <div class="qa-item">
+          <div class="qa-q"><div class="qa-q-icon">Q</div>登録したら売り込まれますか？<div class="qa-q-arrow">＋</div></div>
+          <div class="qa-a"><div class="qa-a-icon">A</div>まず動画3本をお届けします。その後、個別相談のご案内はしますが、強引な勧誘は一切しません。動画だけ受け取っていただいても全く問題ありません。</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q"><div class="qa-q-icon">Q</div>どんな人に向いていますか？<div class="qa-q-arrow">＋</div></div>
+          <div class="qa-a"><div class="qa-a-icon">A</div>すでに売上があり、お客様の変化を実感できている方。でも仕組みがなく毎月ゼロから集客している状態の方に最も刺さる内容です。</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q"><div class="qa-q-icon">Q</div>ビジネスのことが分かっていなくても大丈夫ですか？<div class="qa-q-arrow">＋</div></div>
+          <div class="qa-a"><div class="qa-a-icon">A</div>こちらの動画は「私はなんのビジネスしたらいいんだろう？」と思っている方にはあまりお役に立てないかもしれません。やりたいことがしっかり固まったら是非ご登録ください。</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       [Q&A]
-  ============================================================ -->
-  <section class="qa">
-    <div class="container">
-      <div class="qa-header fade-in">
-        <span class="section-label">Q&amp;A</span>
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-diamond"></div>
-          <div class="divider-line r"></div>
-        </div>
-        <h2 class="section-heading">よくあるご質問</h2>
+  <!-- 最後に -->
+  <section class="section-closing">
+    <div class="wrap fi">
+      <span class="sec-badge" style="background:var(--yellow); color:var(--brown);">最後に</span>
+      <div class="closing-msg" style="margin-top:20px;">
+        <p>SNSで反応があるなら、あなたの発信はすでに機能しています。</p>
+        <p>でも売上が安定しないなら、問題はその先の流れがないことです。</p>
+        <p>動画を見終わった後、<br>「あ、だからか」と腑に落ちる瞬間があるはずです。</p>
+        <p>是非あなたのビジネスに活かしてください。</p>
       </div>
-
-      <div class="qa-list fade-in">
-
-        <div class="qa-item">
-          <div class="qa-q">登録したら売り込まれますか？</div>
-          <div class="qa-a">まず動画3本をお届けします。その後、個別相談のご案内はしますが、強引な勧誘は一切しません。動画だけ受け取っていただいても全く問題ありません。</div>
-        </div>
-
-        <div class="qa-item">
-          <div class="qa-q">どんな人に向いていますか？</div>
-          <div class="qa-a">すでに売上があり、お客様の変化を実感できている方。でも仕組みがなく毎月ゼロから集客している状態の方に最も刺さる内容です。</div>
-        </div>
-
-        <div class="qa-item">
-          <div class="qa-q">ビジネスのことが分かっていなくても大丈夫ですか？</div>
-          <div class="qa-a">こちらの動画は「私はなんのビジネスしたらいいんだろう？」と思っている方にはあまりお役に立てないかもしれません。やりたいことがしっかり固まったら是非ご登録ください。</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       [最後に]
-  ============================================================ -->
-  <section class="closing">
-    <div class="container">
-      <div class="closing-inner fade-in">
-        <span class="section-label">Message</span>
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-diamond"></div>
-          <div class="divider-line r"></div>
-        </div>
-        <h2 class="closing-heading">最後に</h2>
-
-        <div class="closing-body">
-          <p>
-            SNSで反応があるなら、<br>
-            あなたの発信はすでに機能しています。
-          </p>
-          <p>
-            でも売上が安定しないなら、<br>
-            問題はその先の流れがないことです。
-          </p>
-          <p>
-            動画を見終わった後、<br>
-            「あ、だからか」と腑に落ちる瞬間があるはずです。
-          </p>
-          <p>
-            是非あなたのビジネスに活かして
-          </p>
-        </div>
-
-        <p class="closing-tagline">
-          迷いをゼロに、成果を最速に。<br>
-          一緒に叶えましょう。
-        </p>
-
-        <p class="closing-sig">セールス伴走コーチ ゾエ</p>
-
-        <a href="https://lin.ee/ropbySH" class="cta-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      <p class="closing-tagline">迷いをゼロに、成果を最速に。<br>一緒に叶えましょう。</p>
+      <p class="closing-sig">セールス伴走コーチ ゾエ</p>
+      <div class="cta-area">
+        <a href="https://lin.ee/ropbySH" class="line-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
           ▼ 無料動画を受け取る（公式LINEへ）
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <p class="footer-logo">川副真理子 / Zoe</p>
-      <div class="footer-divider"></div>
+      <div class="footer-line"></div>
       <div class="footer-sns">
         <a href="https://www.instagram.com/zoe_yanagimind" target="_blank" rel="noopener">
-          <svg class="sns-ig-icon" viewBox="0 0 24 24" fill="currentColor" aria-label="Instagram">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           @zoe_yanagimind
         </a>
       </div>
-      <div class="footer-divider"></div>
+      <div class="footer-line"></div>
       <p class="footer-copy">© Zoe Kawasoe. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- ============================================================
-       SCRIPTS
-  ============================================================ -->
   <script>
-    // Fade-in on scroll
-    (function() {
-      var els = document.querySelectorAll('.fade-in');
-      if (!('IntersectionObserver' in window)) {
-        els.forEach(function(el) { el.classList.add('visible'); });
-        return;
-      }
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-      els.forEach(function(el) { observer.observe(el); });
+    (function(){
+      var els = document.querySelectorAll('.fi');
+      if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('on'); }); return; }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){ if(entry.isIntersecting){ entry.target.classList.add('on'); io.unobserve(entry.target); } });
+      },{ threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+      els.forEach(function(el){ io.observe(el); });
     })();
-
-    // Q&A accordion
-    (function() {
-      var items = document.querySelectorAll('.qa-item');
-      items.forEach(function(item) {
-        var q = item.querySelector('.qa-q');
-        q.addEventListener('click', function() {
-          item.classList.toggle('open');
-        });
+    (function(){
+      document.querySelectorAll('.qa-item').forEach(function(item){
+        item.querySelector('.qa-q').addEventListener('click', function(){ item.classList.toggle('open'); });
       });
     })();
   </script>
-
 </body>
 </html>
