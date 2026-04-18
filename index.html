@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>売上が安定しない本当の理由｜売れる流れを作るセールス伴走コーチ ゾエ</title>
+  <meta name="description" content="発信の手ごたえはあるのに、売上が安定しない。その理由を動画で公開します。公式LINEに登録した方限定で「あなたの売上が安定しない本当の理由」を３本の無料動画でお届けします。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --gold:        #C49A3C;
+      --gold-light:  #E2C97E;
+      --gold-pale:   #F7EDCF;
+      --gold-bg:     #FDF8EE;
+      --brown-dark:  #3A2510;
+      --brown-mid:   #6B4826;
+      --brown-soft:  #9C7150;
+      --cream:       #FDFAF4;
+      --cream-2:     #F5EDD8;
+      --white:       #FFFFFF;
+      --line-green:  #06C755;
+
+      --font-mincho: 'Shippori Mincho B1', 'Hiragino Mincho ProN', serif;
+      --font-sans:   'Noto Sans JP', 'Hiragino Sans', sans-serif;
+
+      --max-w: 780px;
+      --section-py: 80px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--gold-bg);
+      color: var(--brown-dark);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.9;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== UTILITY ===== */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .text-center { text-align: center; }
+
+    .section-label {
+      font-family: var(--font-mincho);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .section-heading {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(22px, 4.5vw, 30px);
+      line-height: 1.5;
+      color: var(--brown-dark);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 auto 40px;
+      max-width: 300px;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light));
+    }
+    .divider-line.r {
+      background: linear-gradient(90deg, var(--gold-light), transparent);
+    }
+
+    .divider-diamond {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* ===== TOP BAR ===== */
+    .top-bar {
+      background: var(--brown-dark);
+      color: var(--gold-light);
+      text-align: center;
+      padding: 10px 16px;
+      font-family: var(--font-mincho);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(160deg, var(--brown-dark) 0%, #5A3A1A 55%, var(--brown-mid) 100%);
+      position: relative;
+      overflow: hidden;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(196,154,60,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(196,154,60,0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      width: 100%;
+    }
+
+    .hero-text  { order: 1; }
+    .hero-image { order: 2; }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-family: var(--font-mincho);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      padding: 5px 16px;
+      margin-bottom: 28px;
+    }
+
+    .hero-catch {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(20px, 4vw, 28px);
+      color: var(--white);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .hero-catch em {
+      font-style: normal;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.95;
+      margin-bottom: 36px;
+      padding-left: 16px;
+      border-left: 2px solid var(--gold);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -8px -8px 8px 8px;
+      border: 1px solid var(--gold);
+      opacity: 0.5;
+      border-radius: 2px;
+      z-index: 0;
+    }
+
+    .hero-image-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      border-radius: 2px;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      filter: brightness(0.97) contrast(1.03);
+    }
+
+    .hero-name {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-top: 14px;
+      color: var(--gold-light);
+      font-family: var(--font-mincho);
+      font-size: 13px;
+      letter-spacing: 0.2em;
+    }
+
+    /* ===== CTA BUTTONS ===== */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #08D65D 0%, var(--line-green) 50%, #04A848 100%);
+      color: var(--white);
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(15px, 3vw, 17px);
+      letter-spacing: 0.05em;
+      padding: 20px 36px;
+      border-radius: 6px;
+      box-shadow: 0 6px 30px rgba(6,199,85,0.40);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 40px rgba(6,199,85,0.50);
+    }
+    .cta-btn:hover::after { left: 150%; }
+
+    .cta-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .cta-wrap {
+      text-align: center;
+      margin: 24px 0 8px;
+    }
+
+    .cta-wrap .sub {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--brown-soft);
+    }
+
+    /* ===== SCROLL CUE ===== */
+    .scroll-cue {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--gold);
+      font-family: var(--font-mincho);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      z-index: 3;
+    }
+
+    .scroll-cue-arrow {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(180deg, var(--gold), transparent);
+      animation: scrollDown 1.6s ease-in-out infinite;
+    }
+
+    @keyframes scrollDown {
+      0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
+      50%  { opacity: 1; transform: scaleY(1); }
+      100% { opacity: 0; transform: translateY(20px); }
+    }
+
+    /* ===== CTA SECTION (Shared) ===== */
+    .cta-section {
+      background: var(--cream-2);
+      padding: 60px 0;
+    }
+
+    .cta-section-inner {
+      text-align: center;
+    }
+
+    .cta-section-title {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(17px, 3.5vw, 21px);
+      line-height: 1.7;
+      color: var(--brown-dark);
+      margin-bottom: 16px;
+    }
+
+    .cta-section-desc {
+      font-size: 14px;
+      color: var(--brown-soft);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+
+    /* ===== EMPATHY SECTION ===== */
+    .empathy {
+      background: var(--gold-bg);
+      padding: var(--section-py) 0;
+    }
+
+    .empathy-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .pain-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .pain-list li {
+      background: var(--white);
+      border: 1px solid var(--gold-pale);
+      border-left: 3px solid var(--gold);
+      padding: 18px 24px;
+      border-radius: 0 4px 4px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-family: var(--font-mincho);
+      font-size: clamp(14px, 2.8vw, 16px);
+      line-height: 1.75;
+      color: var(--brown-dark);
+      transition: box-shadow 0.2s;
+    }
+
+    .pain-list li:hover { box-shadow: 0 4px 20px rgba(196,154,60,0.12); }
+
+    .pain-check {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+      border: 1.5px solid var(--gold-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .empathy-close {
+      text-align: center;
+      margin-top: 48px;
+      padding: 36px 32px;
+      background: linear-gradient(135deg, var(--brown-dark), #5A3A1A);
+      border-radius: 4px;
+    }
+
+    .empathy-close p {
+      font-family: var(--font-mincho);
+      font-size: clamp(15px, 3vw, 18px);
+      color: var(--white);
+      line-height: 1.9;
+    }
+
+    .empathy-close em {
+      font-style: normal;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    /* ===== PROBLEM SECTION ===== */
+    .problem {
+      background: var(--cream-2);
+      padding: var(--section-py) 0;
+    }
+
+    .problem-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .problem-box {
+      background: var(--white);
+      padding: 40px 36px;
+      border-radius: 4px;
+      box-shadow: 0 2px 16px rgba(58,37,16,0.06);
+      margin-bottom: 32px;
+    }
+
+    .problem-lead {
+      font-family: var(--font-mincho);
+      font-size: clamp(16px, 3vw, 19px);
+      color: var(--brown-dark);
+      line-height: 1.85;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .problem-answer {
+      text-align: center;
+      padding: 28px 20px;
+      margin: 28px 0;
+      border-top: 1px solid var(--gold-pale);
+      border-bottom: 1px solid var(--gold-pale);
+    }
+
+    .problem-answer-label {
+      font-family: var(--font-mincho);
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .problem-answer-text {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(20px, 4.5vw, 26px);
+      color: var(--brown-dark);
+      line-height: 1.6;
+    }
+
+    .problem-answer-text em {
+      font-style: normal;
+      color: var(--gold);
+      position: relative;
+    }
+
+    .problem-answer-text em::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: var(--gold-pale);
+      z-index: -1;
+    }
+
+    .problem-body p {
+      font-family: var(--font-mincho);
+      font-size: 15px;
+      line-height: 2;
+      color: var(--brown-dark);
+      margin-bottom: 18px;
+    }
+
+    .problem-body p:last-child { margin-bottom: 0; }
+
+    .problem-body strong {
+      color: var(--brown-dark);
+      font-weight: 700;
+      background: linear-gradient(transparent 70%, var(--gold-pale) 70%);
+      padding: 0 2px;
+    }
+
+    .problem-structure {
+      background: var(--brown-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 24px 20px;
+      margin-top: 28px;
+      border-radius: 4px;
+    }
+
+    .problem-structure p {
+      font-family: var(--font-mincho);
+      font-size: clamp(15px, 3vw, 17px);
+      line-height: 1.8;
+      color: var(--white);
+    }
+
+    .problem-structure em {
+      font-style: normal;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    /* ===== BENEFITS (VIDEOS) ===== */
+    .benefits {
+      background: var(--gold-bg);
+      padding: var(--section-py) 0;
+      position: relative;
+    }
+
+    .benefits-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .benefits-intro {
+      font-family: var(--font-mincho);
+      font-size: 14px;
+      color: var(--brown-mid);
+      margin-top: 16px;
+      line-height: 1.9;
+    }
+
+    .video-gift-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      font-family: var(--font-mincho);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      padding: 5px 20px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .video-list {
+      display: grid;
+      gap: 28px;
+    }
+
+    .video-item {
+      background: var(--white);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(58,37,16,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid var(--gold-pale);
+    }
+
+    .video-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(58,37,16,0.10);
+    }
+
+    .video-item-head {
+      background: linear-gradient(135deg, var(--brown-dark), #5A3A1A);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .video-num {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      background: var(--gold);
+      color: var(--white);
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .video-num span {
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+      margin-bottom: 2px;
+    }
+
+    .video-num strong {
+      font-size: 20px;
+    }
+
+    .video-title {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(15px, 3vw, 17px);
+      color: var(--white);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .video-body {
+      padding: 24px 28px;
+    }
+
+    .video-desc {
+      font-size: 14px;
+      line-height: 1.95;
+      color: var(--brown-dark);
+    }
+
+    .video-closing {
+      margin-top: 48px;
+      padding: 32px 28px;
+      background: var(--white);
+      border: 1px dashed var(--gold);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .video-closing p {
+      font-family: var(--font-mincho);
+      font-size: clamp(14px, 2.8vw, 16px);
+      line-height: 1.9;
+      color: var(--brown-dark);
+    }
+
+    .video-closing em {
+      font-style: normal;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      background: var(--cream-2);
+      padding: var(--section-py) 0;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .testimonials-intro {
+      font-family: var(--font-mincho);
+      font-size: 14px;
+      color: var(--brown-mid);
+      margin-top: 16px;
+      line-height: 1.9;
+    }
+
+    .testimonial-list {
+      display: grid;
+      gap: 28px;
+    }
+
+    .testimonial {
+      background: var(--white);
+      border-radius: 6px;
+      padding: 32px 32px 28px;
+      box-shadow: 0 2px 16px rgba(58,37,16,0.06);
+      position: relative;
+      border-top: 3px solid var(--gold);
+    }
+
+    .testimonial-quote {
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      font-family: 'Georgia', serif;
+      font-size: 48px;
+      line-height: 1;
+      color: var(--gold-pale);
+      font-weight: 700;
+    }
+
+    .testimonial-client {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(15px, 2.8vw, 17px);
+      color: var(--brown-dark);
+      line-height: 1.6;
+      margin-bottom: 4px;
+    }
+
+    .testimonial-service {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--gold-pale);
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      line-height: 1.95;
+      color: var(--brown-dark);
+      margin-bottom: 18px;
+    }
+
+    .testimonial-result {
+      background: var(--gold-bg);
+      border-left: 2px solid var(--gold);
+      padding: 12px 16px;
+      font-family: var(--font-mincho);
+      font-size: clamp(14px, 2.6vw, 15px);
+      color: var(--brown-dark);
+      line-height: 1.7;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-result strong {
+      color: var(--gold);
+    }
+
+    .testimonial-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--brown-mid);
+      border-bottom: 1px solid var(--gold-pale);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .testimonial-link:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .testimonial-link svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    /* ===== PROFILE ===== */
+    .profile {
+      background: var(--gold-bg);
+      padding: var(--section-py) 0;
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .profile-inner {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .profile-photo-wrap {
+      position: relative;
+    }
+
+    .profile-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 6px -6px -6px 6px;
+      background: var(--gold-pale);
+      border-radius: 2px;
+      z-index: 0;
+    }
+
+    .profile-photo-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      border-radius: 2px;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+
+    .profile-name-plate {
+      position: relative;
+      z-index: 2;
+      background: var(--brown-dark);
+      color: var(--gold-light);
+      text-align: center;
+      padding: 10px 16px;
+    }
+
+    .profile-name-plate .name-en {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      opacity: 0.6;
+      font-family: var(--font-sans);
+    }
+
+    .profile-name-plate .name-ja {
+      font-family: var(--font-mincho);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .profile-name-plate .name-title {
+      font-size: 10px;
+      opacity: 0.7;
+      margin-top: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    .profile-tagline {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(15px, 3vw, 18px);
+      color: var(--brown-dark);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--gold-pale);
+    }
+
+    .profile-tagline small {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .profile-bio {
+      font-size: 13.5px;
+      line-height: 1.95;
+      color: var(--brown-dark);
+      margin-bottom: 20px;
+    }
+
+    .profile-achievements {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .profile-achievements li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--brown-dark);
+    }
+
+    .achievement-dot {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      background: var(--gold);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      margin-top: 5px;
+    }
+
+    .profile-motto {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: var(--white);
+      border-left: 3px solid var(--gold);
+      font-family: var(--font-mincho);
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--brown-dark);
+    }
+
+    /* ===== MAIN CTA ===== */
+    .main-cta {
+      background: linear-gradient(160deg, var(--brown-dark) 0%, #3A1A06 100%);
+      padding: var(--section-py) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .main-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,154,60,0.18) 0%, transparent 60%);
+    }
+
+    .main-cta-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .main-cta .section-label { color: var(--gold-light); }
+    .main-cta .section-heading { color: var(--white); margin-bottom: 28px; }
+
+    .main-cta-desc {
+      font-family: var(--font-mincho);
+      font-size: clamp(14px, 3vw, 16px);
+      color: rgba(255,255,255,0.85);
+      line-height: 2;
+      margin-bottom: 32px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .main-cta-desc em {
+      font-style: normal;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    .main-cta-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 28px;
+      line-height: 1.9;
+    }
+
+    .main-cta-remark {
+      margin-top: 20px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ===== QA ===== */
+    .qa {
+      background: var(--cream-2);
+      padding: var(--section-py) 0;
+    }
+
+    .qa-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .qa-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .qa-item {
+      background: var(--white);
+      border: 1px solid var(--gold-pale);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .qa-q {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px 24px;
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(14px, 2.8vw, 16px);
+      line-height: 1.6;
+      color: var(--brown-dark);
+      background: var(--gold-bg);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s;
+    }
+
+    .qa-q:hover { background: var(--gold-pale); }
+
+    .qa-q::before {
+      content: 'Q';
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--gold);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .qa-q::after {
+      content: '+';
+      margin-left: auto;
+      color: var(--gold);
+      font-size: 22px;
+      line-height: 1;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .qa-item.open .qa-q::after {
+      transform: rotate(45deg);
+    }
+
+    .qa-a {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 0 24px;
+      font-size: 14px;
+      line-height: 1.95;
+      color: var(--brown-dark);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .qa-item.open .qa-a {
+      padding: 20px 24px 24px;
+      max-height: 400px;
+    }
+
+    .qa-a::before {
+      content: 'A';
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--brown-dark);
+      color: var(--gold-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-mincho);
+    }
+
+    /* ===== CLOSING ===== */
+    .closing {
+      background: var(--gold-bg);
+      padding: var(--section-py) 0;
+    }
+
+    .closing-inner {
+      text-align: center;
+    }
+
+    .closing-heading {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(18px, 3.5vw, 22px);
+      color: var(--brown-dark);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .closing-body p {
+      font-family: var(--font-mincho);
+      font-size: clamp(14px, 2.8vw, 16px);
+      line-height: 2;
+      color: var(--brown-dark);
+      margin-bottom: 18px;
+    }
+
+    .closing-tagline {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(18px, 3.8vw, 22px);
+      color: var(--gold);
+      line-height: 1.6;
+      margin: 32px 0 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .closing-sig {
+      font-family: var(--font-mincho);
+      font-size: 13px;
+      color: var(--brown-mid);
+      letter-spacing: 0.1em;
+      margin-bottom: 32px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--brown-dark);
+      padding: 40px 24px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-mincho);
+      font-size: 15px;
+      color: var(--gold-light);
+      letter-spacing: 0.2em;
+    }
+
+    .footer-sns {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer-sns a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .footer-sns a:hover { color: var(--gold-light); }
+
+    .sns-ig-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 680px) {
+      :root { --section-py: 60px; }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 60px 24px 80px;
+        text-align: center;
+      }
+
+      .hero-text  { order: 2; }
+      .hero-image { order: 1; }
+
+      .hero-sub { text-align: left; }
+
+      .hero-image-wrap::before { display: none; }
+
+      .hero-image-wrap img {
+        max-width: 220px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+
+      .profile-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo-wrap {
+        max-width: 220px;
+        margin: 0 auto;
+      }
+
+      .video-item-head {
+        padding: 20px;
+        gap: 14px;
+      }
+
+      .video-num {
+        width: 48px;
+        height: 48px;
+      }
+
+      .video-num strong { font-size: 17px; }
+
+      .video-body, .problem-box, .testimonial {
+        padding: 24px 22px;
+      }
+
+      .pain-list li {
+        padding: 16px 18px;
+        gap: 10px;
+      }
+
+      .qa-q, .qa-item.open .qa-a {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero-catch { font-size: 19px; }
+      .cta-btn { padding: 18px 20px; font-size: 14px; }
+    }
+
+    /* ===== ANIMATION ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    公式LINE登録で「売上が安定しない本当の理由」３本の無料動画をプレゼント
+  </div>
+
+  <!-- ============================================================
+       [FV] HERO
+  ============================================================ -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="hero-text">
+        <div class="hero-badge">Sales Coaching × LINE Strategy</div>
+
+        <h1 class="hero-catch">
+          発信の手ごたえはあるのに、<br>
+          <em>売上が安定しない。</em><br>
+          その理由を動画で公開します。
+        </h1>
+
+        <p class="hero-sub">
+          公式LINEに登録した方限定で<br>
+          「あなたの売上が安定しない本当の理由」を<br>
+          ３本の無料動画でお届けします。
+        </p>
+
+        <a href="https://lin.ee/ropbySH" class="cta-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          ▼ 無料動画を受け取る
+        </a>
+      </div>
+
+      <div class="hero-image">
+        <div class="hero-image-wrap">
+          <img src="images/profile.jpg" alt="川副真理子 ゾエ｜売れる流れを作るセールス伴走コーチ" loading="eager">
+        </div>
+        <p class="hero-name">川副真理子 / Zoe</p>
+      </div>
+
+    </div>
+
+    <div class="scroll-cue">
+      <span>scroll</span>
+      <div class="scroll-cue-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       [CTA①] SMALL CTA
+  ============================================================ -->
+  <section class="cta-section">
+    <div class="container cta-section-inner fade-in">
+      <p class="cta-section-title">
+        公式LINEに登録した方限定<br>
+        ３本の無料動画をプレゼント中
+      </p>
+      <p class="cta-section-desc">
+        登録は30秒。もちろん完全無料です。
+      </p>
+      <a href="https://lin.ee/ropbySH" class="cta-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        ▼ 無料動画を受け取る（公式LINEへ）
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       [よくあるお悩み]
+  ============================================================ -->
+  <section class="empathy">
+    <div class="container">
+      <div class="empathy-header fade-in">
+        <span class="section-label">Trouble</span>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-diamond"></div>
+          <div class="divider-line r"></div>
+        </div>
+        <h2 class="section-heading">こんな状況に、心当たりありませんか？</h2>
+      </div>
+
+      <ul class="pain-list fade-in">
+        <li>
+          <div class="pain-check">✓</div>
+          <span>発信は続けているのに、毎月<strong>売上がバラバラ</strong>で不安が消えない</span>
+        </li>
+        <li>
+          <div class="pain-check">✓</div>
+          <span>LINEに登録してもらっても、設定は<strong>あいさつ文だけ</strong></span>
+        </li>
+        <li>
+          <div class="pain-check">✓</div>
+          <span>「何かやらなきゃ」と思いながら、<strong>SNS投稿だけが続く</strong></span>
+        </li>
+        <li>
+          <div class="pain-check">✓</div>
+          <span>やることが多すぎて、<strong>何から手をつければいいか</strong>分からない</span>
+        </li>
+        <li>
+          <div class="pain-check">✓</div>
+          <span>時間を使えば使うほど、<strong>本来の仕事が圧迫される</strong></span>
+        </li>
+      </ul>
+
+      <div class="empathy-close fade-in">
+        <p>
+          頑張っているのに売上があがらない。<br>
+          それ、<em>頑張りレベルの問題じゃなくて、</em><br>
+          <em>頑張る場所が少しズレているだけ</em>なんです。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       [問題提起]
+  ============================================================ -->
+  <section class="problem">
+    <div class="container">
+      <div class="problem-header fade-in">
+        <span class="section-label">The Real Reason</span>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-diamond"></div>
+          <div class="divider-line r"></div>
+        </div>
+        <h2 class="section-heading">
+          なぜ発信しているのに<br>
+          売上が安定しないのか
+        </h2>
+      </div>
+
+      <div class="problem-box fade-in">
+        <p class="problem-lead">
+          理由は、一つです。
+        </p>
+
+        <div class="problem-answer">
+          <span class="problem-answer-label">—— それは ——</span>
+          <p class="problem-answer-text">
+            「発信」と「販売」の間に<br>
+            <em>橋がない。</em>ということ。
+          </p>
+        </div>
+
+        <div class="problem-body">
+          <p>
+            フォロワーが増えて、いいねもつく。LINEにも登録してもらえてる。<br>
+            でも<strong>売上には繋がっていない。</strong>
+          </p>
+          <p>
+            それは、登録した人に<br>
+            「なぜ今、あなたのサービスが必要なのか」を<br>
+            伝える仕組みがないから。
+          </p>
+          <p>
+            <strong>登録してくれた瞬間が一番熱量が高い</strong>のに、<br>
+            その後何も届かないから、気づいた時にはもう冷めている。
+          </p>
+          <p>
+            だから、毎月ゼロから集客し直して、発信して、疲弊して続かなくなる。。。
+          </p>
+        </div>
+
+        <div class="problem-structure">
+          <p>
+            この負のスパイラルの正体は、<br>
+            才能でも努力でもなく、<em>構造が問題</em>なんです。
+          </p>
+        </div>
+      </div>
+
+      <div class="problem-box fade-in">
+        <div class="problem-body">
+          <p style="text-align:center;">
+            <strong>さらに…</strong>
+          </p>
+          <p>
+            インスタの発信は<strong>「点」</strong>でしかありません。<br>
+            どれだけ投稿を重ねても、<br>
+            それだけでは見込み客の信頼は育ちません。
+          </p>
+          <p>
+            点を<strong>「線」</strong>にする仕組みが、<br>
+            あなたのビジネスにはまだ足りていない。
+          </p>
+          <p style="text-align:center; margin-top: 24px;">
+            その仕組みの作り方を、<br>
+            <strong>この動画で全部話します。</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       [特典の中身]
+  ============================================================ -->
+  <section class="benefits">
+    <div class="container">
+      <div class="benefits-header fade-in">
+        <span class="video-gift-badge">★ 無料プレゼント ★</span>
+        <h2 class="section-heading">
+          公式LINE登録で受け取れる<br>
+          無料動画３本
+        </h2>
+        <p class="benefits-intro">
+          売上が安定しない本当の理由を、<br>
+          ３本の動画で丁寧に解説します。
+        </p>
+      </div>
+
+      <div class="video-list fade-in">
+
+        <div class="video-item">
+          <div class="video-item-head">
+            <div class="video-num">
+              <span>VIDEO</span>
+              <strong>01</strong>
+            </div>
+            <p class="video-title">
+              フォロワーが増えても売れない<br>本当の理由、知っていますか？
+            </p>
+          </div>
+          <div class="video-body">
+            <p class="video-desc">
+              売上が安定しない女性起業家が陥りがちな３つの罠を暴きます。<br>
+              「頑張っているのに結果が出ない」のは、あなたのせいではありません。その構造的な原因を、この動画で明らかにします。
+            </p>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <div class="video-item-head">
+            <div class="video-num">
+              <span>VIDEO</span>
+              <strong>02</strong>
+            </div>
+            <p class="video-title">
+              売れ続ける人だけが知っている<br>セールスの３つの鉄則
+            </p>
+          </div>
+          <div class="video-body">
+            <p class="video-desc">
+              苦手意識がスーッと消えて、自信を持って発信できるようになります。<br>
+              「売り込まなきゃいけない」という感覚が、そもそも間違っているんです。売れ続ける人が自然にやっていることを、私の経験から言語化します。
+            </p>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <div class="video-item-head">
+            <div class="video-num">
+              <span>VIDEO</span>
+              <strong>03</strong>
+            </div>
+            <p class="video-title">
+              公式LINE×沼らせ設計で<br>自然と選ばれる導線の全体像を公開
+            </p>
+          </div>
+          <div class="video-body">
+            <p class="video-desc">
+              LINEであなたが体験することが、そのままあなたのビジネスに転用できます。<br>
+              「作って終わり」ではなく、見込み客が自然に深くなっていく仕組みの全体像を、具体的に体感してみてください。
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="video-closing fade-in">
+        <p>
+          一度この仕組みができれば、<br>
+          クライアント対応をしながらでも、<br>
+          子どもと過ごしながらでも、<br>
+          <em>あなたが睡眠中でも、</em><br>
+          導線は止まらずに動き続けます。
+        </p>
+      </div>
+
+      <div class="cta-wrap fade-in" style="margin-top: 40px;">
+        <a href="https://lin.ee/ropbySH" class="cta-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          ▼ 無料動画を受け取る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       [お客様の声]
+  ============================================================ -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials-header fade-in">
+        <span class="section-label">Voice</span>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-diamond"></div>
+          <div class="divider-line r"></div>
+        </div>
+        <h2 class="section-heading">お客様の声</h2>
+        <p class="testimonials-intro">
+          今まで導線をサポートさせていただいた方から<br>
+          嬉しいお声をいただいています。
+        </p>
+      </div>
+
+      <div class="testimonial-list fade-in">
+
+        <div class="testimonial">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-client">訪問産後ケアの助産師として独立開業<br>青木ゆきさん</p>
+          <p class="testimonial-service">公式LINE構築</p>
+          <p class="testimonial-text">
+            何から手をつければいいか全くわからない状態からスタートして、インスタ → LINE → 予約フォームの流れが完全に機能するようになりました。「LINEもちゃんと稼働してる」とお客様から直接言われた時は、やってよかったと心から思いました。
+          </p>
+          <p class="testimonial-result">
+            事業開始2ヶ月半で<strong>予約の9割が埋まり</strong>、<strong>月25件の目標</strong>を毎月更新中。
+          </p>
+          <a href="https://youtu.be/_n2Am_D8eH8" target="_blank" rel="noopener" class="testimonial-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            インタビュー動画を見る
+          </a>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-client">発酵教室10年・講師育成講座を主催<br>吉田亜衣さん</p>
+          <p class="testimonial-service">LP制作</p>
+          <p class="testimonial-text">
+            ヒアリングシートに書いただけの内容なのに、私が言いたかったことを丁寧に拾い上げてもらえて。色合いも世界観も、「自分で作るより私らしい」と感じるほどでした。SNSとLPで流れがきちんと整いました。
+          </p>
+          <p class="testimonial-result">
+            初回ローンチで<strong>400名がセミナーに申し込み</strong>。SNSの「点」が「線」でつながった瞬間でした。
+          </p>
+          <a href="https://youtu.be/JCyiLYKR49I" target="_blank" rel="noopener" class="testimonial-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            インタビュー動画を見る
+          </a>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-client">親子教室の先生向け集客コンサル<br>小関すみよさん</p>
+          <p class="testimonial-service">プロモーションサポート</p>
+          <p class="testimonial-text">
+            返事が早く、クオリティも高く、余計なストレスが一切なかった。不安で頭がいっぱいになりそうな時に「すみよさんは、救うべき人を救うだけでいい」と言ってもらえて、そこで原点に立ち返れました。
+          </p>
+          <p class="testimonial-result">
+            <strong>2週間で400万円以上</strong>の売上を達成。
+          </p>
+          <a href="https://youtu.be/PMd_BmNI-zs" target="_blank" rel="noopener" class="testimonial-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            インタビュー動画を見る
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       [ゾエについて]
+  ============================================================ -->
+  <section class="profile">
+    <div class="container">
+      <div class="profile-header fade-in">
+        <span class="section-label">About Zoe</span>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-diamond"></div>
+          <div class="divider-line r"></div>
+        </div>
+        <h2 class="section-heading">ゾエについて</h2>
+      </div>
+
+      <div class="profile-inner fade-in">
+
+        <div class="profile-photo-wrap">
+          <img src="images/profile.jpg" alt="川副真理子 プロフィール写真">
+          <div class="profile-name-plate">
+            <p class="name-en">Sales Coaching / Zoe</p>
+            <p class="name-ja">川副 真理子</p>
+            <p class="name-title">売れる流れを作るセールス伴走コーチ</p>
+          </div>
+        </div>
+
+        <div class="profile-content">
+          <p class="profile-tagline">
+            <small>SALES COACH</small>
+            売れる流れを作る<br>
+            セールス伴走コーチ ゾエ
+          </p>
+
+          <p class="profile-bio">
+            YKK AP株式会社で中高層ビルの設計を8年経験後、貿易事務・コーヒー豆の直輸入販売・iPadイラスト制作等を経て、2022年次男の出産を機にオンライン起業。「細分化と整理」を武器に、クライアントのビジネス構築を伴走。
+          </p>
+
+          <ul class="profile-achievements">
+            <li>
+              <div class="achievement-dot"></div>
+              LP制作でクライアントの初セミナー集客<strong>400名超</strong>に貢献
+            </li>
+            <li>
+              <div class="achievement-dot"></div>
+              <strong>1億規模</strong>のプロモーションチームで導線整理を担当
+            </li>
+            <li>
+              <div class="achievement-dot"></div>
+              <strong>5,000万円以上</strong>売り上げるクライアントのコンテンツ制作を担当
+            </li>
+            <li>
+              <div class="achievement-dot"></div>
+              公式LINE構築サポートで産後ケア事業の予約を<strong>3ヶ月で満席</strong>に
+            </li>
+          </ul>
+
+          <p class="profile-motto">
+            4歳と7歳の兄弟の母。次男の4ヶ月入院付き添い中にもビジネスを構築し続けた経験から、<br>
+            <strong>「どんな状況でも、具体化さえできれば行動できる！」</strong>をモットーにサポートをしています。
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       [CTA②] MAIN CTA
+  ============================================================ -->
+  <section class="main-cta">
+    <div class="container">
+      <div class="main-cta-inner fade-in">
+        <span class="section-label">Free Gift</span>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-diamond"></div>
+          <div class="divider-line r"></div>
+        </div>
+        <h2 class="section-heading">
+          まずは無料動画を<br>
+          受け取ってください。
+        </h2>
+
+        <p class="main-cta-desc">
+          動画を見た上で、もし<em>「一緒にやってみたい」</em>と<br>
+          思っていただけたら、公式LINE内で<br>
+          個別相談のご案内をします。
+        </p>
+
+        <p class="main-cta-note">
+          もちろん動画を受け取るだけでも大歓迎です。
+        </p>
+
+        <a href="https://lin.ee/ropbySH" class="cta-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          ▼ 無料動画を受け取る（公式LINEへ）
+        </a>
+
+        <p class="main-cta-remark">※ 登録は30秒・完全無料・強引な勧誘はありません</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       [Q&A]
+  ============================================================ -->
+  <section class="qa">
+    <div class="container">
+      <div class="qa-header fade-in">
+        <span class="section-label">Q&amp;A</span>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-diamond"></div>
+          <div class="divider-line r"></div>
+        </div>
+        <h2 class="section-heading">よくあるご質問</h2>
+      </div>
+
+      <div class="qa-list fade-in">
+
+        <div class="qa-item">
+          <div class="qa-q">登録したら売り込まれますか？</div>
+          <div class="qa-a">まず動画3本をお届けします。その後、個別相談のご案内はしますが、強引な勧誘は一切しません。動画だけ受け取っていただいても全く問題ありません。</div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">どんな人に向いていますか？</div>
+          <div class="qa-a">すでに売上があり、お客様の変化を実感できている方。でも仕組みがなく毎月ゼロから集客している状態の方に最も刺さる内容です。</div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">ビジネスのことが分かっていなくても大丈夫ですか？</div>
+          <div class="qa-a">こちらの動画は「私はなんのビジネスしたらいいんだろう？」と思っている方にはあまりお役に立てないかもしれません。やりたいことがしっかり固まったら是非ご登録ください。</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       [最後に]
+  ============================================================ -->
+  <section class="closing">
+    <div class="container">
+      <div class="closing-inner fade-in">
+        <span class="section-label">Message</span>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-diamond"></div>
+          <div class="divider-line r"></div>
+        </div>
+        <h2 class="closing-heading">最後に</h2>
+
+        <div class="closing-body">
+          <p>
+            SNSで反応があるなら、<br>
+            あなたの発信はすでに機能しています。
+          </p>
+          <p>
+            でも売上が安定しないなら、<br>
+            問題はその先の流れがないことです。
+          </p>
+          <p>
+            動画を見終わった後、<br>
+            「あ、だからか」と腑に落ちる瞬間があるはずです。
+          </p>
+          <p>
+            是非あなたのビジネスに活かして
+          </p>
+        </div>
+
+        <p class="closing-tagline">
+          迷いをゼロに、成果を最速に。<br>
+          一緒に叶えましょう。
+        </p>
+
+        <p class="closing-sig">セールス伴走コーチ ゾエ</p>
+
+        <a href="https://lin.ee/ropbySH" class="cta-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          ▼ 無料動画を受け取る（公式LINEへ）
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-logo">川副真理子 / Zoe</p>
+      <div class="footer-divider"></div>
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/zoe_yanagimind" target="_blank" rel="noopener">
+          <svg class="sns-ig-icon" viewBox="0 0 24 24" fill="currentColor" aria-label="Instagram">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          @zoe_yanagimind
+        </a>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">© Zoe Kawasoe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script>
+    // Fade-in on scroll
+    (function() {
+      var els = document.querySelectorAll('.fade-in');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function(el) { el.classList.add('visible'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function(el) { observer.observe(el); });
+    })();
+
+    // Q&A accordion
+    (function() {
+      var items = document.querySelectorAll('.qa-item');
+      items.forEach(function(item) {
+        var q = item.querySelector('.qa-q');
+        q.addEventListener('click', function() {
+          item.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
