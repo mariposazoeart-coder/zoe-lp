@@ -310,8 +310,33 @@
 
     /* ===== SECTION: PAIN ===== */
     .section-pain {
-      background: var(--off-white);
+      position: relative;
       padding: 64px 0;
+      overflow: hidden;
+    }
+
+    /* 背景：悩んでる女性の写真 */
+    .section-pain::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/lady_SP_sad.jpg') center / cover no-repeat;
+      z-index: 0;
+    }
+
+    /* ブラウン透過オーバーレイ：悩んでる雰囲気 */
+    .section-pain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(90, 55, 25, 0.72);
+      z-index: 1;
+    }
+
+    /* コンテンツを前面に */
+    .section-pain .wrap {
+      position: relative;
+      z-index: 2;
     }
 
     .section-pain .inner { text-align: center; }
@@ -355,7 +380,25 @@
       font-family: var(--font-mincho);
       font-size: clamp(14px, 2.8vw, 15px);
       line-height: 1.7;
-      color: var(--text-dark);
+      color: var(--white);
+    }
+
+    /* pain セクション：背景画像に合わせて文字色を白系に */
+    .section-pain .sec-badge {
+      background: var(--yellow);
+      color: var(--brown);
+    }
+    .section-pain .sec-title {
+      color: var(--white);
+    }
+    .section-pain .pain-card {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.2);
+      border-left-color: var(--yellow);
+    }
+    .section-pain .pain-icon {
+      background: var(--yellow);
+      color: var(--brown);
     }
 
     .pain-close {
@@ -1061,7 +1104,7 @@
 
   <!-- TOP RIBBON -->
   <div class="top-ribbon">
-    公式LINE登録で「売上が安定しない本当の理由」３本の無料動画をプレゼント
+    公式LINE登録で「売上が安定しない本当の理由」<br>３本の無料動画をプレゼント
   </div>
 
   <!-- HERO -->
