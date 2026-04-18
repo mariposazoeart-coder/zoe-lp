@@ -315,12 +315,12 @@
       overflow: hidden;
     }
 
-    /* 背景：悩んでる女性の写真（パララックス） */
+    /* 背景：悩んでる女性の写真（パララックス・引いた状態） */
     .section-pain::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: url('images/lady_SP_sad.jpg') center / cover no-repeat;
+      background: url('images/lady_SP_sad.jpg') center top / auto 130% no-repeat;
       background-attachment: fixed;
       z-index: 0;
     }
@@ -1101,6 +1101,9 @@
 
     /* CTAボタンのみ角丸を復元・一行表示 */
     .line-btn { border-radius: 50px !important; white-space: nowrap; font-size: 14px; }
+
+    /* pain-icon のみ円形に復元 */
+    .pain-icon { border-radius: 50% !important; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
