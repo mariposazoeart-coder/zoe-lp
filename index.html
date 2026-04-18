@@ -433,6 +433,23 @@
 
     .section-problem .inner { text-align: center; }
 
+    /* sec-badge を平行四辺形に（テキストはまっすぐ） */
+    .section-problem .sec-badge {
+      background: transparent;
+      border-radius: 0;
+      position: relative;
+      z-index: 1;
+      padding: 6px 30px;
+    }
+    .section-problem .sec-badge::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--brown);
+      transform: skewX(-18deg);
+      z-index: -1;
+    }
+
     .problem-lead {
       font-family: var(--font-mincho);
       font-size: clamp(15px, 3vw, 18px);
@@ -445,28 +462,16 @@
     .problem-answer-box {
       background: var(--white);
       border: 2px solid var(--yellow);
-      border-radius: 8px;
+      border-radius: 0;
       padding: 28px 24px;
       margin-bottom: 28px;
       position: relative;
       text-align: center;
     }
 
+    /* 「理由はひとつ」帯 → 削除 */
     .problem-answer-box::before {
-      content: '理由はひとつ';
-      position: absolute;
-      top: -13px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--yellow);
-      color: var(--brown);
-      font-family: var(--font-mincho);
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: .2em;
-      padding: 3px 18px;
-      border-radius: 20px;
-      white-space: nowrap;
+      display: none;
     }
 
     .problem-answer-text {
@@ -486,7 +491,7 @@
     .problem-body {
       text-align: left;
       background: var(--white);
-      border-radius: 8px;
+      border-radius: 0;
       padding: 28px 28px;
       margin-bottom: 20px;
     }
@@ -509,7 +514,7 @@
     .problem-structure {
       background: var(--brown);
       color: var(--white);
-      border-radius: 8px;
+      border-radius: 0;
       padding: 22px 24px;
       text-align: center;
     }
