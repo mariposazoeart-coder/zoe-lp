@@ -12,7 +12,11 @@
   <style>
     /* ===== RESET ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      background: url('images/back_FV.jpg') center / cover fixed;
+      min-height: 100vh;
+    }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
 
@@ -45,6 +49,10 @@
       line-height: 1.85;
       font-size: 15px;
       -webkit-font-smoothing: antialiased;
+      /* スマホ幅固定・PC表示時は中央に配置 */
+      max-width: 430px;
+      margin: 0 auto;
+      box-shadow: 0 0 60px rgba(0,0,0,0.22);
     }
 
     /* ===== SECTION WRAPPER ===== */
@@ -133,7 +141,7 @@
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 540px;
+      min-height: 420px;
     }
 
     /* 背景画像 */
@@ -161,7 +169,7 @@
     .hero-photo-col {
       position: absolute;
       left: 0; top: 0; bottom: 0;
-      width: 58%;
+      width: 52%;
       z-index: 2;
     }
 
@@ -201,13 +209,13 @@
     .hero-text-col {
       position: relative;
       z-index: 3;
-      margin-left: 44%;
-      padding: 48px 16px 152px 8px;
+      margin-left: 40%;
+      padding: 28px 8px 130px 4px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 16px;
-      min-height: 540px;
+      gap: 10px;
+      min-height: 420px;
     }
 
     .hero-eyebrow {
@@ -215,16 +223,16 @@
       border: 1px solid var(--brown);
       color: var(--brown);
       font-family: var(--font-mincho);
-      font-size: 10px;
-      letter-spacing: 0.25em;
-      padding: 4px 12px;
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      padding: 3px 8px;
     }
 
     /* 座布団エリア：列ごとに個別ボックス（参考LP準拠） */
     .hero-zabuton {
       display: inline-flex;
       flex-direction: row-reverse; /* 右列から左列へ（縦書き読み順） */
-      gap: 8px;
+      gap: 5px;
       align-items: flex-start;
     }
 
@@ -236,19 +244,19 @@
       font-weight: 800;
       letter-spacing: 0.13em;
       line-height: 1.25;
-      padding: 14px 10px;
+      padding: 10px 7px;
       background: rgba(50,30,8,0.86);
     }
 
     /* 「発信の手ごたえはあるのに、」白・細め */
     .v-normal {
-      font-size: clamp(17px, 2.6vw, 21px);
+      font-size: 13px;
       color: rgba(255,255,255,.93);
     }
 
     /* 「売上が安定しない。」黄色・大きめ */
     .v-em {
-      font-size: clamp(19px, 3.6vw, 25px);
+      font-size: 17px;
       color: var(--yellow);
     }
 
@@ -258,7 +266,7 @@
       text-orientation: mixed;
       font-family: var(--font-mincho);
       font-weight: 700;
-      font-size: clamp(15px, 2.3vw, 18px);
+      font-size: 12px;
       color: var(--white);
       letter-spacing: 0.15em;
       line-height: 1.3;
@@ -290,15 +298,15 @@
     /* 名前タグ：写真の手元付近（左下）・座布団なし */
     .hero-name-tag {
       position: absolute;
-      bottom: 112px;
-      left: 12px;
+      bottom: 86px;
+      left: 8px;
       z-index: 5;
       display: inline-block;
       background: none;
       color: var(--white);
       font-family: var(--font-mincho);
-      font-size: 13px;
-      letter-spacing: 0.2em;
+      font-size: 11px;
+      letter-spacing: 0.12em;
       text-shadow: 0 1px 5px rgba(0,0,0,0.7);
     }
 
@@ -334,88 +342,6 @@
 
     .hero-zabuton .v-normal::before {
       animation-delay: 0.5s;
-    }
-
-    /* モバイル：デスクトップと同じ横並びレイアウトを維持 */
-    @media (max-width: 540px) {
-      .hero {
-        min-height: 420px;
-      }
-
-      /* 写真：左側に絶対配置のまま・幅を少し広げる */
-      .hero-photo-col {
-        position: absolute;
-        width: 52%;
-        left: 0; top: 0; bottom: 0;
-      }
-
-      .hero-photo-col::after {
-        background:
-          linear-gradient(
-            to right,
-            transparent       0%,
-            transparent      15%,
-            rgba(232,200,80,0.25) 35%,
-            rgba(232,200,80,0.60) 55%,
-            rgba(232,200,80,0.85) 70%,
-            rgba(232,200,80,0.97) 83%,
-            rgb(232,200,80)  100%
-          ),
-          linear-gradient(
-            to top,
-            rgba(200,160,30,0.92) 0%,
-            rgba(200,160,30,0.40) 22%,
-            transparent 42%
-          );
-      }
-
-      /* テキスト：右寄せのまま・フォントを縮小 */
-      .hero-text-col {
-        position: relative;
-        margin-left: 40%;
-        padding: 28px 8px 130px 4px;
-        min-height: 420px;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .hero-eyebrow {
-        font-size: 8px;
-        padding: 3px 8px;
-        letter-spacing: 0.15em;
-      }
-
-      /* 座布団テキスト：スマホ用に縮小 */
-      .hero-zabuton {
-        flex-direction: row-reverse;
-        gap: 5px;
-      }
-
-      .hero-zabuton span {
-        padding: 10px 7px;
-      }
-
-      .v-normal {
-        font-size: 13px;
-      }
-
-      .v-em {
-        font-size: 17px;
-      }
-
-      .hero-v-reason {
-        font-size: 12px;
-      }
-
-      /* 名前タグ：スマホでも写真の手元付近 */
-      .hero-name-tag {
-        bottom: 86px;
-        left: 8px;
-        font-size: 10px;
-        letter-spacing: 0.12em;
-      }
-
-      .hero-bottom-grad { height: 40%; }
     }
 
     /* ===== MINI CTA ===== */
