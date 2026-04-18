@@ -133,115 +133,126 @@
     .hero {
       position: relative;
       overflow: hidden;
-      background: var(--brown);
-      min-height: 520px;
+      background: linear-gradient(180deg, var(--brown) 0%, #4A2E14 60%, #2E1608 100%);
+      padding-bottom: 0;
     }
 
-    /* 写真 — 左カラム */
-    .hero-photo-col {
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 62%;
+    /* 3カラムグリッド */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 220px 1fr;
+      align-items: flex-start;
+      gap: 0;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 52px 16px 0;
+      position: relative;
+      z-index: 3;
     }
 
-    .hero-photo-col img {
+    /* 左カラム：売上が安定しない。*/
+    .hero-col-left {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 16px;
+      padding-top: 32px;
+    }
+
+    /* 右カラム：発信の手ごたえはあるのに、*/
+    .hero-col-right {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 16px;
+      padding-top: 32px;
+    }
+
+    /* 縦書き共通 */
+    .hero-col-left span,
+    .hero-col-right span {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-family: var(--font-mincho);
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      line-height: 1.2;
+    }
+
+    /* 左：黄色・大 */
+    .v-em {
+      font-size: clamp(22px, 4.5vw, 30px);
+      color: var(--yellow);
+    }
+
+    /* 右：白・やや小 */
+    .v-normal {
+      font-size: clamp(16px, 3vw, 21px);
+      color: rgba(255,255,255,.90);
+    }
+
+    /* 中央：写真 */
+    .hero-photo-center {
+      position: relative;
+    }
+
+    .hero-photo-center img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 3/4;
       object-fit: cover;
       object-position: center top;
       display: block;
     }
 
-    /* 右方向フェード ＋ 下方向グラデ */
-    .hero-photo-col::after {
+    /* 写真の左右フェード */
+    .hero-photo-center::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to right, rgba(123,92,62,0) 28%, var(--brown) 88%),
-        linear-gradient(to top,   var(--brown) 0%,   rgba(123,92,62,0) 38%);
-    }
-
-    /* 下部ブラウングラデーション（全体） */
-    .hero-bottom-grad {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 48%;
-      background: linear-gradient(to top, #3D2210 0%, rgba(61,34,16,0) 100%);
-      z-index: 2;
+        linear-gradient(to right, var(--brown) 0%, transparent 20%, transparent 80%, var(--brown) 100%);
+      z-index: 1;
       pointer-events: none;
     }
 
-    /* テキストカラム — 右側 */
-    .hero-text-col {
+    /* 下部ブラウングラデーション */
+    .hero-bottom-grad {
       position: relative;
       z-index: 3;
-      margin-left: 46%;
-      padding: 52px 20px 148px 6px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 18px;
-      min-height: 520px;
+      height: 160px;
+      margin-top: -100px;
+      background: linear-gradient(to top, #2E1608 30%, rgba(46,22,8,0) 100%);
+      pointer-events: none;
     }
 
-    .hero-eyebrow {
-      display: inline-block;
-      border: 1px solid var(--yellow);
-      color: var(--yellow);
-      font-family: var(--font-mincho);
-      font-size: 10px;
-      letter-spacing: 0.25em;
-      padding: 4px 12px;
-    }
-
-    /* 縦書きコンテナ */
-    .hero-v-wrap {
-      display: flex;
-      flex-direction: row;   /* 左→右の順（縦書きは右から読む） */
-      gap: 14px;
-      align-items: flex-start;
-    }
-
-    .hero-v-wrap span {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      font-family: var(--font-mincho);
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      line-height: 1.2;
-    }
-
-    /* 1行目 — 白・細め */
-    .v-normal {
-      font-size: clamp(17px, 3.2vw, 22px);
-      color: rgba(255,255,255,.92);
-    }
-
-    /* 2行目 — 黄色・太く大きい（パンチライン） */
-    .v-em {
-      font-size: clamp(22px, 4.2vw, 30px);
-      color: var(--yellow);
-    }
-
-    /* 横書きサブコピー */
-    .hero-tagline {
-      font-family: var(--font-mincho);
-      font-size: clamp(12px, 2.4vw, 14px);
-      color: rgba(255,255,255,.78);
-      line-height: 1.85;
-      border-left: 2px solid var(--yellow);
-      padding-left: 10px;
-    }
-
-    /* 下部固定CTA */
-    .hero-cta-bottom {
-      position: absolute;
-      bottom: 24px;
-      left: 0; right: 0;
+    /* 「その理由を動画で公開します。」 */
+    .hero-reason {
+      position: relative;
       z-index: 4;
       text-align: center;
-      padding: 0 20px;
+      padding: 0 20px 12px;
+      margin-top: -60px;
+    }
+
+    .hero-reason p {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(15px, 3.5vw, 19px);
+      color: var(--white);
+      letter-spacing: 0.08em;
+      line-height: 1.7;
+    }
+
+    .hero-reason p em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    /* 下部CTA */
+    .hero-cta-bottom {
+      position: relative;
+      z-index: 4;
+      text-align: center;
+      padding: 16px 20px 36px;
+      background: #2E1608;
     }
 
     .hero-name-tag {
@@ -256,30 +267,30 @@
       border: 1px solid rgba(227,201,100,.4);
     }
 
+    .hero-eyebrow {
+      display: inline-block;
+      border: 1px solid var(--yellow);
+      color: var(--yellow);
+      font-family: var(--font-mincho);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      padding: 4px 12px;
+      margin-bottom: 20px;
+    }
+
     /* モバイル */
     @media (max-width: 540px) {
-      .hero { min-height: unset; }
-      .hero-photo-col {
-        position: relative;
-        width: 100%;
-        height: 58vw;
-        min-height: 220px;
+      .hero-grid {
+        grid-template-columns: 1fr 140px 1fr;
+        padding: 36px 10px 0;
+        gap: 0;
       }
-      .hero-photo-col::after {
-        background:
-          linear-gradient(to bottom, rgba(123,92,62,0) 40%, var(--brown) 95%);
-      }
-      .hero-text-col {
-        position: relative;
-        margin-left: 0;
-        padding: 0 20px 140px;
-        min-height: unset;
-        align-items: center;
-        text-align: center;
-      }
-      .hero-v-wrap { justify-content: center; }
-      .hero-tagline { text-align: left; }
-      .hero-bottom-grad { height: 60%; }
+      .hero-col-left  { padding-right: 8px; padding-top: 20px; }
+      .hero-col-right { padding-left: 8px;  padding-top: 20px; }
+      .v-em     { font-size: 18px; }
+      .v-normal { font-size: 14px; }
+      .hero-bottom-grad { height: 120px; margin-top: -80px; }
+      .hero-reason { margin-top: -40px; }
     }
 
     /* ===== MINI CTA ===== */
@@ -1059,32 +1070,35 @@
   <!-- HERO -->
   <section class="hero">
 
-    <!-- 写真（左） -->
-    <div class="hero-photo-col">
-      <img src="images/profile-fv.png" alt="川副真理子 ゾエ">
+    <!-- 3カラムグリッド -->
+    <div class="hero-grid">
+
+      <!-- 左：売上が安定しない。（黄色・大） -->
+      <div class="hero-col-left">
+        <span class="v-em">売上が安定しない。</span>
+      </div>
+
+      <!-- 中央：写真 -->
+      <div class="hero-photo-center">
+        <img src="images/profile-fv.png" alt="川副真理子 ゾエ">
+      </div>
+
+      <!-- 右：発信の手ごたえはあるのに、（白・細） -->
+      <div class="hero-col-right">
+        <span class="v-normal">発信の手ごたえはあるのに、</span>
+      </div>
+
     </div>
 
     <!-- 下部ブラウングラデ -->
     <div class="hero-bottom-grad"></div>
 
-    <!-- テキスト（右） -->
-    <div class="hero-text-col">
-      <div class="hero-eyebrow">Sales Coaching × LINE</div>
-
-      <!-- 縦書きキャッチ -->
-      <h1 class="hero-v-wrap">
-        <span class="v-normal">発信の手ごたえはあるのに、</span>
-        <span class="v-em">売上が安定しない。</span>
-      </h1>
-
-      <!-- 横書きサブ -->
-      <p class="hero-tagline">
-        その理由を動画で公開します。<br>
-        公式LINE登録者限定・無料動画３本
-      </p>
+    <!-- その理由を動画で公開します -->
+    <div class="hero-reason">
+      <p>その理由を<em>動画で公開します。</em></p>
     </div>
 
-    <!-- 下部CTA（グラデの上に重ねる） -->
+    <!-- CTA -->
     <div class="hero-cta-bottom">
       <div class="hero-name-tag">川副真理子 / セールス伴走コーチ ゾエ</div>
       <a href="https://lin.ee/ropbySH" class="line-btn" style="max-width:380px;" target="_blank" rel="noopener">
