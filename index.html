@@ -336,13 +336,17 @@
       overflow: hidden;
     }
 
-    /* 背景：悩んでる女性の写真（パララックス・引いた状態） */
+    /* 背景：悩んでる女性の写真（JSパララックス・iOS対応） */
     .section-pain::before {
       content: '';
       position: absolute;
-      inset: 0;
+      left: 0; right: 0;
+      top: -20%;
+      height: 140%;
       background: url('images/lady_SP_sad.jpg') center 20% / cover no-repeat;
       z-index: 0;
+      transform: translate3d(0, var(--parallax-y, 0), 0);
+      will-change: transform;
     }
 
     /* ブラウン透過オーバーレイ：悩んでる雰囲気 */
@@ -1485,6 +1489,27 @@
           document.querySelector('[data-panel="' + tab + '"]').classList.add('active');
         });
       });
+    })();
+    /* パララックス（iOS対応・JSベース） */
+    (function(){
+      var section = document.querySelector('.section-pain');
+      if(!section) return;
+      var ticking = false;
+      function update(){
+        var rect = section.getBoundingClientRect();
+        var offset = rect.top * 0.35;
+        section.style.setProperty('--parallax-y', offset + 'px');
+        ticking = false;
+      }
+      function onScroll(){
+        if(!ticking){
+          window.requestAnimationFrame(update);
+          ticking = true;
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
     })();
   </script>
 </body>
