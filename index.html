@@ -724,6 +724,22 @@
 
     .section-voice .inner { text-align: center; }
 
+    /* voice sec-badge を平行四辺形に */
+    .section-voice .sec-badge {
+      background: transparent;
+      position: relative;
+      z-index: 1;
+      padding: 6px 30px;
+    }
+    .section-voice .sec-badge::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--brown);
+      transform: skewX(-18deg);
+      z-index: -1;
+    }
+
     .voice-cards {
       display: grid;
       gap: 24px;
@@ -739,7 +755,7 @@
     }
 
     .voice-card-head {
-      background: linear-gradient(90deg, var(--yellow-pale), var(--white));
+      background: var(--yellow-pale);
       border-bottom: 2px solid var(--yellow);
       padding: 16px 22px;
       display: flex;
@@ -1403,7 +1419,7 @@
   <section class="section-voice">
     <div class="wrap">
       <div class="inner fi" style="text-align:center;">
-        <span class="sec-badge">リアルな声</span>
+        <span class="sec-badge">お客様の声</span>
         <p class="sec-title" style="margin-top:8px;">導線サポートを受けた方から<br>嬉しいお声をいただいています</p>
       </div>
       <div class="voice-cards fi">
