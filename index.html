@@ -583,6 +583,32 @@
       padding: 6px 20px;
       border-radius: 20px;
       margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .gift-badge::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        110deg,
+        transparent 25%,
+        rgba(255,255,255,0.65) 48%,
+        rgba(255,255,255,0.25) 52%,
+        transparent 72%
+      );
+      animation: kirain 3.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    /* 3本の強調：下線削除・上に圏点 */
+    .sec-title em.dot-emph {
+      border-bottom: none;
+      color: var(--yellow-dark);
+      text-emphasis: filled circle;
+      text-emphasis-position: over;
+      -webkit-text-emphasis: filled circle;
+      -webkit-text-emphasis-position: over;
     }
 
     /* ===== 動画タブ切り替え ===== */
@@ -1294,7 +1320,7 @@
     <div class="wrap">
       <div class="inner fi" style="text-align:center; margin-bottom:8px;">
         <span class="gift-badge">公式LINE登録で無料プレゼント</span>
-        <p class="sec-title" style="margin-top:8px;">無料動画<em>３本</em>の中身</p>
+        <p class="sec-title" style="margin-top:8px;">無料動画<em class="dot-emph">３本</em>の中身</p>
       </div>
       <!-- ジャンプボタン -->
       <div class="vtab-btns">
