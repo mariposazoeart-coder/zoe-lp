@@ -336,20 +336,13 @@
       overflow: hidden;
     }
 
-    /* 背景：悩んでる女性の写真（JSパララックス・iOS対応） */
+    /* 背景：悩んでる女性の写真 */
     .section-pain::before {
       content: '';
       position: absolute;
-      left: 0; right: 0;
-      top: -25%;
-      height: 160%;
-      background-image: url('images/lady_SP_sad.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
+      inset: 0;
+      background: url('images/lady_SP_sad.jpg') center / cover no-repeat;
       z-index: 0;
-      transform: translate3d(0, var(--parallax-y, 0), 0);
-      will-change: transform;
     }
 
     /* ブラウン透過オーバーレイ：悩んでる雰囲気 */
@@ -1492,27 +1485,6 @@
           document.querySelector('[data-panel="' + tab + '"]').classList.add('active');
         });
       });
-    })();
-    /* パララックス（iOS対応・JSベース） */
-    (function(){
-      var section = document.querySelector('.section-pain');
-      if(!section) return;
-      var ticking = false;
-      function update(){
-        var rect = section.getBoundingClientRect();
-        var offset = rect.top * 0.5;
-        section.style.setProperty('--parallax-y', offset + 'px');
-        ticking = false;
-      }
-      function onScroll(){
-        if(!ticking){
-          window.requestAnimationFrame(update);
-          ticking = true;
-        }
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll, { passive: true });
-      update();
     })();
   </script>
 </body>
