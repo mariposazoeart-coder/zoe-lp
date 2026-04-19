@@ -47,7 +47,7 @@
       font-family: var(--font-sans);
       font-weight: 400;
       line-height: 1.85;
-      font-size: 15px;
+      font-size: 17px;
       -webkit-font-smoothing: antialiased;
       /* スマホ幅固定・PC表示時は中央に配置 */
       max-width: 430px;
@@ -165,14 +165,18 @@
     /* 右上バッジ */
     .hero-badge-top {
       position: absolute;
-      top: 0; right: 0;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 4;
-      background: var(--brown);
-      color: var(--yellow-pale);
+      background: transparent;
+      color: var(--white);
       font-family: var(--font-mincho);
       font-size: 10px;
-      letter-spacing: 0.18em;
-      padding: 8px 16px;
+      letter-spacing: 0.22em;
+      padding: 6px 18px;
+      border: 1px solid rgba(255,255,255,0.85);
+      white-space: nowrap;
     }
 
     /* テキストエリア：右寄せ・縦書き */
@@ -190,8 +194,8 @@
       display: inline-flex;
       flex-direction: row-reverse;
       gap: 6px;
-      align-items: stretch;
-      height: 100%;
+      align-items: flex-start;
+      height: auto;
     }
 
     /* 各列：縦書き・座布団 */
@@ -230,13 +234,13 @@
       line-height: 1.3;
       background: none !important;
       padding: 0 5px !important;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.7);
+      text-shadow: 0 2px 6px rgba(80,40,10,1), 0 1px 3px rgba(0,0,0,1), 0 0 12px rgba(60,30,5,0.9);
     }
 
     /* 名前タグ：左下 */
     .hero-name-tag {
       position: absolute;
-      bottom: 90px;
+      bottom: 28px;
       left: 14px;
       z-index: 5;
       color: var(--white);
@@ -294,8 +298,20 @@
     .mini-cta {
       background: var(--yellow-pale);
       border-top: 3px solid var(--yellow);
-      border-bottom: 3px solid var(--yellow);
-      padding: 36px 20px;
+      position: relative;
+      padding: 36px 0 72px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 50% 100%, 0 calc(100% - 40px));
+    }
+
+    .mini-cta .wrap { padding: 0 20px; }
+
+    .mini-cta .cta-area {
+      padding: 0;
+    }
+
+    .mini-cta .line-btn {
+      max-width: 100%;
+      width: 100%;
     }
 
     .mini-cta-text {
@@ -1153,20 +1169,12 @@
     <!-- 名前タグ（左下） -->
     <div class="hero-name-tag">川副真理子 / セールス伴走コーチ ゾエ</div>
 
-    <!-- 下部CTA -->
-    <div class="hero-cta-bottom">
-      <a href="https://lin.ee/ropbySH" class="line-btn" style="max-width:380px;" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        ▼ 無料動画を受け取る（公式LINEへ）
-      </a>
-    </div>
-
   </section>
 
   <!-- MINI CTA① -->
   <section class="mini-cta">
     <div class="wrap fi">
-      <p class="mini-cta-text">公式LINEに登録した方限定<br>３本の<strong>無料動画</strong>をプレゼント中📩</p>
+      <p class="mini-cta-text">公式LINEに登録した方限定<br>３本の<strong>無料動画</strong>をプレゼント中</p>
       <div class="cta-area">
         <a href="https://lin.ee/ropbySH" class="line-btn" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
@@ -1237,7 +1245,7 @@
   <section class="section-videos">
     <div class="wrap">
       <div class="inner fi" style="text-align:center; margin-bottom:8px;">
-        <span class="gift-badge">🎁 公式LINE登録で無料プレゼント</span>
+        <span class="gift-badge">公式LINE登録で無料プレゼント</span>
         <p class="sec-title" style="margin-top:8px;">無料動画<em>３本</em>の中身</p>
       </div>
       <!-- タブボタン -->
