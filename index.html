@@ -565,7 +565,7 @@
     /* ===== SECTION: VIDEOS ===== */
     .section-videos {
       background: var(--off-white);
-      padding: 36px 0 64px;
+      padding: 20px 0 64px;
     }
 
     .section-videos .inner { text-align: center; }
@@ -601,14 +601,15 @@
       pointer-events: none;
     }
 
-    /* 3本の強調：下線削除・上に圏点（小さめ） */
+    /* 3本の強調：下線削除・上に小さな圏点（文字に近づける） */
     .sec-title em.dot-emph {
       border-bottom: none;
       color: var(--yellow-dark);
-      text-emphasis: filled dot;
+      text-emphasis: '·' filled;
       text-emphasis-position: over;
-      -webkit-text-emphasis: filled dot;
+      -webkit-text-emphasis: '·' filled;
       -webkit-text-emphasis-position: over;
+      line-height: 1.0;
     }
 
     /* ===== 動画タブ切り替え ===== */
