@@ -747,19 +747,36 @@
       gap: 14px;
     }
 
-    .voice-avatar {
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: var(--brown-pale);
-      flex-shrink: 0;
+    /* YouTube サムネイル */
+    .voice-thumb {
+      display: block;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #000;
+    }
+    .voice-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s;
+    }
+    .voice-thumb:hover img { transform: scale(1.04); }
+    .voice-thumb-play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px; height: 60px;
+      background: rgba(255,0,0,0.92);
+      color: #fff;
+      border-radius: 50% !important;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--white);
-      font-family: var(--font-mincho);
-      font-size: 20px;
-      font-weight: 700;
-      border: 2px solid var(--yellow);
+      font-size: 22px;
+      padding-left: 5px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.35);
     }
 
     .voice-name {
@@ -1391,8 +1408,11 @@
       </div>
       <div class="voice-cards fi">
         <div class="voice-card">
+          <a href="https://youtu.be/_n2Am_D8eH8" target="_blank" rel="noopener" class="voice-thumb">
+            <img src="images/voice1.jpg" alt="青木ゆきさん インタビュー">
+            <span class="voice-thumb-play">▶</span>
+          </a>
           <div class="voice-card-head">
-            <div class="voice-avatar">青</div>
             <div>
               <p class="voice-name">青木ゆきさん<br><span style="font-size:12px;font-weight:400;color:var(--text-soft);">訪問産後ケアの助産師として独立開業</span></p>
               <span class="voice-tag">公式LINE構築</span>
@@ -1405,8 +1425,11 @@
           </div>
         </div>
         <div class="voice-card">
+          <a href="https://youtu.be/JCyiLYKR49I" target="_blank" rel="noopener" class="voice-thumb">
+            <img src="images/voice2.jpg" alt="吉田亜衣さん インタビュー">
+            <span class="voice-thumb-play">▶</span>
+          </a>
           <div class="voice-card-head">
-            <div class="voice-avatar">吉</div>
             <div>
               <p class="voice-name">吉田亜衣さん<br><span style="font-size:12px;font-weight:400;color:var(--text-soft);">発酵教室10年・講師育成講座を主催</span></p>
               <span class="voice-tag">LP制作</span>
@@ -1419,8 +1442,11 @@
           </div>
         </div>
         <div class="voice-card">
+          <a href="https://youtu.be/PMd_BmNI-zs" target="_blank" rel="noopener" class="voice-thumb">
+            <img src="images/voice3.jpg" alt="小関すみよさん インタビュー">
+            <span class="voice-thumb-play">▶</span>
+          </a>
           <div class="voice-card-head">
-            <div class="voice-avatar">小</div>
             <div>
               <p class="voice-name">小関すみよさん<br><span style="font-size:12px;font-weight:400;color:var(--text-soft);">親子教室の先生向け集客コンサル</span></p>
               <span class="voice-tag">プロモーションサポート</span>
