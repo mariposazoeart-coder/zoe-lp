@@ -1146,6 +1146,24 @@
     /* 動画画像：右上だけ角丸 */
     .vtab-img { border-radius: 0 36px 0 0 !important; }
 
+    /* 動画間の誘導矢印（3つの三角） */
+    .vtab-arrows {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      padding: 18px 0;
+    }
+    .vtab-arrows span {
+      width: 0; height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 12px solid var(--brown-light);
+    }
+    .vtab-arrows span:nth-child(1) { opacity: 0.45; }
+    .vtab-arrows span:nth-child(2) { opacity: 0.75; }
+    .vtab-arrows span:nth-child(3) { opacity: 1; border-top-color: var(--brown); }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; }
@@ -1289,7 +1307,10 @@
         <p class="vtab-desc">売上が安定しない女性起業家が陥りがちな３つの罠を暴きます。「頑張っているのに結果が出ない」のは、あなたのせいではありません。その構造的な原因を、この動画で明らかにします。</p>
       </div>
 
-      <!-- タブパネル② -->
+      <!-- 矢印：1→2 -->
+      <div class="vtab-arrows"><span></span><span></span><span></span></div>
+
+      <!-- パネル② -->
       <div class="vtab-panel fi" data-panel="2">
         <img class="vtab-img" src="images/douga2.jpg" alt="動画2サムネイル">
         <p class="vtab-label">VIDEO 02</p>
@@ -1297,7 +1318,10 @@
         <p class="vtab-desc">苦手意識がスーッと消えて、自信を持って発信できるようになります。「売り込まなきゃいけない」という感覚が、そもそも間違っているんです。売れ続ける人が自然にやっていることを、私の経験から言語化します。</p>
       </div>
 
-      <!-- タブパネル③ -->
+      <!-- 矢印：2→3 -->
+      <div class="vtab-arrows"><span></span><span></span><span></span></div>
+
+      <!-- パネル③ -->
       <div class="vtab-panel fi" data-panel="3">
         <img class="vtab-img" src="images/douga3.jpg" alt="動画3サムネイル">
         <p class="vtab-label">VIDEO 03</p>
