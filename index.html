@@ -131,10 +131,11 @@
       background: var(--brown);
       color: var(--yellow-pale);
       text-align: center;
-      padding: 9px 16px;
+      padding: 12px 16px 44px;
       font-family: var(--font-mincho);
       font-size: 12px;
       letter-spacing: 0.15em;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), 50% 100%, 0 calc(100% - 24px));
     }
 
     /* ===== HERO ===== */
@@ -169,13 +170,13 @@
       left: 50%;
       transform: translateX(-50%);
       z-index: 4;
-      background: transparent;
-      color: var(--white);
+      background: rgba(255,248,230,0.82);
+      color: var(--brown);
       font-family: var(--font-mincho);
       font-size: 10px;
       letter-spacing: 0.22em;
       padding: 6px 18px;
-      border: 1px solid rgba(255,255,255,0.85);
+      border: 1px solid var(--brown);
       white-space: nowrap;
     }
 
@@ -228,7 +229,7 @@
       text-orientation: mixed;
       font-family: var(--font-mincho);
       font-weight: 700;
-      font-size: 14px;
+      font-size: 16px;
       color: var(--white);
       letter-spacing: 0.15em;
       line-height: 1.3;
@@ -298,9 +299,8 @@
     .mini-cta {
       background: var(--yellow-pale);
       border-top: 3px solid var(--yellow);
-      position: relative;
-      padding: 36px 0 72px;
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 50% 100%, 0 calc(100% - 40px));
+      border-bottom: 3px solid var(--yellow);
+      padding: 36px 0;
     }
 
     .mini-cta .wrap { padding: 0 20px; }
@@ -1167,7 +1167,7 @@
     </div>
 
     <!-- 名前タグ（左下） -->
-    <div class="hero-name-tag">川副真理子 / セールス伴走コーチ ゾエ</div>
+    <div class="hero-name-tag">ゾエ / セールス伴走コーチ</div>
 
   </section>
 
