@@ -736,14 +736,18 @@
 
     .section-voice .inner { text-align: center; }
 
-    /* voice sec-badge を平行四辺形に */
-    .section-voice .sec-badge {
+    /* voice / profile / qa sec-badge を平行四辺形に */
+    .section-voice .sec-badge,
+    .section-profile .sec-badge,
+    .section-qa .sec-badge {
       background: transparent;
       position: relative;
       z-index: 1;
       padding: 6px 30px;
     }
-    .section-voice .sec-badge::before {
+    .section-voice .sec-badge::before,
+    .section-profile .sec-badge::before,
+    .section-qa .sec-badge::before {
       content: '';
       position: absolute;
       inset: 0;
