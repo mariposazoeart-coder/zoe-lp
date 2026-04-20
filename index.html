@@ -767,12 +767,21 @@
     }
 
     .voice-card-head {
-      background: var(--yellow-pale);
-      border-bottom: 2px solid var(--yellow);
-      padding: 16px 22px;
+      background: var(--white);
+      padding: 16px 22px 18px;
       display: flex;
       align-items: flex-start;
       gap: 14px;
+      position: relative;
+    }
+    .voice-card-head::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 22px;
+      right: 22px;
+      height: 1px;
+      background: var(--brown);
     }
 
     /* YouTube サムネイル */
@@ -823,7 +832,7 @@
       letter-spacing: .1em;
       padding: 2px 10px;
       border-radius: 20px;
-      margin-top: 4px;
+      margin-bottom: 6px;
     }
 
     .voice-body { padding: 20px 22px; }
@@ -1441,8 +1450,8 @@
           </a>
           <div class="voice-card-head">
             <div>
-              <p class="voice-name">青木ゆきさん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">訪問産後ケアの助産師として独立開業</span></p>
               <span class="voice-tag">公式LINE構築</span>
+              <p class="voice-name">青木ゆきさん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">訪問産後ケアの助産師として独立開業</span></p>
             </div>
           </div>
           <div class="voice-body">
@@ -1457,8 +1466,8 @@
           </a>
           <div class="voice-card-head">
             <div>
-              <p class="voice-name">吉田亜衣さん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">発酵教室10年・講師育成講座を主催</span></p>
               <span class="voice-tag">LP制作</span>
+              <p class="voice-name">吉田亜衣さん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">発酵教室10年・講師育成講座を主催</span></p>
             </div>
           </div>
           <div class="voice-body">
@@ -1473,8 +1482,8 @@
           </a>
           <div class="voice-card-head">
             <div>
-              <p class="voice-name">小関すみよさん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">親子教室の先生向け集客コンサル</span></p>
               <span class="voice-tag">プロモーションサポート</span>
+              <p class="voice-name">小関すみよさん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">親子教室の先生向け集客コンサル</span></p>
             </div>
           </div>
           <div class="voice-body">
