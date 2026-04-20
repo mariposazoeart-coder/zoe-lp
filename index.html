@@ -601,28 +601,16 @@
       pointer-events: none;
     }
 
-    /* 「本当の理由」：下線なし・ゴールド・キラーン */
+    /* 「本当の理由」：下線なし・ブラウン統一 */
     .sec-title em.shine-emph {
       border-bottom: none;
-      color: #D4AF37;
+      color: var(--brown);
       font-weight: 700;
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
     }
-    .sec-title em.shine-emph::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        110deg,
-        transparent 30%,
-        rgba(255,250,210,0.85) 48%,
-        rgba(255,250,210,0.3) 52%,
-        transparent 72%
-      );
-      animation: kirain 3.5s ease-in-out infinite;
-      pointer-events: none;
+
+    /* 問題セクションタイトル：白光彩 */
+    .section-problem .sec-title {
+      text-shadow: 0 0 14px rgba(255,255,255,0.9), 0 0 26px rgba(255,255,255,0.6);
     }
 
     /* 3本の強調：下線削除・圏点は span で位置精密制御 */
