@@ -601,6 +601,30 @@
       pointer-events: none;
     }
 
+    /* 「本当の理由」：下線なし・ゴールド・キラーン */
+    .sec-title em.shine-emph {
+      border-bottom: none;
+      color: #D4AF37;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+    .sec-title em.shine-emph::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        110deg,
+        transparent 30%,
+        rgba(255,250,210,0.85) 48%,
+        rgba(255,250,210,0.3) 52%,
+        transparent 72%
+      );
+      animation: kirain 3.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
     /* 3本の強調：下線削除・圏点は span で位置精密制御 */
     .sec-title em.dot-emph {
       border-bottom: none;
@@ -1328,7 +1352,7 @@
     <div class="wrap">
       <div class="inner fi" style="text-align:center; margin-bottom: 32px;">
         <span class="sec-badge">なぜ売上が安定しないのか</span>
-        <p class="sec-title" style="margin-top:8px;">発信しているのに<br>売上が安定しない<em>本当の理由</em></p>
+        <p class="sec-title" style="margin-top:8px;">発信しているのに<br>売上が安定しない<em class="shine-emph">本当の理由</em></p>
       </div>
       <p class="problem-lead fi">理由は、一つです。</p>
       <div class="problem-answer-box fi">
