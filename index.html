@@ -3,1117 +3,988 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>売上が安定しない本当の理由｜売れる流れを作る集客導線デザイナー ゾエ</title>
-  <meta name="description" content="発信の手ごたえはあるのに、売上が安定しない。その理由を動画で公開します。公式LINEに登録した方限定で「あなたの売上が安定しない本当の理由」を３本の無料動画でお届けします。">
+  <title>売上が安定しない本当の理由｜集客導線デザイナー ゾエ</title>
+  <meta name="description" content="発信の手ごたえはあるのに、売上が安定しない。その理由を動画で公開します。公式LINE登録で3本の無料動画をプレゼント。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== RESET ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html {
-      scroll-behavior: smooth;
-      background: url('images/back_FV.jpg') center / cover fixed;
-      min-height: 100vh;
-    }
+    html { scroll-behavior: smooth; }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
 
-    /* ===== VARIABLES ===== */
     :root {
-      --yellow:      #E3C964;
-      --yellow-pale: #FAF3CE;
-      --yellow-dark: #C9AF50;
-      --brown:       #7B5C3E;
-      --brown-light: #AC947F;
-      --brown-pale:  #BAAA9C;
-      --brown-bg:    #F7F2ED;
-      --white:       #FFFFFF;
-      --off-white:   #FDFAF5;
-      --text-dark:   #3A2A1A;
-      --text-mid:    #6B5040;
-      --text-soft:   #9A8070;
-      --line-green:  #06C755;
-
-      --font-mincho: 'Shippori Mincho B1', 'Hiragino Mincho ProN', serif;
-      --font-sans:   'Noto Sans JP', 'Hiragino Sans', sans-serif;
-      --max-w: 720px;
+      --cream:      #FAF7F0;
+      --cream-d:    #EDE5D6;
+      --gold:       #D4A830;
+      --gold-pale:  #FBF0D0;
+      --gold-dark:  #B8901A;
+      --brown:      #5C3418;
+      --brown-m:    #8B6040;
+      --brown-l:    #B89068;
+      --brown-pale: #C8B09A;
+      --white:      #FFFFFF;
+      --text-dk:    #2E1A08;
+      --text-m:     #6B4828;
+      --text-s:     #9A7858;
+      --green:      #06C755;
+      --mq: 'Shippori Mincho B1', 'Hiragino Mincho ProN', serif;
+      --sq: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
     }
 
     body {
-      background: var(--off-white);
-      color: var(--text-dark);
-      font-family: var(--font-sans);
-      font-weight: 400;
-      line-height: 1.85;
-      font-size: 17px;
-      -webkit-font-smoothing: antialiased;
-      /* スマホ幅固定・PC表示時は中央に配置 */
       max-width: 430px;
       margin: 0 auto;
-      box-shadow: 0 0 60px rgba(0,0,0,0.22);
+      background: var(--cream);
+      color: var(--text-dk);
+      font-family: var(--sq);
+      font-size: 16px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      box-shadow: 0 0 80px rgba(0,0,0,0.18);
+      overflow-x: hidden;
     }
 
-    /* ===== SECTION WRAPPER ===== */
-    .wrap {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .wrap { padding: 0 22px; }
 
-    /* ===== SECTION TITLE BADGE ===== */
-    .sec-badge {
-      display: inline-block;
-      background: var(--brown);
-      color: var(--white);
-      font-family: var(--font-mincho);
-      font-size: 13px;
-      letter-spacing: 0.15em;
-      padding: 6px 24px;
-      border-radius: 2px;
-      margin-bottom: 16px;
-    }
-
-    .sec-title {
-      font-family: var(--font-mincho);
-      font-weight: 700;
-      font-size: clamp(20px, 4.5vw, 26px);
-      line-height: 1.55;
-      color: var(--brown);
-    }
-
-    .sec-title em {
-      font-style: normal;
-      color: var(--yellow-dark);
-      border-bottom: 3px solid var(--yellow);
-    }
-
-    /* ===== LINE CTA BUTTON ===== */
-    .line-btn {
+    /* ── LINE BUTTON ── */
+    .btn-line {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      background: var(--line-green);
-      color: var(--white);
-      font-family: var(--font-mincho);
+      background: var(--green);
+      color: #fff;
+      font-family: var(--mq);
       font-weight: 700;
-      font-size: clamp(15px, 3.5vw, 17px);
+      font-size: 15px;
       letter-spacing: 0.04em;
-      padding: 18px 32px;
-      border-radius: 50px;
-      box-shadow: 0 4px 20px rgba(6,199,85,0.38);
-      transition: transform .2s, box-shadow .2s;
-      max-width: 420px;
+      padding: 18px 24px;
+      border-radius: 50px !important;
+      box-shadow: 0 6px 24px rgba(6,199,85,0.32);
       width: 100%;
-      margin: 0 auto;
       position: relative;
       overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+      white-space: nowrap;
     }
-    .line-btn::after {
+    .btn-line::after {
       content: '';
       position: absolute;
-      top: 0; left: -80%;
-      width: 50%; height: 100%;
-      background: linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
-      transition: left .5s;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.24) 50%, transparent 70%);
+      animation: lbtn-shine 3s ease-in-out infinite;
     }
-    .line-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(6,199,85,.48); }
-    .line-btn:hover::after { left: 130%; }
-    .line-btn svg { width: 24px; height: 24px; fill: currentColor; flex-shrink: 0; }
+    @keyframes lbtn-shine { 0%{transform:translateX(-120%)} 40%,100%{transform:translateX(140%)} }
+    .btn-line:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(6,199,85,.44); }
+    .btn-line svg { width: 22px; height: 22px; fill: currentColor; flex-shrink: 0; }
+    .cta-note { text-align: center; font-size: 11px; color: var(--text-s); margin-top: 10px; letter-spacing: .05em; }
 
-    .cta-area { text-align: center; padding: 12px 0 4px; }
-    .cta-note { font-size: 11px; color: var(--text-soft); margin-top: 10px; }
+    /* ── SECTION EYEBROW ── */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sq);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .28em;
+      color: var(--brown-m);
+      margin-bottom: 12px;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      width: 22px; height: 1px;
+      background: var(--gold);
+    }
 
-    /* ===== TOP RIBBON ===== */
-    .top-ribbon {
-      background: var(--brown);
-      color: var(--yellow-pale);
-      text-align: center;
-      padding: 12px 16px 44px;
-      font-family: var(--font-mincho);
-      font-size: 12px;
-      letter-spacing: 0.15em;
+    /* ── SECTION HEADING ── */
+    .sh {
+      font-family: var(--mq);
+      font-weight: 700;
+      font-size: clamp(21px, 4.8vw, 26px);
+      line-height: 1.55;
+      color: var(--brown);
+    }
+    .sh em {
+      font-style: normal;
+      color: var(--gold-dark);
       position: relative;
-      z-index: 10;
-      margin-bottom: -24px;
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), 50% 100%, 0 calc(100% - 24px));
+    }
+    .sh em::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
     }
 
-    /* ===== HERO ===== */
+    /* ══════════════════════════════════
+       TOP RIBBON
+    ══════════════════════════════════ */
+    .ribbon {
+      background: var(--brown);
+      color: var(--gold-pale);
+      text-align: center;
+      padding: 11px 20px;
+      font-family: var(--mq);
+      font-size: 12px;
+      letter-spacing: .12em;
+      line-height: 1.65;
+    }
+    .ribbon strong { color: var(--gold); }
+
+    /* ══════════════════════════════════
+       HERO
+    ══════════════════════════════════ */
     .hero {
       position: relative;
+      height: 560px;
       overflow: hidden;
-      min-height: 520px;
     }
-
-    /* 人物写真：フル背景・100%不透明 */
-    .hero-photo-bg {
+    .hero-photo {
       position: absolute;
       inset: 0;
       background: url('images/profile-fv2.png') center top / cover no-repeat;
-      z-index: 0;
     }
-
-    /* 下部グラデ：自然なフェードアウト */
-    .hero-bottom-grad {
+    /* 写真の右半分を残して左をしっかり暗くする */
+    .hero-shadow {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(24,12,4,.82) 0%,
+        rgba(24,12,4,.48) 42%,
+        transparent 68%
+      );
+    }
+    /* 下部フェードで次セクションへ自然につなぐ */
+    .hero-fade-bottom {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 45%;
-      background: linear-gradient(to top, rgba(20,10,0,0.65) 0%, transparent 100%);
-      z-index: 2;
-      pointer-events: none;
+      height: 28%;
+      background: linear-gradient(to top, var(--cream) 0%, transparent 100%);
     }
-
     /* 右上バッジ */
-    .hero-badge-top {
+    .hero-badge {
       position: absolute;
-      top: 40px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 22px; right: 18px;
       z-index: 4;
-      background: transparent;
-      color: var(--brown);
-      font-family: var(--font-mincho);
-      font-size: 10px;
-      letter-spacing: 0.22em;
-      padding: 6px 18px;
-      border: 1px solid var(--brown);
-      white-space: nowrap;
+      border: 1px solid rgba(212,168,48,.5);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.75);
+      font-family: var(--sq);
+      font-size: 9px;
+      letter-spacing: .28em;
+      padding: 5px 14px;
     }
-
-    /* テキストエリア：右寄せ・縦書き */
-    .hero-text-wrap {
+    /* 縦書きテキスト・左寄せ */
+    .hero-text {
       position: absolute;
-      top: 36px; right: 30px; bottom: 95px;
+      top: 60px; left: 20px; bottom: 90px;
       z-index: 3;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
     }
-
-    /* 座布団エリア */
-    .hero-zabuton {
-      display: inline-flex;
+    .hero-cols {
+      display: flex;
       flex-direction: row-reverse;
       gap: 6px;
       align-items: flex-start;
-      height: auto;
     }
-
-    /* 各列：縦書き・座布団 */
-    .hero-zabuton span {
+    .hero-col {
       writing-mode: vertical-rl;
-      text-orientation: mixed;
-      font-family: var(--font-mincho);
+      font-family: var(--mq);
       font-weight: 800;
-      letter-spacing: 0.13em;
-      line-height: 1.25;
-      padding: 14px 9px;
-      background: rgba(50,30,8,0.82);
+      letter-spacing: .1em;
+      line-height: 1.2;
+      padding: 12px 8px;
+      background: rgba(44,22,6,.76);
     }
-
-    /* 「発信の手ごたえはあるのに、」白 */
-    .v-normal {
-      font-size: 18px;
-      color: rgba(255,255,255,.95);
+    .hero-col-sm {
+      font-size: 17px;
+      color: rgba(255,255,255,.88);
     }
-
-    /* 「売上が安定しない。」黄色・大きく */
-    .v-em {
-      font-size: 26px;
-      color: var(--yellow);
+    .hero-col-lg {
+      font-size: 28px;
+      color: var(--gold);
+      text-shadow: 0 2px 10px rgba(0,0,0,.3);
     }
-
-    /* 「その理由を動画で公開します。」座布団なし */
-    .hero-v-reason {
+    /* 「その理由を動画で公開します。」は座布団なし */
+    .hero-col-xs {
       writing-mode: vertical-rl;
-      text-orientation: mixed;
-      font-family: var(--font-mincho);
+      font-family: var(--mq);
       font-weight: 700;
-      font-size: 16px;
-      color: var(--white);
-      letter-spacing: 0.15em;
+      font-size: 14px;
+      color: rgba(255,255,255,.68);
+      letter-spacing: .18em;
       line-height: 1.3;
+      padding: 0 4px;
       background: none !important;
-      padding: 0 5px !important;
-      margin-top: 14px;
-      text-shadow: 0 2px 6px rgba(80,40,10,1), 0 1px 3px rgba(0,0,0,1), 0 0 12px rgba(60,30,5,0.9);
+      text-shadow: 0 1px 8px rgba(0,0,0,.9);
     }
-
-    /* 名前タグ：左下 */
-    .hero-name-tag {
-      position: absolute;
-      bottom: 28px;
-      left: 14px;
-      z-index: 5;
-      color: var(--white);
-      font-family: var(--font-sans);
-      font-weight: 500;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+    /* キラーンアニメ */
+    @keyframes kiran {
+      0%   { transform: translateX(-120%) skewX(-16deg); opacity: 0; }
+      8%   { opacity: .9; }
+      38%  { transform: translateX(260%) skewX(-16deg); opacity: 0; }
+      100% { transform: translateX(260%) skewX(-16deg); opacity: 0; }
     }
-
-    /* 下部CTA */
-    .hero-cta-bottom {
-      position: absolute;
-      bottom: 20px;
-      left: 0; right: 0;
-      z-index: 4;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    /* ===== キラーンアニメーション ===== */
-    @keyframes kirain {
-      0%   { transform: translateX(-120%) skewX(-18deg); opacity: 0; }
-      8%   { opacity: 1; }
-      38%  { transform: translateX(250%) skewX(-18deg); opacity: 0; }
-      100% { transform: translateX(250%) skewX(-18deg); opacity: 0; }
-    }
-
-    .hero-zabuton .v-em,
-    .hero-zabuton .v-normal {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-zabuton .v-em::before,
-    .hero-zabuton .v-normal::before {
+    .hero-col { position: relative; overflow: hidden; }
+    .hero-col::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        110deg,
-        transparent 25%,
-        rgba(255,255,255,0.55) 48%,
-        rgba(255,255,255,0.20) 52%,
-        transparent 72%
-      );
-      animation: kirain 3.8s ease-in-out infinite;
+      background: linear-gradient(108deg, transparent 25%, rgba(255,255,255,.45) 48%, rgba(255,255,255,.18) 52%, transparent 72%);
+      animation: kiran 4s ease-in-out infinite;
       pointer-events: none;
     }
-
-    .hero-zabuton .v-normal::before {
-      animation-delay: 0.5s;
+    .hero-col-sm::before { animation-delay: .6s; }
+    /* 名前タグ */
+    .hero-name {
+      position: absolute;
+      bottom: 26px; left: 20px;
+      z-index: 4;
+      color: rgba(255,255,255,.62);
+      font-family: var(--sq);
+      font-size: 10px;
+      letter-spacing: .16em;
+    }
+    /* スクロールヒント */
+    .hero-scroll {
+      position: absolute;
+      bottom: 26px; right: 20px;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+    .hero-scroll span {
+      font-size: 8px;
+      letter-spacing: .22em;
+      color: rgba(255,255,255,.4);
+      font-family: var(--sq);
+    }
+    .scroll-bar {
+      width: 1px; height: 38px;
+      background: linear-gradient(to bottom, transparent, rgba(212,168,48,.65));
+      animation: sbar 2s ease-in-out infinite;
+    }
+    @keyframes sbar {
+      0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+      50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
     }
 
-    /* ===== MINI CTA ===== */
+    /* ══════════════════════════════════
+       MINI CTA
+    ══════════════════════════════════ */
     .mini-cta {
-      background: var(--yellow-pale);
-      border-top: 3px solid var(--yellow);
-      border-bottom: 3px solid var(--yellow);
-      padding: 36px 0;
-    }
-
-    .mini-cta .wrap { padding: 0 20px; }
-
-    .mini-cta .cta-area {
-      padding: 0;
-    }
-
-    .mini-cta .line-btn {
-      max-width: 100%;
-      width: 100%;
-    }
-
-    .mini-cta-text {
+      background: var(--gold-pale);
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
+      padding: 36px 22px;
       text-align: center;
-      font-family: var(--font-mincho);
+    }
+    .mini-cta-msg {
+      font-family: var(--mq);
       font-weight: 700;
-      font-size: clamp(15px, 3.5vw, 18px);
+      font-size: 17px;
       color: var(--brown);
-      line-height: 1.7;
-      margin-bottom: 20px;
+      line-height: 1.75;
+      margin-bottom: 22px;
     }
+    .mini-cta-msg u { text-decoration: none; border-bottom: 2px solid var(--gold); }
 
-    /* ===== SECTION: PAIN ===== */
+    /* ══════════════════════════════════
+       PAIN
+    ══════════════════════════════════ */
     .section-pain {
-      position: relative;
+      background: var(--white);
       padding: 64px 0;
-      overflow: hidden;
     }
-
-    /* 背景：悩んでる女性の写真 */
-    .section-pain::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('images/lady_SP_sad.jpg') center / cover no-repeat;
-      z-index: 0;
-    }
-
-    /* ブラウン透過オーバーレイ：悩んでる雰囲気 */
-    .section-pain::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(90, 55, 25, 0.52);
-      z-index: 1;
-    }
-
-    /* コンテンツを前面に */
-    .section-pain .wrap {
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-pain .inner { text-align: center; }
-
-    .pain-cards {
-      display: grid;
-      gap: 14px;
+    .pain-intro { text-align: center; margin-bottom: 32px; }
+    .pain-list {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
       margin-bottom: 36px;
     }
-
-    .pain-card {
-      background: var(--white);
-      border: 1px solid #E0D5CA;
-      border-left: 4px solid var(--yellow);
-      border-radius: 6px;
-      padding: 16px 20px;
+    .pain-item {
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      text-align: left;
-      transition: box-shadow .2s;
+      background: var(--cream);
+      padding: 15px 18px;
+      border-left: 4px solid var(--gold);
     }
-
-    .pain-card:hover { box-shadow: 0 4px 18px rgba(123,92,62,.10); }
-
     .pain-icon {
-      width: 32px; height: 32px;
       flex-shrink: 0;
-      background: var(--yellow-pale);
-      border-radius: 50%;
+      width: 28px; height: 28px;
+      border-radius: 50% !important;
+      background: var(--gold);
+      color: var(--brown);
+      font-weight: 800;
+      font-size: 13px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--yellow-dark);
-      font-weight: 700;
-      font-size: 15px;
-      margin-top: 1px;
+      margin-top: 2px;
     }
-
-    .pain-text {
-      font-family: var(--font-mincho);
-      font-size: clamp(14px, 2.8vw, 15px);
-      line-height: 1.7;
-      color: var(--white);
+    .pain-item p {
+      font-family: var(--mq);
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-dk);
     }
-
-    /* pain セクション：背景画像に合わせて文字色を白系に */
-    .section-pain .sec-badge {
-      background: var(--brown);
-      color: var(--white);
-    }
-    .section-pain .sec-title {
-      color: var(--white);
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.8);
-    }
-    .section-pain .pain-card {
-      background: rgba(80, 45, 15, 0.52);
-      border-color: rgba(255,255,255,0.18);
-      border-left-color: var(--yellow);
-    }
-    .section-pain .pain-icon {
-      background: var(--yellow);
-      color: var(--brown);
-    }
-
-    /* pain-close：角丸なし・ゴールドボーダー */
+    .pain-item p strong { color: var(--brown); }
     .pain-close {
-      background: rgba(50,30,8,0.55);
-      border-radius: 0;
-      border: 1px solid var(--yellow);
-      padding: 28px 28px;
-      text-align: center;
-    }
-
-    .pain-close p {
-      font-family: var(--font-mincho);
-      font-size: clamp(15px, 3vw, 18px);
-      color: var(--white);
-      line-height: 1.85;
-    }
-
-    .pain-close em {
-      font-style: normal;
-      color: var(--yellow);
-      font-weight: 700;
-    }
-
-    /* ===== SECTION: PROBLEM ===== */
-    .section-problem {
-      background: url('images/back_problem2.jpg') center / cover no-repeat;
-      padding: 64px 0;
-    }
-
-    .section-problem .inner { text-align: center; }
-
-    /* sec-badge を平行四辺形に（テキストはまっすぐ） */
-    .section-problem .sec-badge {
-      background: transparent;
-      border-radius: 0;
-      position: relative;
-      z-index: 1;
-      padding: 6px 30px;
-    }
-    .section-problem .sec-badge::before {
-      content: '';
-      position: absolute;
-      inset: 0;
       background: var(--brown);
-      transform: skewX(-18deg);
-      z-index: -1;
-    }
-
-    .problem-lead {
-      font-family: var(--font-mincho);
-      font-size: clamp(15px, 3vw, 18px);
-      color: var(--text-dark);
-      line-height: 1.9;
-      margin-bottom: 28px;
+      padding: 28px 22px;
       text-align: center;
     }
-
-    .problem-answer-box {
-      background: var(--white);
-      border: 2px solid var(--yellow);
-      border-radius: 0;
-      padding: 28px 24px;
-      margin-bottom: 28px;
-      position: relative;
-      text-align: center;
-    }
-
-    /* 「理由はひとつ」帯 → 削除 */
-    .problem-answer-box::before {
-      display: none;
-    }
-
-    .problem-answer-text {
-      font-family: var(--font-mincho);
-      font-weight: 700;
-      font-size: clamp(20px, 4.5vw, 26px);
-      color: var(--brown);
-      line-height: 1.55;
-    }
-
-    .problem-answer-text em {
-      font-style: normal;
-      color: var(--yellow-dark);
-      border-bottom: 3px solid var(--yellow);
-    }
-
-    .problem-body {
-      text-align: left;
-      background: var(--white);
-      border-radius: 0;
-      padding: 28px 28px;
-      margin-bottom: 20px;
-    }
-
-    .problem-body p {
-      font-family: var(--font-mincho);
+    .pain-close p {
+      font-family: var(--mq);
       font-size: 15px;
       line-height: 2;
-      color: var(--text-dark);
-      margin-bottom: 16px;
-    }
-
-    .problem-body p:last-child { margin-bottom: 0; }
-
-    .problem-body strong {
-      color: var(--brown);
-      font-weight: 700;
-    }
-
-    .problem-structure {
-      background: var(--brown);
-      color: var(--white);
-      border-radius: 0;
-      padding: 22px 24px;
-      text-align: center;
-    }
-
-    .problem-structure p {
-      font-family: var(--font-mincho);
-      font-size: clamp(14px, 3vw, 17px);
-      line-height: 1.85;
-    }
-
-    .problem-structure em {
-      font-style: normal;
-      color: var(--yellow);
-      font-weight: 700;
-    }
-
-    .dots-bridge {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin: 28px 0;
-    }
-
-    .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--brown-pale); }
-    .bridge { flex: 1; max-width: 100px; height: 2px; background: linear-gradient(90deg, var(--brown-pale), var(--yellow)); }
-
-    /* ===== SECTION: VIDEOS ===== */
-    .section-videos {
-      background: var(--off-white);
-      padding: 36px 0 64px;
-    }
-
-    .section-videos .inner { text-align: center; }
-
-    .gift-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--yellow);
-      color: var(--brown);
-      font-family: var(--font-mincho);
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: .2em;
-      padding: 6px 20px;
-      border-radius: 20px;
-      margin-bottom: 6px;
-      position: relative;
-      overflow: hidden;
-    }
-    .gift-badge::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        110deg,
-        transparent 25%,
-        rgba(255,255,255,0.65) 48%,
-        rgba(255,255,255,0.25) 52%,
-        transparent 72%
-      );
-      animation: kirain 3.2s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    /* 「本当の理由」：下線なし・ブラウン統一 */
-    .sec-title em.shine-emph {
-      border-bottom: none;
-      color: var(--brown);
-      font-weight: 700;
-    }
-
-    /* 問題セクションタイトル：白光彩 */
-    .section-problem .sec-title {
-      text-shadow: 0 0 14px rgba(255,255,255,0.9), 0 0 26px rgba(255,255,255,0.6);
-    }
-
-    /* 3本の強調：下線削除・圏点は span で位置精密制御 */
-    .sec-title em.dot-emph {
-      border-bottom: none;
-      color: var(--yellow-dark);
-      text-emphasis: none;
-      -webkit-text-emphasis: none;
-    }
-    .sec-title em.dot-emph .dc {
-      position: relative;
-      display: inline-block;
-    }
-    .sec-title em.dot-emph .dc::before {
-      content: '・';
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.6em;
-      line-height: 1;
-      color: var(--yellow-dark);
-    }
-
-    /* ===== 動画タブ切り替え ===== */
-    .vtab-btns {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin: 24px 0 20px;
-    }
-
-    .vtab-btn {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      border: 2px solid var(--brown-light);
-      background: transparent;
-      font-family: var(--font-mincho);
-      font-size: 22px;
-      color: var(--brown-light);
-      cursor: pointer;
-      transition: all 0.22s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .vtab-btn.active,
-    .vtab-btn:hover {
-      background: var(--brown);
-      border-color: var(--brown);
       color: var(--white);
     }
+    .pain-close em { font-style: normal; color: var(--gold); font-weight: 700; }
 
-    .vtab-panel {
-      display: block;
-      margin-bottom: 36px;
-      scroll-margin-top: 20px;
-    }
-    .vtab-panel:last-child { margin-bottom: 0; }
-
-    .vtab-img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      object-fit: cover;
-      max-height: 220px;
-    }
-
-    .vtab-label {
-      display: inline-block;
-      font-size: 10px;
-      font-family: var(--font-sans);
-      letter-spacing: 0.22em;
-      color: var(--white);
-      background: var(--brown-light);
-      padding: 4px 12px;
-      margin-bottom: 10px;
-    }
-
-    .vtab-title {
-      font-family: var(--font-mincho);
-      font-weight: 700;
-      font-size: 16px;
-      color: var(--brown);
-      line-height: 1.65;
-      margin-bottom: 12px;
-    }
-
-    .vtab-desc {
-      font-size: 14px;
-      line-height: 1.95;
-      color: var(--text-mid);
-    }
-
-    .video-closing {
-      background: var(--yellow-pale);
-      border: 2px dotted var(--yellow-dark);
-      border-radius: 10px;
-      padding: 28px 24px;
-      text-align: center;
-      margin-top: 28px;
-    }
-
-    .video-closing p {
-      font-family: var(--font-mincho);
-      font-size: clamp(14px, 3vw, 16px);
-      color: var(--brown);
-      line-height: 1.95;
-    }
-
-    .video-closing em {
-      font-style: normal;
-      font-weight: 700;
-      color: var(--yellow-dark);
-    }
-
-    /* ===== SECTION: VOICE ===== */
-    .section-voice {
-      background: url('images/back_voice.jpg') center / cover no-repeat;
+    /* ══════════════════════════════════
+       PROBLEM
+    ══════════════════════════════════ */
+    .section-problem {
+      background: var(--cream);
       padding: 64px 0;
     }
-
-    .section-voice .inner { text-align: center; }
-
-    /* voice / profile / qa sec-badge を平行四辺形に */
-    .section-voice .sec-badge,
-    .section-profile .sec-badge,
-    .section-qa .sec-badge {
-      background: transparent;
+    .problem-intro { text-align: center; margin-bottom: 36px; }
+    .problem-reason {
+      font-family: var(--mq);
+      font-size: 16px;
+      color: var(--text-m);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .problem-box {
+      background: var(--white);
+      border: 2px solid var(--gold);
+      padding: 26px 22px;
+      text-align: center;
+      margin-bottom: 28px;
       position: relative;
-      z-index: 1;
-      padding: 6px 30px;
     }
-    .section-voice .sec-badge::before,
-    .section-profile .sec-badge::before,
-    .section-qa .sec-badge::before {
-      content: '';
+    .problem-box-label {
       position: absolute;
-      inset: 0;
-      background: var(--brown);
-      transform: skewX(-18deg);
-      z-index: -1;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--brown);
+      font-family: var(--sq);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      padding: 3px 16px;
     }
-
-    .voice-cards {
-      display: grid;
-      gap: 24px;
-      margin-top: 36px;
+    .problem-box p {
+      font-family: var(--mq);
+      font-weight: 700;
+      font-size: clamp(20px, 4.5vw, 24px);
+      line-height: 1.6;
+      color: var(--brown);
     }
+    .problem-box em { font-style: normal; color: var(--gold-dark); border-bottom: 3px solid var(--gold); }
 
-    .voice-card {
+    /* ── 橋ダイアグラム ── */
+    .bridge {
       background: var(--white);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(123,92,62,.07);
-      text-align: left;
+      padding: 24px 20px 28px;
+      margin-bottom: 24px;
     }
-
-    .voice-card-head {
-      background: var(--white);
-      padding: 16px 22px 18px;
+    .bridge-title {
+      text-align: center;
+      font-family: var(--sq);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      color: var(--brown-l);
+      margin-bottom: 18px;
+    }
+    .bridge-row {
       display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      position: relative;
+      align-items: center;
+      margin-bottom: 6px;
     }
-    .voice-card-head::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 22px;
-      right: 22px;
-      height: 1px;
-      background: var(--brown);
+    .b-node {
+      flex: 0 0 72px;
+      text-align: center;
     }
-
-    /* YouTube サムネイル */
-    .voice-thumb {
-      display: block;
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      background: #000;
-    }
-    .voice-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .3s;
-    }
-    .voice-thumb:hover img { transform: scale(1.04); }
-    .voice-thumb-play {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60px; height: 60px;
-      background: rgba(255,0,0,0.92);
-      color: #fff;
+    .b-icon {
+      width: 48px; height: 48px;
       border-radius: 50% !important;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
-      padding-left: 5px;
-      box-shadow: 0 4px 14px rgba(0,0,0,.35);
+      margin: 0 auto 5px;
+      font-size: 20px;
     }
-
-    .voice-name {
-      font-family: var(--font-mincho);
+    .b-icon.sns  { background: var(--cream-d); }
+    .b-icon.sale { background: var(--gold-pale); }
+    .b-label {
+      font-size: 10px;
+      font-family: var(--mq);
       font-weight: 700;
-      font-size: 15px;
-      color: var(--brown);
-      line-height: 1.4;
+      color: var(--text-m);
+      line-height: 1.3;
     }
-    .voice-tag {
-      display: inline-block;
-      background: var(--yellow);
-      color: var(--brown);
+    .b-mid {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      padding: 0 8px;
+    }
+    /* 破線（橋がない） */
+    .b-dash {
+      width: 100%; height: 3px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--brown-pale) 0px, var(--brown-pale) 8px,
+        transparent 8px, transparent 15px
+      );
+    }
+    .b-gap-badge {
+      background: rgba(200,80,80,.12);
+      color: #c05050;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      font-family: var(--sq);
+      padding: 3px 10px;
+    }
+    /* 実線（橋あり） */
+    .b-solid {
+      width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--green));
+      border-radius: 2px !important;
+    }
+    .b-ok-badge {
+      background: rgba(6,199,85,.1);
+      color: var(--green);
       font-size: 10px;
       font-weight: 700;
       letter-spacing: .1em;
-      padding: 2px 10px;
-      border-radius: 20px;
-      margin-bottom: 6px;
+      font-family: var(--sq);
+      padding: 3px 10px;
     }
-
-    .voice-body { padding: 20px 22px; }
-
-    .voice-text {
-      font-size: 13px;
-      line-height: 1.95;
-      color: var(--text-dark);
-      margin-bottom: 14px;
+    .b-middle-node {
+      flex: 0 0 56px;
+      text-align: center;
     }
-
-    /* 実績スタット表示 */
-    .voice-stat-bar {
+    .b-middle-icon {
+      width: 38px; height: 38px;
+      border-radius: 50% !important;
+      background: rgba(6,199,85,.1);
       display: flex;
-      align-items: baseline;
-      gap: 4px;
-      flex-wrap: wrap;
-      padding: 14px 22px 12px;
-      background: linear-gradient(135deg, var(--yellow-pale) 0%, rgba(250,243,206,0.4) 100%);
-      border-bottom: 2px solid var(--yellow);
-      position: relative;
-      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 4px;
+      font-size: 16px;
     }
-    .voice-stat-bar::before {
-      content: '→';
-      position: absolute;
-      right: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 20px;
-      color: var(--yellow-dark);
-      opacity: 0.5;
+    .b-middle-label {
+      font-size: 9px;
+      font-family: var(--sq);
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: var(--green);
     }
-    .voice-stat-pre {
-      font-family: var(--font-mincho);
-      font-size: 12px;
-      color: var(--text-mid);
-      font-weight: 400;
-      line-height: 2;
-    }
-    .voice-stat-main {
-      font-family: var(--font-mincho);
-      font-weight: 800;
-      font-size: 32px;
-      color: var(--brown);
-      line-height: 1.1;
-      position: relative;
-      display: inline-block;
-    }
-    .voice-stat-main::after {
-      content: '';
-      position: absolute;
-      bottom: 2px;
-      left: -2px; right: -2px;
-      height: 8px;
-      background: var(--yellow);
-      opacity: 0.55;
-      z-index: -1;
-    }
-    .voice-stat-post {
-      font-family: var(--font-mincho);
-      font-size: 13px;
-      color: var(--text-mid);
-      font-weight: 400;
-      line-height: 2;
+    .bridge-arrow {
+      text-align: center;
+      font-size: 18px;
+      color: var(--gold);
+      margin: 10px 0 14px;
+      line-height: 1;
     }
 
-    .voice-result {
-      background: var(--yellow-pale);
-      border-left: 3px solid var(--yellow-dark);
-      padding: 12px 16px;
-      font-family: var(--font-mincho);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-mid);
-      line-height: 1.75;
+    .problem-body {
+      background: var(--white);
+      padding: 26px 22px;
       margin-bottom: 14px;
     }
-    .voice-result strong { color: var(--brown); }
+    .problem-body p {
+      font-family: var(--mq);
+      font-size: 15px;
+      line-height: 2;
+      color: var(--text-dk);
+      margin-bottom: 14px;
+    }
+    .problem-body p:last-child { margin-bottom: 0; }
+    .problem-body strong { color: var(--brown); }
+    .problem-emph {
+      background: var(--brown);
+      padding: 22px 22px;
+      text-align: center;
+    }
+    .problem-emph p {
+      font-family: var(--mq);
+      font-size: 15px;
+      color: var(--white);
+      line-height: 1.9;
+    }
+    .problem-emph em { font-style: normal; color: var(--gold); font-weight: 700; }
+    .problem-more {
+      background: var(--white);
+      padding: 26px 22px;
+      margin-top: 14px;
+    }
+    .problem-more p {
+      font-family: var(--mq);
+      font-size: 15px;
+      line-height: 2;
+      color: var(--text-dk);
+      margin-bottom: 14px;
+    }
+    .problem-more p:last-child { margin-bottom: 0; text-align: center; font-weight: 700; }
+    .problem-more strong { color: var(--brown); }
 
-    .voice-link {
+    /* ══════════════════════════════════
+       VIDEOS
+    ══════════════════════════════════ */
+    .section-videos {
+      background: var(--cream);
+      padding: 64px 0;
+    }
+    .videos-intro { text-align: center; margin-bottom: 36px; }
+    .gift-tag {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 12px;
-      color: var(--brown-light);
-      border-bottom: 1px solid var(--brown-pale);
-      padding-bottom: 1px;
-      transition: color .2s;
-    }
-    .voice-link:hover { color: var(--brown); }
-    .voice-link svg { width: 14px; height: 14px; fill: currentColor; }
-
-    /* ===== SECTION: PROFILE ===== */
-    .section-profile {
-      background: var(--off-white);
-      padding: 64px 0;
-    }
-
-    .profile-box {
-      background: var(--white);
-      border-radius: 12px;
+      background: var(--gold);
+      color: var(--brown);
+      font-family: var(--mq);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: .2em;
+      padding: 5px 18px;
+      margin-bottom: 12px;
+      position: relative;
       overflow: hidden;
-      box-shadow: 0 2px 20px rgba(123,92,62,.08);
+    }
+    .gift-tag::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(108deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%);
+      animation: lbtn-shine 2.8s ease-in-out infinite;
     }
 
-    .profile-box-head {
-      background: linear-gradient(135deg, var(--brown) 0%, #5C3E28 100%);
-      padding: 28px 28px 24px;
+    /* タイムラインスタイル */
+    .video-timeline {
+      position: relative;
+      padding-left: 48px;
+    }
+    .video-timeline::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 44px; bottom: 44px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold) 0%, var(--cream-d) 100%);
+    }
+    .video-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .video-item:last-child { margin-bottom: 0; }
+    .video-num {
+      position: absolute;
+      left: -48px; top: 20px;
+      width: 38px; height: 38px;
+      border-radius: 50% !important;
+      background: var(--brown);
+      color: var(--gold);
+      font-family: var(--mq);
+      font-weight: 800;
+      font-size: 16px;
       display: flex;
       align-items: center;
-      gap: 24px;
+      justify-content: center;
+      box-shadow: 0 3px 12px rgba(92,52,24,.3);
+      z-index: 1;
     }
+    .video-card {
+      background: var(--white);
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(92,52,24,.07);
+    }
+    .video-card img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      /* 右上だけ角を少し取る */
+      border-radius: 0 24px 0 0 !important;
+    }
+    .video-card-body { padding: 18px 20px; }
+    .video-ep {
+      display: inline-block;
+      font-size: 9px;
+      font-family: var(--sq);
+      letter-spacing: .25em;
+      color: var(--white);
+      background: var(--brown-l);
+      padding: 3px 12px;
+      margin-bottom: 10px;
+    }
+    .video-title {
+      font-family: var(--mq);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--brown);
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+    .video-desc {
+      font-size: 13px;
+      line-height: 1.95;
+      color: var(--text-m);
+    }
+    /* ビデオ②の背景変化 */
+    .video-item:nth-child(2) .video-card {
+      background: rgba(172,148,127,.12);
+    }
+    .video-closing {
+      background: var(--gold-pale);
+      border: 2px dashed var(--gold);
+      padding: 28px 22px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .video-closing p {
+      font-family: var(--mq);
+      font-size: 15px;
+      color: var(--brown);
+      line-height: 2;
+    }
+    .video-closing em { font-style: normal; font-weight: 700; color: var(--gold-dark); }
 
-    .profile-photo-wrap {
+    /* ══════════════════════════════════
+       VOICE
+    ══════════════════════════════════ */
+    .section-voice {
+      background: var(--cream-d);
+      padding: 64px 0;
+    }
+    .voice-intro { text-align: center; margin-bottom: 36px; }
+    .voice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .voice-card {
+      background: var(--white);
+      overflow: hidden;
+      box-shadow: 0 4px 22px rgba(92,52,24,.10);
+    }
+    /* サムネイル */
+    .v-thumb {
+      display: block;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--cream-d);
+    }
+    .v-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+    .v-thumb:hover img { transform: scale(1.04); }
+    .v-play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 52px; height: 52px;
+      border-radius: 50% !important;
+      background: rgba(210,25,25,.88);
+      color: #fff;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 4px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.3);
+    }
+    /* カードヘッダー */
+    .v-head {
+      padding: 14px 20px 12px;
+      border-bottom: 1px solid var(--cream-d);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .v-tag {
+      background: var(--gold);
+      color: var(--brown);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      padding: 3px 10px;
       flex-shrink: 0;
-      width: 110px; height: 130px;
+    }
+    .v-name {
+      font-family: var(--mq);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--brown);
+      line-height: 1.4;
+    }
+    .v-name-sub {
+      display: block;
+      font-size: 11px;
+      color: var(--text-s);
+      font-weight: 400;
+      font-family: var(--sq);
+    }
+    /* 実績スタット */
+    .v-stat {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: 14px 20px 12px;
+      background: linear-gradient(135deg, var(--gold-pale) 0%, rgba(251,240,208,.4) 100%);
+      border-bottom: 2px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+    .v-stat::after {
+      content: '実績';
+      position: absolute;
+      top: 8px; right: 14px;
+      font-size: 9px;
+      font-family: var(--sq);
+      letter-spacing: .2em;
+      color: var(--brown-l);
+    }
+    .v-pre, .v-post {
+      font-family: var(--mq);
+      font-size: 12px;
+      color: var(--text-m);
+      line-height: 2;
+    }
+    .v-num {
+      font-family: var(--mq);
+      font-weight: 800;
+      font-size: 36px;
+      color: var(--brown);
+      line-height: 1;
+      position: relative;
+      display: inline-block;
+    }
+    .v-num::after {
+      content: '';
+      position: absolute;
+      bottom: 3px; left: -2px; right: -2px;
+      height: 9px;
+      background: var(--gold);
+      opacity: .48;
+      z-index: -1;
+    }
+    /* テキスト */
+    .v-body { padding: 20px; }
+    .v-quote {
+      font-size: 13px;
+      line-height: 1.95;
+      color: var(--text-dk);
+      margin-bottom: 14px;
+      padding-left: 14px;
       position: relative;
     }
+    .v-quote::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 4px; bottom: 4px;
+      width: 3px;
+      background: var(--gold);
+    }
+    .v-result {
+      background: var(--gold-pale);
+      border-left: 3px solid var(--gold-dark);
+      padding: 11px 16px;
+      font-family: var(--mq);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brown);
+      line-height: 1.75;
+    }
+    .v-result strong { font-weight: 800; }
 
+    /* ══════════════════════════════════
+       PROFILE
+    ══════════════════════════════════ */
+    .section-profile {
+      background: var(--white);
+      padding: 64px 0;
+    }
+    .profile-intro { text-align: center; margin-bottom: 32px; }
+    .profile-card { overflow: hidden; }
+    .profile-top {
+      background: linear-gradient(148deg, var(--brown) 0%, #3A1E0A 100%);
+      padding: 30px 24px;
+      display: flex;
+      align-items: flex-end;
+      gap: 22px;
+    }
+    .profile-photo-wrap {
+      flex-shrink: 0;
+      width: 96px; height: 118px;
+      position: relative;
+    }
     .profile-photo-wrap::before {
       content: '';
       position: absolute;
-      inset: 4px -4px -4px 4px;
-      background: var(--yellow);
-      opacity: .4;
-      border-radius: 2px;
+      inset: 5px -5px -5px 5px;
+      background: var(--gold);
+      opacity: .36;
     }
-
     .profile-photo-wrap img {
       position: relative;
       z-index: 1;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover;
-      border-radius: 2px;
     }
-
-    .profile-label {
-      font-size: 10px;
-      letter-spacing: .2em;
-      color: var(--yellow);
-      opacity: .8;
-      font-family: var(--font-sans);
+    .profile-info { flex: 1; }
+    .profile-role {
+      font-size: 9px;
+      font-family: var(--sq);
+      letter-spacing: .26em;
+      color: var(--gold);
+      opacity: .72;
       margin-bottom: 4px;
     }
     .profile-name {
-      font-family: var(--font-mincho);
+      font-family: var(--mq);
       font-weight: 700;
-      font-size: clamp(20px, 4vw, 24px);
+      font-size: 22px;
       color: var(--white);
-      letter-spacing: .1em;
-      line-height: 1.3;
+      letter-spacing: .08em;
     }
     .profile-title {
-      font-family: var(--font-mincho);
-      font-size: 12px;
-      color: rgba(255,255,255,.7);
-      margin-top: 6px;
-      line-height: 1.6;
+      margin-top: 8px;
+      font-family: var(--mq);
+      font-size: 11px;
+      color: rgba(255,255,255,.6);
+      line-height: 1.7;
     }
-
-    .profile-box-body { padding: 28px 28px; }
-
+    .profile-bottom { padding: 28px 24px; }
     .profile-bio {
       font-size: 14px;
       line-height: 1.95;
-      color: var(--text-mid);
-      margin-bottom: 20px;
+      color: var(--text-m);
+      margin-bottom: 22px;
     }
-
-    .profile-achievements {
+    .profile-ach {
       list-style: none;
-      display: grid;
+      display: flex;
+      flex-direction: column;
       gap: 10px;
     }
-
-    .profile-achievements li {
+    .profile-ach li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
       font-size: 14px;
       line-height: 1.7;
-      color: var(--text-dark);
+      color: var(--text-dk);
     }
-
-    .ach-diamond {
-      width: 14px; height: 14px;
+    .ach-gem {
       flex-shrink: 0;
-      background: var(--yellow);
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
       margin-top: 5px;
+      width: 12px; height: 12px;
+      background: var(--gold);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     }
-
     .profile-motto {
-      margin-top: 20px;
-      padding: 14px 18px;
-      background: var(--yellow-pale);
-      font-family: var(--font-mincho);
+      margin-top: 22px;
+      background: var(--cream);
+      border-left: 4px solid var(--gold);
+      padding: 16px 20px;
+      font-family: var(--mq);
       font-size: 14px;
-      line-height: 1.85;
+      line-height: 1.9;
       color: var(--brown);
     }
 
-    /* ===== SECTION: MAIN CTA ===== */
+    /* ══════════════════════════════════
+       MAIN CTA
+    ══════════════════════════════════ */
     .section-main-cta {
-      background: linear-gradient(150deg, var(--brown) 0%, #3D2210 100%);
-      padding: 64px 20px;
+      background: linear-gradient(160deg, var(--brown) 0%, #28100A 100%);
+      padding: 72px 22px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-
     .section-main-cta::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(227,201,100,.18) 0%, transparent 55%);
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
-
-    .section-main-cta .inner { position: relative; z-index: 1; }
-
-    .main-cta-title {
-      font-family: var(--font-mincho);
+    .section-main-cta::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(212,168,48,.16) 0%, transparent 60%);
+    }
+    .main-cta-inner { position: relative; z-index: 1; }
+    .main-cta-h {
+      font-family: var(--mq);
       font-weight: 700;
-      font-size: clamp(18px, 4vw, 22px);
+      font-size: clamp(20px, 4.5vw, 24px);
       color: var(--white);
-      line-height: 1.65;
+      line-height: 1.7;
       margin-bottom: 20px;
     }
-
-    .main-cta-desc {
-      font-family: var(--font-mincho);
+    .main-cta-p {
+      font-family: var(--mq);
       font-size: 14px;
-      color: rgba(255,255,255,.80);
-      line-height: 1.95;
-      margin-bottom: 28px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
+      color: rgba(255,255,255,.76);
+      line-height: 2;
+      margin-bottom: 12px;
     }
-
-    .main-cta-desc em {
-      font-style: normal;
-      color: var(--yellow);
-      font-weight: 700;
-    }
-
-    .main-cta-note {
-      font-size: 12px;
-      color: rgba(255,255,255,.55);
+    .main-cta-p em { font-style: normal; color: var(--gold); font-weight: 700; }
+    .main-cta-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,.48);
       margin-bottom: 28px;
     }
-
-    .main-cta-remark {
+    .main-cta-fine {
       margin-top: 14px;
       font-size: 11px;
-      color: rgba(255,255,255,.45);
+      color: rgba(255,255,255,.3);
     }
 
-    /* ===== SECTION: QA ===== */
+    /* ══════════════════════════════════
+       Q&A
+    ══════════════════════════════════ */
     .section-qa {
-      background: var(--brown-bg);
+      background: var(--cream);
       padding: 64px 0;
     }
-
-    .section-qa .inner { text-align: center; }
-
-    .qa-list { display: grid; gap: 12px; margin-top: 32px; text-align: left; }
-
-    .qa-item {
-      background: var(--white);
-      border: 1px solid #E0D5CA;
-      border-radius: 8px;
-      overflow: hidden;
+    .qa-intro { text-align: center; margin-bottom: 32px; }
+    .qa-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-
+    .qa-item { background: var(--white); overflow: hidden; }
     .qa-q {
       display: flex;
       align-items: center;
@@ -1121,375 +992,411 @@
       padding: 18px 20px;
       cursor: pointer;
       user-select: none;
-      font-family: var(--font-mincho);
+      font-family: var(--mq);
       font-weight: 700;
-      font-size: clamp(13px, 2.8vw, 15px);
+      font-size: 14px;
       line-height: 1.6;
       color: var(--brown);
-      background: var(--yellow-pale);
+      background: var(--gold-pale);
       transition: background .2s;
     }
-
-    .qa-q:hover { background: #F5E89A; }
-
-    .qa-q-icon {
+    .qa-q:hover { background: #F6E7AA; }
+    .qa-qb {
       flex-shrink: 0;
-      width: 28px; height: 28px;
-      background: var(--yellow);
-      border-radius: 50%;
+      width: 26px; height: 26px;
+      border-radius: 50% !important;
+      background: var(--gold);
+      color: var(--brown);
+      font-weight: 800;
+      font-size: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--brown);
-      font-family: var(--font-mincho);
-      font-size: 13px;
-      font-weight: 800;
     }
-
-    .qa-q-arrow {
+    .qa-plus {
       margin-left: auto;
       flex-shrink: 0;
       width: 22px; height: 22px;
+      border-radius: 50% !important;
       border: 2px solid var(--brown-pale);
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--brown-light);
-      font-size: 14px;
+      color: var(--brown-l);
+      font-size: 17px;
+      line-height: 1;
       transition: transform .3s;
     }
-
-    .qa-item.open .qa-q-arrow { transform: rotate(45deg); }
-
+    .qa-item.open .qa-plus { transform: rotate(45deg); }
     .qa-a {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
       padding: 0 20px;
-      font-size: 14px;
-      line-height: 1.95;
-      color: var(--text-dark);
       max-height: 0;
       overflow: hidden;
       transition: max-height .4s ease, padding .4s ease;
+      font-size: 14px;
+      line-height: 1.95;
+      color: var(--text-dk);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
     }
-
-    .qa-item.open .qa-a {
-      padding: 18px 20px 20px;
-      max-height: 300px;
-    }
-
-    .qa-a-icon {
+    .qa-item.open .qa-a { padding: 18px 20px 20px; max-height: 320px; }
+    .qa-ab {
       flex-shrink: 0;
-      width: 28px; height: 28px;
+      width: 26px; height: 26px;
+      border-radius: 50% !important;
       background: var(--brown);
-      border-radius: 50%;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--yellow);
-      font-family: var(--font-mincho);
-      font-size: 13px;
-      font-weight: 800;
       margin-top: 1px;
     }
 
-    /* ===== SECTION: CLOSING ===== */
+    /* ══════════════════════════════════
+       CLOSING
+    ══════════════════════════════════ */
     .section-closing {
-      background: var(--off-white);
-      padding: 64px 20px;
+      background: var(--white);
+      padding: 72px 22px;
       text-align: center;
     }
-
-    .closing-msg p {
-      font-family: var(--font-mincho);
-      font-size: clamp(14px, 3vw, 16px);
-      line-height: 2;
-      color: var(--text-dark);
-      margin-bottom: 16px;
-    }
-
-    .closing-tagline {
-      font-family: var(--font-mincho);
-      font-weight: 700;
-      font-size: clamp(19px, 4.5vw, 24px);
+    .closing-badge {
+      display: inline-block;
+      background: var(--gold);
       color: var(--brown);
-      line-height: 1.6;
-      margin: 32px 0 12px;
+      font-family: var(--mq);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: .2em;
+      padding: 5px 20px;
+      margin-bottom: 28px;
     }
-
+    .closing-body p {
+      font-family: var(--mq);
+      font-size: 15px;
+      line-height: 2.1;
+      color: var(--text-dk);
+      margin-bottom: 14px;
+    }
+    .closing-tagline {
+      font-family: var(--mq);
+      font-weight: 700;
+      font-size: clamp(20px, 4.5vw, 24px);
+      color: var(--brown);
+      line-height: 1.65;
+      margin: 36px 0 10px;
+    }
     .closing-sig {
-      font-family: var(--font-mincho);
+      font-family: var(--mq);
       font-size: 13px;
-      color: var(--brown-light);
+      color: var(--brown-l);
       letter-spacing: .1em;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
     }
 
-    /* ===== FOOTER ===== */
+    /* ══════════════════════════════════
+       FOOTER
+    ══════════════════════════════════ */
     footer {
       background: var(--brown);
-      padding: 36px 20px;
+      padding: 40px 22px;
     }
-
-    .footer-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      text-align: center;
+    .foot-inner {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 16px;
+      text-align: center;
     }
-
-    .footer-logo {
-      font-family: var(--font-mincho);
-      font-size: 14px;
-      color: var(--yellow-pale);
-      letter-spacing: .2em;
+    .foot-logo {
+      font-family: var(--mq);
+      font-size: 13px;
+      color: var(--gold-pale);
+      letter-spacing: .22em;
     }
-
-    .footer-line { width: 36px; height: 1px; background: var(--yellow); opacity: .4; }
-
-    .footer-sns a {
+    .foot-line { width: 30px; height: 1px; background: var(--gold); opacity: .35; }
+    .foot-sns a {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: rgba(255,255,255,.6);
-      font-size: 13px;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
       transition: color .2s;
     }
-    .footer-sns a:hover { color: var(--yellow); }
-    .footer-sns svg { width: 18px; height: 18px; fill: currentColor; }
+    .foot-sns a:hover { color: var(--gold); }
+    .foot-sns svg { width: 16px; height: 16px; fill: currentColor; }
+    .foot-copy { font-size: 10px; color: rgba(255,255,255,.24); letter-spacing: .08em; }
 
-    .footer-copy {
-      font-size: 11px;
-      color: rgba(255,255,255,.3);
-      letter-spacing: .08em;
+    /* ══════════════════════════════════
+       FLOATING CTA
+    ══════════════════════════════════ */
+    .float-cta {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%) translateY(24px);
+      width: calc(100% - 40px);
+      max-width: 390px;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .4s ease, transform .4s ease;
+    }
+    .float-cta.show {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(-50%) translateY(0);
+    }
+    .float-cta .btn-line { font-size: 14px; padding: 15px 20px; }
+    .float-cta-shadow {
+      position: absolute;
+      inset: 6px -4px -6px 4px;
+      background: rgba(0,0,0,.12);
+      border-radius: 50px !important;
+      z-index: -1;
     }
 
-    /* ===== FADE IN ===== */
-    .fi { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    /* ══════════════════════════════════
+       FADE IN
+    ══════════════════════════════════ */
+    .fi {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .68s ease, transform .68s ease;
+    }
     .fi.on { opacity: 1; transform: none; }
 
-    /* ===== 全角丸を直角に ===== */
+    /* ══════════════════════════════════
+       GLOBAL: 直角統一＋例外復元
+    ══════════════════════════════════ */
     *, *::before, *::after { border-radius: 0 !important; }
-
-    /* CTAボタンのみ角丸を復元・一行表示 */
-    .line-btn { border-radius: 50px !important; white-space: nowrap; font-size: 14px; }
-
-    /* pain-icon のみ円形に復元 */
-    .pain-icon { border-radius: 50% !important; }
-
-    /* dots-bridge のドットを円形に復元 */
-    .dot { border-radius: 50% !important; }
-
-    /* 動画タブボタンを円形に復元 */
-    .vtab-btn { border-radius: 50% !important; }
-
-    /* QA の Q/A アイコンと + を円形に復元 */
-    .qa-q-icon, .qa-a-icon, .qa-q-arrow { border-radius: 50% !important; }
-
-    /* 動画②のみ背景を薄いブラウンに（両端まで広げる） */
-    .vtab-panel[data-panel="2"] {
-      background: rgba(172, 148, 127, 0.18);
-      margin-left: -20px;
-      margin-right: -20px;
-      padding: 24px 20px;
-    }
-
-    /* 動画画像：右上だけ角丸 */
-    .vtab-img { border-radius: 0 36px 0 0 !important; }
-
-    /* 動画間の誘導矢印（3つの三角） */
-    .vtab-arrows {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      padding: 4px 0 14px;
-      margin-top: -24px;
-    }
-    .vtab-arrows span {
-      width: 0; height: 0;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-top: 8px solid var(--brown-light);
-    }
-    .vtab-arrows span:nth-child(1) { opacity: 0.45; }
-    .vtab-arrows span:nth-child(2) { opacity: 0.75; }
-    .vtab-arrows span:nth-child(3) { opacity: 1; border-top-color: var(--brown); }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 640px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero-photo { max-width: 180px; margin: 0 auto; }
-      .hero-photo img { aspect-ratio: 1/1; border-radius: 50%; }
-      .hero-photo::before { display: none; }
-      .hero-sub { text-align: left; }
-      .profile-box-head { flex-direction: column; text-align: center; }
-      .profile-photo-wrap { margin: 0 auto; }
-      .profile-photo-wrap::before { display: none; }
-    }
-
-    @media (max-width: 400px) {
-      .hero-catch { font-size: 19px; }
-      .line-btn { font-size: 14px; padding: 16px 20px; }
-    }
+    .btn-line { border-radius: 50px !important; }
+    .pain-icon, .video-num, .b-icon, .b-middle-icon,
+    .v-play, .qa-qb, .qa-ab, .qa-plus { border-radius: 50% !important; }
   </style>
 </head>
 <body>
 
-  <!-- TOP RIBBON -->
-  <div class="top-ribbon">
-    公式LINE登録で「売上が安定しない本当の理由」<br>３本の無料動画をプレゼント
+  <!-- ══ TOP RIBBON ══ -->
+  <div class="ribbon">
+    公式LINE登録で<strong>「売上が安定しない本当の理由」</strong><br>３本の無料動画をプレゼント
   </div>
 
-  <!-- HERO -->
+  <!-- ══ HERO ══ -->
   <section class="hero">
+    <div class="hero-photo"></div>
+    <div class="hero-shadow"></div>
+    <div class="hero-fade-bottom"></div>
 
-    <!-- 人物写真：フル背景・100%不透明 -->
-    <div class="hero-photo-bg"></div>
+    <div class="hero-badge">SALES COACHING × LINE</div>
 
-    <!-- 下部グラデ -->
-    <div class="hero-bottom-grad"></div>
-
-    <!-- 右上バッジ -->
-    <div class="hero-badge-top">Sales Coaching × LINE</div>
-
-    <!-- 縦書きテキスト（右寄せ） -->
-    <div class="hero-text-wrap">
-      <div class="hero-zabuton">
-        <span class="v-normal">発信の手ごたえはあるのに、</span>
-        <span class="v-em">売上が安定しない。</span>
-        <span class="hero-v-reason">その理由を動画で公開します。</span>
+    <div class="hero-text">
+      <div class="hero-cols">
+        <span class="hero-col hero-col-sm">発信の手ごたえはあるのに、</span>
+        <span class="hero-col hero-col-lg">売上が安定しない。</span>
+        <span class="hero-col-xs">その理由を動画で公開します。</span>
       </div>
     </div>
 
-    <!-- 名前タグ（左下） -->
-    <div class="hero-name-tag">ゾエ / 集客導線デザイナー</div>
+    <div class="hero-name">ゾエ / 集客導線デザイナー</div>
 
-  </section>
-
-  <!-- MINI CTA① -->
-  <section class="mini-cta">
-    <div class="wrap fi">
-      <p class="mini-cta-text">公式LINEに登録した方限定<br>３本の<strong>無料動画</strong>をプレゼント中</p>
-      <div class="cta-area">
-        <a href="https://lin.ee/ropbySH" class="line-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          ▼ 無料動画を受け取る（公式LINEへ）
-        </a>
-        <p class="cta-note">登録30秒・完全無料・強引な勧誘はありません</p>
-      </div>
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <div class="scroll-bar"></div>
     </div>
   </section>
 
-  <!-- お悩み -->
+  <!-- ══ MINI CTA ① ══ -->
+  <section class="mini-cta fi">
+    <p class="mini-cta-msg">
+      公式LINEに登録した方限定<br>
+      ３本の<u>無料動画</u>をプレゼント中
+    </p>
+    <a href="https://lin.ee/ropbySH" class="btn-line" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      ▼ 無料動画を受け取る（公式LINEへ）
+    </a>
+    <p class="cta-note">登録30秒・完全無料・強引な勧誘はありません</p>
+  </section>
+
+  <!-- ══ PAIN ══ -->
   <section class="section-pain">
     <div class="wrap">
-      <div class="inner fi" style="text-align:center;">
-        <span class="sec-badge">こんなお悩みはありませんか？</span>
-        <p class="sec-title" style="margin-bottom:32px;">こんな状況に、<br>心当たりありませんか？</p>
+      <div class="pain-intro fi">
+        <span class="eyebrow">こんなお悩みはありませんか？</span>
+        <p class="sh">こんな状況に、<br>心当たりありませんか？</p>
       </div>
-      <div class="pain-cards fi">
-        <div class="pain-card"><div class="pain-icon">✓</div><p class="pain-text">発信は続けているのに、毎月<strong>売上がバラバラ</strong>で不安が消えない</p></div>
-        <div class="pain-card"><div class="pain-icon">✓</div><p class="pain-text">LINEに登録してもらっても、設定は<strong>あいさつ文だけ</strong></p></div>
-        <div class="pain-card"><div class="pain-icon">✓</div><p class="pain-text">「何かやらなきゃ」と思いながら、<strong>SNS投稿だけが続く</strong></p></div>
-        <div class="pain-card"><div class="pain-icon">✓</div><p class="pain-text">やることが多すぎて、<strong>何から手をつければいいか</strong>分からない</p></div>
-        <div class="pain-card"><div class="pain-icon">✓</div><p class="pain-text">時間を使えば使うほど、<strong>本来の仕事が圧迫される</strong></p></div>
+      <div class="pain-list fi">
+        <div class="pain-item">
+          <div class="pain-icon">✓</div>
+          <p>発信は続けているのに、毎月<strong>売上がバラバラ</strong>で不安が消えない</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">✓</div>
+          <p>LINEに登録してもらっても、設定は<strong>あいさつ文だけ</strong></p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">✓</div>
+          <p>「何かやらなきゃ」と思いながら、<strong>SNS投稿だけが続く</strong></p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">✓</div>
+          <p>やることが多すぎて、<strong>何から手をつければいいか</strong>分からない</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">✓</div>
+          <p>時間を使えば使うほど、<strong>本来の仕事が圧迫される</strong></p>
+        </div>
       </div>
       <div class="pain-close fi">
-        <p>頑張っているのに売上があがらない。<br>それ、<em>頑張りレベルの問題じゃなくて、</em><br><em>頑張る場所が少しズレているだけ</em>なんです。</p>
+        <p>頑張っているのに売上があがらない。<br>
+        それ、<em>頑張りレベルの問題じゃなくて、</em><br>
+        <em>頑張る場所が少しズレているだけ</em>なんです。</p>
       </div>
     </div>
   </section>
 
-  <!-- 問題提起 -->
+  <!-- ══ PROBLEM ══ -->
   <section class="section-problem">
     <div class="wrap">
-      <div class="inner fi" style="text-align:center; margin-bottom: 32px;">
-        <span class="sec-badge">なぜ売上が安定しないのか</span>
-        <p class="sec-title" style="margin-top:8px;">発信しているのに<br>売上が安定しない<em class="shine-emph">本当の理由</em></p>
+      <div class="problem-intro fi">
+        <span class="eyebrow">なぜ売上が安定しないのか</span>
+        <p class="sh">発信しているのに<br>売上が安定しない<em>本当の理由</em></p>
       </div>
-      <p class="problem-lead fi">理由は、一つです。</p>
-      <div class="problem-answer-box fi">
-        <p class="problem-answer-text">「発信」と「販売」の間に<br><em>橋がない</em>ということ。</p>
+
+      <p class="problem-reason fi">理由は、一つです。</p>
+
+      <div class="problem-box fi">
+        <span class="problem-box-label">THE ANSWER</span>
+        <p>「発信」と「販売」の間に<br><em>橋がない</em>ということ。</p>
       </div>
+
+      <!-- 橋ダイアグラム -->
+      <div class="bridge fi">
+        <p class="bridge-title">── 今の状態 ──</p>
+        <div class="bridge-row">
+          <div class="b-node">
+            <div class="b-icon sns">📱</div>
+            <p class="b-label">SNS<br>発信</p>
+          </div>
+          <div class="b-mid">
+            <div class="b-dash"></div>
+            <div class="b-gap-badge">× 橋がない</div>
+          </div>
+          <div class="b-node">
+            <div class="b-icon sale">💰</div>
+            <p class="b-label">安定<br>売上</p>
+          </div>
+        </div>
+
+        <div class="bridge-arrow">↓ こうすると変わる</div>
+
+        <p class="bridge-title">── LINE導線を作ると ──</p>
+        <div class="bridge-row">
+          <div class="b-node">
+            <div class="b-icon sns">📱</div>
+            <p class="b-label">SNS<br>発信</p>
+          </div>
+          <div class="b-mid">
+            <div class="b-solid"></div>
+            <div class="b-ok-badge">✓ LINE導線</div>
+          </div>
+          <div class="b-middle-node">
+            <div class="b-middle-icon">💬</div>
+            <p class="b-middle-label">LINE</p>
+          </div>
+          <div class="b-mid">
+            <div class="b-solid"></div>
+            <div class="b-ok-badge">✓ 信頼→購買</div>
+          </div>
+          <div class="b-node">
+            <div class="b-icon sale">💰</div>
+            <p class="b-label">安定<br>売上</p>
+          </div>
+        </div>
+      </div>
+
       <div class="problem-body fi">
         <p>フォロワーが増えて、いいねもつく。<br>LINEにも登録してもらえてる。<br>でも<strong>売上には繋がっていない。</strong></p>
         <p>それは、登録した人に<strong>「なぜ今、あなたのサービスが必要なのか」</strong>を伝える仕組みがないから。</p>
         <p><strong>登録してくれた瞬間が一番熱量が高い</strong>のに、その後何も届かないから、気づいた時にはもう冷めている。</p>
         <p>だから、毎月ゼロから集客し直して、発信して、疲弊して続かなくなる。。。</p>
       </div>
-      <div class="problem-structure fi">
-        <p>この負のスパイラルの正体は、才能でも努力でもなく、<em>構造が問題</em>なんです。</p>
+
+      <div class="problem-emph fi">
+        <p>この負のスパイラルの正体は、<br>才能でも努力でもなく、<em>構造が問題</em>なんです。</p>
       </div>
-      <div class="dots-bridge fi">
-        <div class="dot"></div>
-        <div class="bridge"></div>
-        <div class="dot"></div>
-        <div class="bridge" style="background: linear-gradient(90deg, var(--yellow), var(--brown-pale));"></div>
-        <div class="dot"></div>
-      </div>
-      <div class="problem-body fi">
-        <p style="text-align:center;"><strong>さらに…</strong></p>
+
+      <div class="problem-more fi">
         <p>インスタの発信は<strong>「点」</strong>でしかありません。どれだけ投稿を重ねても、それだけでは見込み客の信頼は育ちません。</p>
         <p>点を<strong>「線」</strong>にする仕組みが、あなたのビジネスにはまだ足りていない。</p>
-        <p style="text-align:center; font-family: var(--font-mincho); font-weight:700;">その仕組みの作り方を、<br>この動画で全部話します。</p>
+        <p>その仕組みの作り方を、<br>この動画で全部話します。</p>
       </div>
     </div>
   </section>
 
-  <!-- 動画特典 -->
+  <!-- ══ VIDEOS ══ -->
   <section class="section-videos">
     <div class="wrap">
-      <div class="inner fi" style="text-align:center; margin-bottom:8px;">
-        <span class="gift-badge">公式LINE登録で無料プレゼント</span>
-        <p class="sec-title" style="margin-top:8px;">無料動画<em class="dot-emph"><span class="dc">３</span><span class="dc">本</span></em>の中身</p>
-      </div>
-      <!-- ジャンプボタン -->
-      <div class="vtab-btns">
-        <button class="vtab-btn" data-tab="1">①</button>
-        <button class="vtab-btn" data-tab="2">②</button>
-        <button class="vtab-btn" data-tab="3">③</button>
+      <div class="videos-intro fi">
+        <span class="gift-tag">公式LINE登録で無料プレゼント</span>
+        <p class="sh" style="margin-top:10px;">無料動画「３本」の中身</p>
       </div>
 
-      <!-- パネル① -->
-      <div class="vtab-panel fi" data-panel="1">
-        <img class="vtab-img" src="images/douga1.jpg" alt="動画1サムネイル">
-        <p class="vtab-label">VIDEO 01</p>
-        <p class="vtab-title">フォロワーが増えても売れない<br>本当の理由、知っていますか？</p>
-        <p class="vtab-desc">売上が安定しない女性起業家が陥りがちな３つの罠を暴きます。「頑張っているのに結果が出ない」のは、あなたのせいではありません。その構造的な原因を、この動画で明らかにします。</p>
+      <div class="video-timeline fi">
+        <!-- VIDEO 01 -->
+        <div class="video-item">
+          <div class="video-num">①</div>
+          <div class="video-card">
+            <img src="images/douga1.jpg" alt="動画1">
+            <div class="video-card-body">
+              <span class="video-ep">VIDEO 01</span>
+              <p class="video-title">フォロワーが増えても売れない<br>本当の理由、知っていますか？</p>
+              <p class="video-desc">売上が安定しない女性起業家が陥りがちな３つの罠を暴きます。「頑張っているのに結果が出ない」のは、あなたのせいではありません。その構造的な原因を、この動画で明らかにします。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIDEO 02 -->
+        <div class="video-item">
+          <div class="video-num">②</div>
+          <div class="video-card">
+            <img src="images/douga2.jpg" alt="動画2">
+            <div class="video-card-body">
+              <span class="video-ep">VIDEO 02</span>
+              <p class="video-title">売れ続ける人だけが知っている<br>セールスの３つの鉄則</p>
+              <p class="video-desc">苦手意識がスーッと消えて、自信を持って発信できるようになります。「売り込まなきゃいけない」という感覚が、そもそも間違っているんです。売れ続ける人が自然にやっていることを、私の経験から言語化します。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIDEO 03 -->
+        <div class="video-item">
+          <div class="video-num">③</div>
+          <div class="video-card">
+            <img src="images/douga3.jpg" alt="動画3">
+            <div class="video-card-body">
+              <span class="video-ep">VIDEO 03</span>
+              <p class="video-title">公式LINE×沼らせ設計で<br>自然と選ばれる導線の全体像を公開</p>
+              <p class="video-desc">LINEであなたが体験することが、そのままあなたのビジネスに転用できます。「作って終わり」ではなく、見込み客が自然に深くなっていく仕組みの全体像を、具体的に体感してみてください。</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- 矢印：1→2 -->
-      <div class="vtab-arrows"><span></span><span></span><span></span></div>
-
-      <!-- パネル② -->
-      <div class="vtab-panel fi" data-panel="2">
-        <img class="vtab-img" src="images/douga2.jpg" alt="動画2サムネイル">
-        <p class="vtab-label">VIDEO 02</p>
-        <p class="vtab-title">売れ続ける人だけが知っている<br>セールスの３つの鉄則</p>
-        <p class="vtab-desc">苦手意識がスーッと消えて、自信を持って発信できるようになります。「売り込まなきゃいけない」という感覚が、そもそも間違っているんです。売れ続ける人が自然にやっていることを、私の経験から言語化します。</p>
-      </div>
-
-      <!-- 矢印：2→3 -->
-      <div class="vtab-arrows"><span></span><span></span><span></span></div>
-
-      <!-- パネル③ -->
-      <div class="vtab-panel fi" data-panel="3">
-        <img class="vtab-img" src="images/douga3.jpg" alt="動画3サムネイル">
-        <p class="vtab-label">VIDEO 03</p>
-        <p class="vtab-title">公式LINE×沼らせ設計で<br>自然と選ばれる導線の全体像を公開</p>
-        <p class="vtab-desc">LINEであなたが体験することが、そのままあなたのビジネスに転用できます。「作って終わり」ではなく、見込み客が自然に深くなっていく仕組みの全体像を、具体的に体感してみてください。</p>
-      </div>
       <div class="video-closing fi">
-        <p>一度この仕組みができれば、<br>クライアント対応をしながらでも、<br>子どもと過ごしながらでも、<br><em>あなたが睡眠中でも、</em><br>導線は止まらずに動き続けます。</p>
+        <p>一度この仕組みができれば、<br>
+        クライアント対応をしながらでも、<br>
+        子どもと過ごしながらでも、<br>
+        <em>あなたが睡眠中でも、</em><br>
+        導線は止まらずに動き続けます。</p>
       </div>
-      <div class="cta-area fi" style="margin-top:32px;">
-        <a href="https://lin.ee/ropbySH" class="line-btn" target="_blank" rel="noopener">
+
+      <div class="fi" style="margin-top:32px; text-align:center;">
+        <a href="https://lin.ee/ropbySH" class="btn-line" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
           ▼ 無料動画を受け取る（公式LINEへ）
         </a>
@@ -1497,106 +1404,117 @@
     </div>
   </section>
 
-  <!-- お客様の声 -->
+  <!-- ══ VOICE ══ -->
   <section class="section-voice">
     <div class="wrap">
-      <div class="inner fi" style="text-align:center;">
-        <span class="sec-badge">お客様の声</span>
-        <p class="sec-title" style="margin-top:8px;">導線サポートを受けた方から<br>嬉しいお声をいただいています</p>
+      <div class="voice-intro fi">
+        <span class="eyebrow">お客様の声</span>
+        <p class="sh">導線サポートを受けた方から<br>嬉しいお声をいただいています</p>
       </div>
-      <div class="voice-cards fi">
+
+      <div class="voice-list fi">
+
+        <!-- CARD 1 -->
         <div class="voice-card">
-          <a href="https://youtu.be/_n2Am_D8eH8" target="_blank" rel="noopener" class="voice-thumb">
-            <img src="images/voice1.jpg" alt="青木ゆきさん インタビュー">
-            <span class="voice-thumb-play">▶</span>
+          <a href="https://youtu.be/_n2Am_D8eH8" target="_blank" rel="noopener" class="v-thumb">
+            <img src="images/voice1.jpg" alt="青木ゆきさん インタビュー動画">
+            <span class="v-play">▶</span>
           </a>
-          <div class="voice-card-head">
+          <div class="v-head">
+            <span class="v-tag">公式LINE構築</span>
             <div>
-              <span class="voice-tag">公式LINE構築</span>
-              <p class="voice-name">青木ゆきさん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">訪問産後ケアの助産師として独立開業</span></p>
+              <p class="v-name">青木ゆきさん</p>
+              <span class="v-name-sub">訪問産後ケアの助産師として独立開業</span>
             </div>
           </div>
-          <div class="voice-stat-bar">
-            <span class="voice-stat-pre">事業開始2ヶ月半で</span>
-            <span class="voice-stat-main">25件</span>
-            <span class="voice-stat-post">即満席・毎月更新中</span>
+          <div class="v-stat">
+            <span class="v-pre">事業開始2ヶ月半で</span>
+            <span class="v-num">25件</span>
+            <span class="v-post">即満席・毎月更新中</span>
           </div>
-          <div class="voice-body">
-            <p class="voice-text">何から手をつければいいか全くわからない状態からスタートして、インスタ → LINE → 予約フォームの流れが完全に機能するようになりました。「LINEもちゃんと稼働してる」とお客様から直接言われた時は、やってよかったと心から思いました。</p>
-            <p class="voice-result">→ 事業開始2ヶ月半で<strong>予約の9割が埋まり</strong>、月25件の目標を毎月更新中。</p>
+          <div class="v-body">
+            <p class="v-quote">何から手をつければいいか全くわからない状態からスタートして、インスタ → LINE → 予約フォームの流れが完全に機能するようになりました。「LINEもちゃんと稼働してる」とお客様から直接言われた時は、やってよかったと心から思いました。</p>
+            <p class="v-result">事業開始2ヶ月半で<strong>予約の9割が埋まり</strong>、月25件の目標を毎月更新中。</p>
           </div>
         </div>
+
+        <!-- CARD 2 -->
         <div class="voice-card">
-          <a href="https://youtu.be/JCyiLYKR49I" target="_blank" rel="noopener" class="voice-thumb">
-            <img src="images/voice2.jpg" alt="吉田亜衣さん インタビュー">
-            <span class="voice-thumb-play">▶</span>
+          <a href="https://youtu.be/JCyiLYKR49I" target="_blank" rel="noopener" class="v-thumb">
+            <img src="images/voice2.jpg" alt="吉田亜衣さん インタビュー動画">
+            <span class="v-play">▶</span>
           </a>
-          <div class="voice-card-head">
+          <div class="v-head">
+            <span class="v-tag">LP制作</span>
             <div>
-              <span class="voice-tag">LP制作</span>
-              <p class="voice-name">吉田亜衣さん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">発酵教室10年・講師育成講座を主催</span></p>
+              <p class="v-name">吉田亜衣さん</p>
+              <span class="v-name-sub">発酵教室10年・講師育成講座を主催</span>
             </div>
           </div>
-          <div class="voice-stat-bar">
-            <span class="voice-stat-pre">初回ローンチで</span>
-            <span class="voice-stat-main">400名</span>
-            <span class="voice-stat-post">がセミナーに申し込み</span>
+          <div class="v-stat">
+            <span class="v-pre">初回ローンチで</span>
+            <span class="v-num">400名</span>
+            <span class="v-post">がセミナーに申し込み</span>
           </div>
-          <div class="voice-body">
-            <p class="voice-text">ヒアリングシートに書いただけの内容なのに、私が言いたかったことを丁寧に拾い上げてもらえて。色合いも世界観も、「自分で作るより私らしい」と感じるほどでした。SNSとLPで流れがきちんと整いました。</p>
-            <p class="voice-result">→ 初回ローンチで<strong>400名がセミナーに申し込み</strong>。SNSの「点」が「線」でつながった瞬間でした。</p>
+          <div class="v-body">
+            <p class="v-quote">ヒアリングシートに書いただけの内容なのに、私が言いたかったことを丁寧に拾い上げてもらえて。色合いも世界観も、「自分で作るより私らしい」と感じるほどでした。SNSとLPで流れがきちんと整いました。</p>
+            <p class="v-result">初回ローンチで<strong>400名がセミナーに申し込み</strong>。SNSの「点」が「線」でつながった瞬間でした。</p>
           </div>
         </div>
+
+        <!-- CARD 3 -->
         <div class="voice-card">
-          <a href="https://youtu.be/PMd_BmNI-zs" target="_blank" rel="noopener" class="voice-thumb">
-            <img src="images/voice3.jpg" alt="小関すみよさん インタビュー">
-            <span class="voice-thumb-play">▶</span>
+          <a href="https://youtu.be/PMd_BmNI-zs" target="_blank" rel="noopener" class="v-thumb">
+            <img src="images/voice3.jpg" alt="小関すみよさん インタビュー動画">
+            <span class="v-play">▶</span>
           </a>
-          <div class="voice-card-head">
+          <div class="v-head">
+            <span class="v-tag">プロモーションサポート</span>
             <div>
-              <span class="voice-tag">プロモーションサポート</span>
-              <p class="voice-name">小関すみよさん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">親子教室の先生向け集客コンサル</span></p>
+              <p class="v-name">小関すみよさん</p>
+              <span class="v-name-sub">親子教室の先生向け集客コンサル</span>
             </div>
           </div>
-          <div class="voice-stat-bar">
-            <span class="voice-stat-pre">2週間で</span>
-            <span class="voice-stat-main">400万円超</span>
-            <span class="voice-stat-post">の売上を達成</span>
+          <div class="v-stat">
+            <span class="v-pre">2週間で</span>
+            <span class="v-num">400万円超</span>
+            <span class="v-post">の売上を達成</span>
           </div>
-          <div class="voice-body">
-            <p class="voice-text">返事が早く、クオリティも高く、余計なストレスが一切なかった。不安で頭がいっぱいになりそうな時に「すみよさんは、救うべき人を救うだけでいい」と言ってもらえて、そこで原点に立ち返れました。</p>
-            <p class="voice-result">→ <strong>2週間で400万円以上</strong>の売上を達成。</p>
+          <div class="v-body">
+            <p class="v-quote">返事が早く、クオリティも高く、余計なストレスが一切なかった。不安で頭がいっぱいになりそうな時に「すみよさんは、救うべき人を救うだけでいい」と言ってもらえて、そこで原点に立ち返れました。</p>
+            <p class="v-result"><strong>2週間で400万円以上</strong>の売上を達成。</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- プロフィール -->
+  <!-- ══ PROFILE ══ -->
   <section class="section-profile">
     <div class="wrap">
-      <div class="fi" style="text-align:center; margin-bottom:32px;">
-        <span class="sec-badge">ゾエについて</span>
-        <p class="sec-title" style="margin-top:8px;">制作者の紹介</p>
+      <div class="profile-intro fi">
+        <span class="eyebrow">ゾエについて</span>
+        <p class="sh">制作者の紹介</p>
       </div>
-      <div class="profile-box fi">
-        <div class="profile-box-head">
+      <div class="profile-card fi">
+        <div class="profile-top">
           <div class="profile-photo-wrap">
             <img src="images/profile.jpg" alt="川副真理子 ゾエ">
           </div>
-          <div>
-            <p class="profile-label">SALES COACH</p>
+          <div class="profile-info">
+            <p class="profile-role">SALES COACH</p>
             <p class="profile-name">川副 真理子</p>
             <p class="profile-title">売れる流れを作る<br>集客導線デザイナー ゾエ</p>
           </div>
         </div>
-        <div class="profile-box-body">
+        <div class="profile-bottom">
           <p class="profile-bio">YKK AP株式会社で中高層ビルの設計を8年経験後、貿易事務・コーヒー豆の直輸入販売・iPadイラスト制作等を経て、2022年次男の出産を機にオンライン起業。「細分化と整理」を武器に、クライアントのビジネス構築を伴走。</p>
-          <ul class="profile-achievements">
-            <li><div class="ach-diamond"></div><span>LP制作でクライアントの初セミナー集客<strong>400名超</strong>に貢献</span></li>
-            <li><div class="ach-diamond"></div><span><strong>1億規模</strong>のプロモーションチームで導線整理を担当</span></li>
-            <li><div class="ach-diamond"></div><span><strong>5,000万円以上</strong>売り上げるクライアントのコンテンツ制作を担当</span></li>
-            <li><div class="ach-diamond"></div><span>公式LINE構築サポートで産後ケア事業の予約を<strong>3ヶ月で満席</strong>に</span></li>
+          <ul class="profile-ach">
+            <li><div class="ach-gem"></div><span>LP制作でクライアントの初セミナー集客<strong>「400名超」</strong>に貢献</span></li>
+            <li><div class="ach-gem"></div><span><strong>「1億規模」</strong>のプロモーションチームで導線整理を担当</span></li>
+            <li><div class="ach-gem"></div><span><strong>「5,000万円以上」</strong>売り上げるクライアントのコンテンツ制作を担当</span></li>
+            <li><div class="ach-gem"></div><span>公式LINE構築サポートで産後ケア事業の予約を<strong>「3ヶ月で満席」</strong>に</span></li>
           </ul>
           <p class="profile-motto">4歳と7歳の兄弟の母。次男の4ヶ月入院付き添い中にもビジネスを構築し続けた経験から、<strong>「どんな状況でも、具体化さえできれば行動できる！」</strong>をモットーにサポートをしています。</p>
         </div>
@@ -1604,51 +1522,74 @@
     </div>
   </section>
 
-  <!-- メインCTA② -->
+  <!-- ══ MAIN CTA ② ══ -->
   <section class="section-main-cta">
-    <div class="inner fi">
-      <p class="main-cta-title">まずは無料動画を<br>受け取ってください。</p>
-      <p class="main-cta-desc">動画を見た上で、もし<em>「一緒にやってみたい」</em>と<br>思っていただけたら、公式LINE内で<br>個別相談のご案内をします。</p>
-      <p class="main-cta-note">もちろん動画を受け取るだけでも大歓迎です。</p>
-      <div class="cta-area">
-        <a href="https://lin.ee/ropbySH" class="line-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          ▼ 無料動画を受け取る（公式LINEへ）
-        </a>
-      </div>
-      <p class="main-cta-remark">※ 登録は30秒・完全無料・強引な勧誘はありません</p>
+    <div class="main-cta-inner fi">
+      <p class="main-cta-h">まずは無料動画を<br>受け取ってください。</p>
+      <p class="main-cta-p">
+        動画を見た上で、もし<em>「一緒にやってみたい」</em>と<br>
+        思っていただけたら、公式LINE内で<br>
+        個別相談のご案内をします。
+      </p>
+      <p class="main-cta-sub">もちろん動画を受け取るだけでも大歓迎です。</p>
+      <a href="https://lin.ee/ropbySH" class="btn-line" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        ▼ 無料動画を受け取る（公式LINEへ）
+      </a>
+      <p class="main-cta-fine">※ 登録は30秒・完全無料・強引な勧誘はありません</p>
     </div>
   </section>
 
-  <!-- Q&A -->
+  <!-- ══ Q&A ══ -->
   <section class="section-qa">
     <div class="wrap">
-      <div class="inner fi" style="text-align:center;">
-        <span class="sec-badge">よくあるご質問</span>
-        <p class="sec-title" style="margin-top:8px;">Q &amp; A</p>
+      <div class="qa-intro fi">
+        <span class="eyebrow">よくあるご質問</span>
+        <p class="sh">Q &amp; A</p>
       </div>
       <div class="qa-list fi">
         <div class="qa-item">
-          <div class="qa-q"><div class="qa-q-icon">Q</div>登録したら売り込まれますか？<div class="qa-q-arrow">＋</div></div>
-          <div class="qa-a"><div class="qa-a-icon">A</div>まず動画3本をお届けします。その後、個別相談のご案内はしますが、強引な勧誘は一切しません。動画だけ受け取っていただいても全く問題ありません。</div>
+          <div class="qa-q">
+            <div class="qa-qb">Q</div>
+            登録したら売り込まれますか？
+            <div class="qa-plus">＋</div>
+          </div>
+          <div class="qa-a">
+            <div class="qa-ab">A</div>
+            まず動画3本をお届けします。その後、個別相談のご案内はしますが、強引な勧誘は一切しません。動画だけ受け取っていただいても全く問題ありません。
+          </div>
         </div>
         <div class="qa-item">
-          <div class="qa-q"><div class="qa-q-icon">Q</div>どんな人に向いていますか？<div class="qa-q-arrow">＋</div></div>
-          <div class="qa-a"><div class="qa-a-icon">A</div>すでに売上があり、お客様の変化を実感できている方。でも仕組みがなく毎月ゼロから集客している状態の方に最も刺さる内容です。</div>
+          <div class="qa-q">
+            <div class="qa-qb">Q</div>
+            どんな人に向いていますか？
+            <div class="qa-plus">＋</div>
+          </div>
+          <div class="qa-a">
+            <div class="qa-ab">A</div>
+            すでに売上があり、お客様の変化を実感できている方。でも仕組みがなく毎月ゼロから集客している状態の方に最も刺さる内容です。
+          </div>
         </div>
         <div class="qa-item">
-          <div class="qa-q"><div class="qa-q-icon">Q</div>ビジネスのことが分かっていなくても大丈夫ですか？<div class="qa-q-arrow">＋</div></div>
-          <div class="qa-a"><div class="qa-a-icon">A</div>こちらの動画は「私はなんのビジネスしたらいいんだろう？」と思っている方にはあまりお役に立てないかもしれません。やりたいことがしっかり固まったら是非ご登録ください。</div>
+          <div class="qa-q">
+            <div class="qa-qb">Q</div>
+            ビジネスのことが分かっていなくても大丈夫ですか？
+            <div class="qa-plus">＋</div>
+          </div>
+          <div class="qa-a">
+            <div class="qa-ab">A</div>
+            こちらの動画は「私はなんのビジネスしたらいいんだろう？」と思っている方にはあまりお役に立てないかもしれません。やりたいことがしっかり固まったら是非ご登録ください。
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 最後に -->
+  <!-- ══ CLOSING ══ -->
   <section class="section-closing">
     <div class="wrap fi">
-      <span class="sec-badge" style="background:var(--yellow); color:var(--brown);">最後に</span>
-      <div class="closing-msg" style="margin-top:20px;">
+      <span class="closing-badge">最後に</span>
+      <div class="closing-body">
         <p>SNSで反応があるなら、<br>あなたの発信はすでに機能しています。</p>
         <p>でも売上が安定しないなら、<br>問題はその先の流れがないことです。</p>
         <p>動画を見終わった後、<br>「あ、だからか」と腑に落ちる瞬間が<br>あるはずです。</p>
@@ -1656,58 +1597,73 @@
       </div>
       <p class="closing-tagline">迷いをゼロに、成果を最速に。<br>一緒に叶えましょう。</p>
       <p class="closing-sig">集客導線デザイナー ゾエ</p>
-      <div class="cta-area">
-        <a href="https://lin.ee/ropbySH" class="line-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          ▼ 無料動画を受け取る（公式LINEへ）
-        </a>
-      </div>
+      <a href="https://lin.ee/ropbySH" class="btn-line" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        ▼ 無料動画を受け取る（公式LINEへ）
+      </a>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ══ FOOTER ══ -->
   <footer>
-    <div class="footer-inner">
-      <p class="footer-logo">川副真理子 / Zoe</p>
-      <div class="footer-line"></div>
-      <div class="footer-sns">
+    <div class="foot-inner">
+      <p class="foot-logo">川副真理子 / Zoe</p>
+      <div class="foot-line"></div>
+      <div class="foot-sns">
         <a href="https://www.instagram.com/zoe_yanagimind" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           @zoe_yanagimind
         </a>
       </div>
-      <div class="footer-line"></div>
-      <p class="footer-copy">© Zoe Kawasoe. All rights reserved.</p>
+      <div class="foot-line"></div>
+      <p class="foot-copy">© Zoe Kawasoe. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- ══ FLOATING CTA ══ -->
+  <div class="float-cta" id="floatCta">
+    <div class="float-cta-shadow"></div>
+    <a href="https://lin.ee/ropbySH" class="btn-line" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .627.285.627.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      無料動画を受け取る（公式LINEへ）
+    </a>
+  </div>
+
   <script>
-    (function(){
+    /* フェードイン */
+    (function () {
       var els = document.querySelectorAll('.fi');
-      if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('on'); }); return; }
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){ if(entry.isIntersecting){ entry.target.classList.add('on'); io.unobserve(entry.target); } });
-      },{ threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-      els.forEach(function(el){ io.observe(el); });
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (e) { e.classList.add('on'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('on'); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -28px 0px' });
+      els.forEach(function (el) { io.observe(el); });
     })();
-    (function(){
-      document.querySelectorAll('.qa-item').forEach(function(item){
-        item.querySelector('.qa-q').addEventListener('click', function(){ item.classList.toggle('open'); });
-      });
-    })();
-    /* 動画ボタン：クリックで該当パネルへスムーススクロール */
-    (function(){
-      var btns = document.querySelectorAll('.vtab-btn');
-      btns.forEach(function(btn){
-        btn.addEventListener('click', function(){
-          var tab = btn.dataset.tab;
-          var target = document.querySelector('[data-panel="' + tab + '"]');
-          if(target){
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+
+    /* Q&Aアコーディオン */
+    (function () {
+      document.querySelectorAll('.qa-item').forEach(function (item) {
+        item.querySelector('.qa-q').addEventListener('click', function () {
+          item.classList.toggle('open');
         });
       });
     })();
+
+    /* フローティングCTA：ヒーローを過ぎたら表示 */
+    (function () {
+      var hero = document.querySelector('.hero');
+      var btn  = document.getElementById('floatCta');
+      if (!hero || !btn) return;
+      window.addEventListener('scroll', function () {
+        btn.classList.toggle('show', window.scrollY > hero.offsetHeight + 40);
+      }, { passive: true });
+    })();
   </script>
+
 </body>
 </html>
