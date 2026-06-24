@@ -848,17 +848,74 @@
       margin-bottom: 14px;
     }
 
+    /* 実績スタット表示 */
+    .voice-stat-bar {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      flex-wrap: wrap;
+      padding: 14px 22px 12px;
+      background: linear-gradient(135deg, var(--yellow-pale) 0%, rgba(250,243,206,0.4) 100%);
+      border-bottom: 2px solid var(--yellow);
+      position: relative;
+      overflow: hidden;
+    }
+    .voice-stat-bar::before {
+      content: '→';
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: var(--yellow-dark);
+      opacity: 0.5;
+    }
+    .voice-stat-pre {
+      font-family: var(--font-mincho);
+      font-size: 12px;
+      color: var(--text-mid);
+      font-weight: 400;
+      line-height: 2;
+    }
+    .voice-stat-main {
+      font-family: var(--font-mincho);
+      font-weight: 800;
+      font-size: 32px;
+      color: var(--brown);
+      line-height: 1.1;
+      position: relative;
+      display: inline-block;
+    }
+    .voice-stat-main::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: -2px; right: -2px;
+      height: 8px;
+      background: var(--yellow);
+      opacity: 0.55;
+      z-index: -1;
+    }
+    .voice-stat-post {
+      font-family: var(--font-mincho);
+      font-size: 13px;
+      color: var(--text-mid);
+      font-weight: 400;
+      line-height: 2;
+    }
+
     .voice-result {
       background: var(--yellow-pale);
-      padding: 14px 18px;
+      border-left: 3px solid var(--yellow-dark);
+      padding: 12px 16px;
       font-family: var(--font-mincho);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--brown);
-      clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
-      line-height: 1.65;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-mid);
+      line-height: 1.75;
       margin-bottom: 14px;
     }
+    .voice-result strong { color: var(--brown); }
 
     .voice-link {
       display: inline-flex;
@@ -1459,9 +1516,14 @@
               <p class="voice-name">青木ゆきさん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">訪問産後ケアの助産師として独立開業</span></p>
             </div>
           </div>
+          <div class="voice-stat-bar">
+            <span class="voice-stat-pre">事業開始2ヶ月半で</span>
+            <span class="voice-stat-main">25件</span>
+            <span class="voice-stat-post">即満席・毎月更新中</span>
+          </div>
           <div class="voice-body">
             <p class="voice-text">何から手をつければいいか全くわからない状態からスタートして、インスタ → LINE → 予約フォームの流れが完全に機能するようになりました。「LINEもちゃんと稼働してる」とお客様から直接言われた時は、やってよかったと心から思いました。</p>
-            <p class="voice-result">事業開始2ヶ月半で<strong>予約の9割が埋まり</strong>、月25件の目標を毎月更新中。</p>
+            <p class="voice-result">→ 事業開始2ヶ月半で<strong>予約の9割が埋まり</strong>、月25件の目標を毎月更新中。</p>
           </div>
         </div>
         <div class="voice-card">
@@ -1475,9 +1537,14 @@
               <p class="voice-name">吉田亜衣さん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">発酵教室10年・講師育成講座を主催</span></p>
             </div>
           </div>
+          <div class="voice-stat-bar">
+            <span class="voice-stat-pre">初回ローンチで</span>
+            <span class="voice-stat-main">400名</span>
+            <span class="voice-stat-post">がセミナーに申し込み</span>
+          </div>
           <div class="voice-body">
             <p class="voice-text">ヒアリングシートに書いただけの内容なのに、私が言いたかったことを丁寧に拾い上げてもらえて。色合いも世界観も、「自分で作るより私らしい」と感じるほどでした。SNSとLPで流れがきちんと整いました。</p>
-            <p class="voice-result">初回ローンチで<strong>400名がセミナーに申し込み</strong>。SNSの「点」が「線」でつながった瞬間でした。</p>
+            <p class="voice-result">→ 初回ローンチで<strong>400名がセミナーに申し込み</strong>。SNSの「点」が「線」でつながった瞬間でした。</p>
           </div>
         </div>
         <div class="voice-card">
@@ -1491,9 +1558,14 @@
               <p class="voice-name">小関すみよさん｜<span style="font-size:12px;font-weight:400;color:var(--text-soft);">親子教室の先生向け集客コンサル</span></p>
             </div>
           </div>
+          <div class="voice-stat-bar">
+            <span class="voice-stat-pre">2週間で</span>
+            <span class="voice-stat-main">400万円超</span>
+            <span class="voice-stat-post">の売上を達成</span>
+          </div>
           <div class="voice-body">
             <p class="voice-text">返事が早く、クオリティも高く、余計なストレスが一切なかった。不安で頭がいっぱいになりそうな時に「すみよさんは、救うべき人を救うだけでいい」と言ってもらえて、そこで原点に立ち返れました。</p>
-            <p class="voice-result"><strong>2週間で400万円以上</strong>の売上を達成。</p>
+            <p class="voice-result">→ <strong>2週間で400万円以上</strong>の売上を達成。</p>
           </div>
         </div>
       </div>
